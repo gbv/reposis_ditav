@@ -73,13 +73,17 @@
   <menu id="publish" dir="/content/publish">
     <label xml:lang="de">Dokumente einreichen</label>
     <label xml:lang="en">Submit Document</label>
-    <item href="/servlets/MCRActionMappingServlet/mods/create" type="intern">
-      <label xml:lang="de">Publizieren</label>
-      <label xml:lang="en">Publish</label>
+    <item href="/content/publish/index.xml" type="intern" replaceMenu="false" constrainPopUp="false">
+        <label xml:lang="de">Publizieren</label>
+        <label xml:lang="en">Publish</label>
     </item>
-    <item href="/content/publish/importPPN.xml" type="intern">
-      <label xml:lang="de">Publizieren (PPN Import)</label>
-      <label xml:lang="en">Publish (PPN Import)</label>
+    <item href="/servlets/solr/select?q=createdby:{CurrentUser}&amp;fq=objectType:mods" type="intern" replaceMenu="false" constrainPopUp="false">
+      <label xml:lang="de">Meine Einreichungen</label>
+      <label xml:lang="en">My submissions</label>
+    </item>
+    <item href="/editor/editor-admins.xed" type="intern" replaceMenu="false" constrainPopUp="false">
+        <label xml:lang="de">Publizieren (Admin)</label>
+        <label xml:lang="en">Publish (admin)</label>
     </item>
     <item href="/content/publish/guidelines.xml" type="intern">
       <label xml:lang="de">Leitlinien</label>
@@ -140,7 +144,7 @@
         <label xml:lang="de">Aktive Sitzungen</label>
         <label xml:lang="en">Session Management</label>
       </item>
-      <item href="/modules/webtools/processing/processing.xml" type="intern">
+      <item href="/modules/webtools/processing" type="intern">
         <label xml:lang="de">Aktive Prozesse</label>
         <label xml:lang="en">Processing</label>
       </item>
