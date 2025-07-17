@@ -1,0 +1,71 @@
+services:
+  db:
+    container_name: ${NAME}-db
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=mir
+    volumes:
+      - ${DB_DATA}:/var/lib/postgresql/data/
+    ports:
+      - ${DB_PORT}:5432
+  solr:
+    container_name: ${NAME}-solr
+    image: mycoreorg/mir-solr:2024.06.x
+    restart: unless-stopped
+    volumes:
+      - ${SOLR_DATA}:/var/solr/data
+    ports:
+      - ${SOLR_HTTP}:8983
+    environment:
+      - SOLR_ADMIN_USER=${SOLR_ADMIN_USER}
+      - SOLR_ADMIN_PASSWORD=${SOLR_ADMIN_PASSWORD}
+      - SOLR_SEARCH_USER=${SOLR_SEARCH_USER}
+      - SOLR_SEARCH_PASSWORD=${SOLR_SEARCH_PASSWORD}
+      - SOLR_INDEX_USER=${SOLR_INDEX_USER}
+      - SOLR_INDEX_PASSWORD=${SOLR_INDEX_PASSWORD}
+  tika:
+    container_name: ${NAME}-tika
+    image: apache/tika:2.9.2.1-full
+    restart: unless-stopped
+    ports:
+      - ${TIKA_PORT}:9998
+  mir:
+    container_name: ${NAME}-mir
+    image: mycoreorg/mir:2024.06.x
+    restart: unless-stopped
+    environment:
+      - APP_CONTEXT=${APP_CONTEXT}
+      - JDBC_NAME=${DB_USER}
+      - JDBC_PASSWORD=${DB_PASSWORD}
+      - JDBC_DRIVER=org.postgresql.Driver
+      - JDBC_URL=jdbc:postgresql://db:5432/mir
+      - SOLR_URL=http://solr:8983
+      - SOLR_CORE=mir
+      - SOLR_CLASSIFICATION_CORE=mir-classifications
+      - ENABLE_SOLR_CLOUD=true
+      - SOLR_ADMIN_USER=${SOLR_ADMIN_USER}
+      - SOLR_ADMIN_PASSWORD=${SOLR_ADMIN_PASSWORD}
+      - SOLR_SEARCH_USER=${SOLR_SEARCH_USER}
+      - SOLR_SEARCH_PASSWORD=${SOLR_SEARCH_PASSWORD}
+      - SOLR_INDEX_USER=${SOLR_INDEX_USER}
+      - SOLR_INDEX_PASSWORD=${SOLR_INDEX_PASSWORD}
+      - TIKASERVER_URL=http://tika:9998/
+      - XMX=${MIR_XMX}
+      - XMS=${MIR_XMS}
+      - MIR_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8295 -XX:+CrashOnOutOfMemoryError
+      - FIX_FILE_SYSTEM_RIGHTS=true
+    volumes:
+      - ${MIR_HOME}:/mcr/home/
+      - ${MIR_DATA}:/mcr/data/
+      - ${MIR_LOGS}:/mcr/logs/
+      - ./src/main/:/mcr/dev/
+    depends_on:
+      - db
+      - solr
+    ports:
+      - ${MIR_HTTP}:8080
+      - ${MIR_AJP}:8009
+      - ${MIR_DEBUG}:8295

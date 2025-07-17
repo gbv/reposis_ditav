@@ -66,41 +66,17 @@ local.properties
 # Eclipse Core
 .project
 
-# External tool builders
-.externalToolBuilders/
-
 # Locally stored "Eclipse launch configurations"
 *.launch
 
 # PyDev specific (Python IDE for Eclipse)
 *.pydevproject
 
-# CDT-specific (C/C++ Development Tooling)
-.cproject
-
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
 
 # Java annotation processor (APT)
 .factorypath
-
-# PDT-specific (PHP Development Tools)
-.buildpath
-
-# sbteclipse plugin
-.target
-
-# Tern plugin
-.tern-project
-
-# TeXlipse plugin
-.texlipse
-
-# STS (Spring Tool Suite)
-.springBeans
-
-# Code Recommenders
-.recommenders/
 
 ## Maven https://github.com/github/gitignore/blob/master/Maven.gitignore
 target/
@@ -179,4 +155,5 @@ $RECYCLE.BIN/
 # MyCoRe/MIR
 mycore-jpa-defaults.xml 
 
-ditav/
+# docker data directories
+docker/
