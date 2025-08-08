@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="lod_document_classification">
+  <label xml:lang="de" text="Dokumenttypen" />
+  <label xml:lang="en" text="Dokument Types" />
+  <label xml:lang="x-uri"
+    text="https://ditav.gbv.de/api/v2/classifications/lod_document_classification" />
+  <categories>
+    <category ID="3282e40b9bc4">
+      <label xml:lang="en" text="ego document" description="ego document" />
+      <category ID="5dbb6b96ca45">
+        <label xml:lang="en" text="letter" description="ego document / letter" />
+      </category>
+      <category ID="9ecb1ed7618e">
+        <label xml:lang="en" text="letter of recommendation"
+          description="ego document / letter of recommendation" />
+      </category>
+      <category ID="02caa9b90a60">
+        <label xml:lang="en" text="memoirs and autobiography"
+          description="ego document / memoirs and autobiography" />
+      </category>
+      <category ID="5bae1c61c597">
+        <label xml:lang="en" text="travelogue" description="ego document / travelogue" />
+      </category>
+      <category ID="28ee9e353280">
+        <label xml:lang="en" text="training guide" description="ego document / training guide" />
+      </category>
+      <category ID="b769322f97cb">
+        <label xml:lang="en" text="project" description="ego document / project" />
+      </category>
+    </category>
+    <category ID="e715ffe86ec7">
+      <label xml:lang="en" text="diplomatic document" description="diplomatic document" />
+      <category ID="a60c13095c3d">
+        <label xml:lang="en" text="charter" description="diplomatic document / charter" />
+      </category>
+      <category ID="d6c106118673">
+        <label xml:lang="en" text="cipher table" description="diplomatic document / cipher table" />
+      </category>
+      <category ID="3063b0eaa6fd">
+        <label xml:lang="en" text="circular" description="diplomatic document / circular" />
+      </category>
+      <category ID="18b97258d1a4">
+        <label xml:lang="en" text="commercial treaty"
+          description="diplomatic document / commercial treaty" />
+      </category>
+      <category ID="241575261ead">
+        <label xml:lang="en" text="complaint" description="diplomatic document / complaint" />
+      </category>
+      <category ID="2878fc5fc4af">
+        <label xml:lang="en" text="declaration" description="diplomatic document / declaration" />
+      </category>
+      <category ID="f4876afd8aa2">
+        <label xml:lang="en" text="declaration of cession"
+          description="diplomatic document / declaration of cession" />
+      </category>
+      <category ID="97179fbc78da">
+        <label xml:lang="en" text="declaration of independance"
+          description="diplomatic document / declaration of independance" />
+      </category>
+      <category ID="82fdbe93fe11">
+        <label xml:lang="en" text="declaration of neutrality"
+          description="diplomatic document / declaration of neutrality" />
+      </category>
+      <category ID="4ebe1132e19e">
+        <label xml:lang="en" text="declaration of nonbelligency"
+          description="diplomatic document / declaration of nonbelligency" />
+      </category>
+      <category ID="e5a9b6d1ee11">
+        <label xml:lang="en" text="declaration of war"
+          description="diplomatic document / declaration of war" />
+      </category>
+      <category ID="d658a2b20294">
+        <label xml:lang="en" text="agreement" description="diplomatic document / agreement" />
+      </category>
+      <category ID="a4bb893391b6">
+        <label xml:lang="en" text="dispatch" description="diplomatic document / dispatch" />
+      </category>
+      <category ID="73e95bfc1f29">
+        <label xml:lang="en" text="full powers" description="diplomatic document / full powers" />
+      </category>
+      <category ID="e3a00a2dd51d">
+        <label xml:lang="en" text="international treaty"
+          description="diplomatic document / international treaty" />
+      </category>
+      <category ID="f4b70b44edd2">
+        <label xml:lang="en" text="journal of the ceremonial"
+          description="diplomatic document / journal of the ceremonial" />
+      </category>
+      <category ID="3192e47e0f22">
+        <label xml:lang="en" text="letter" description="diplomatic document / letter" />
+      </category>
+      <category ID="17c3962aa33b">
+        <label xml:lang="en" text="letter of credence"
+          description="diplomatic document / letter of credence" />
+      </category>
+      <category ID="5b9a377302d9">
+        <label xml:lang="en" text="letter of recall"
+          description="diplomatic document / letter of recall" />
+      </category>
+      <category ID="40ffe78d9f12">
+        <label xml:lang="en" text="list" description="diplomatic document / list" />
+      </category>
+      <category ID="18cda45d408b">
+        <label xml:lang="en" text="marital contract"
+          description="diplomatic document / marital contract" />
+      </category>
+      <category ID="70c57c66c4c9">
+        <label xml:lang="en" text="memorandum" description="diplomatic document / memorandum" />
+      </category>
+      <category ID="54daf4b75058">
+        <label xml:lang="en" text="memorial" description="diplomatic document / memorial" />
+      </category>
+      <category ID="94fe31bfa12d">
+        <label xml:lang="en" text="negotiation record"
+          description="diplomatic document / negotiation record" />
+      </category>
+      <category ID="d05afee123a7">
+        <label xml:lang="en" text="note" description="diplomatic document / note" />
+      </category>
+      <category ID="969a72662b94">
+        <label xml:lang="en" text="particular agreement"
+          description="diplomatic document / particular agreement" />
+      </category>
+      <category ID="f32cdb59eead">
+        <label xml:lang="en" text="peace treaty" description="diplomatic document / peace treaty" />
+      </category>
+      <category ID="20ff73befdc3">
+        <label xml:lang="en" text="petition" description="diplomatic document / petition" />
+      </category>
+      <category ID="b89757289b8f">
+        <label xml:lang="en" text="pro-memoria" description="diplomatic document / pro-memoria" />
+      </category>
+      <category ID="34e4bc4d5b3f">
+        <label xml:lang="en" text="proclamation" description="diplomatic document / proclamation" />
+      </category>
+      <category ID="c93190464be3">
+        <label xml:lang="en" text="proposition" description="diplomatic document / proposition" />
+      </category>
+      <category ID="ce9f8c97da40">
+        <label xml:lang="en" text="ratification" description="diplomatic document / ratification" />
+      </category>
+      <category ID="f43f891bb3d0">
+        <label xml:lang="en" text="reassurance" description="diplomatic document / reassurance" />
+      </category>
+      <category ID="67ae067bb49a">
+        <label xml:lang="en" text="recredential" description="diplomatic document / recredential" />
+      </category>
+      <category ID="ea2b4ebae4c2">
+        <label xml:lang="en" text="report" description="diplomatic document / report" />
+      </category>
+      <category ID="d2a60e57402c">
+        <label xml:lang="en" text="report to a monarch"
+          description="diplomatic document / report to a monarch" />
+      </category>
+      <category ID="219dcaf89315">
+        <label xml:lang="en" text="rescript" description="diplomatic document / rescript" />
+      </category>
+      <category ID="ea82953439b3">
+        <label xml:lang="en" text="response to the speech"
+          description="diplomatic document / response to the speech" />
+      </category>
+      <category ID="fa12c1d3cbc1">
+        <label xml:lang="en" text="royal letter" description="diplomatic document / royal letter" />
+      </category>
+      <category ID="9679067886cd">
+        <label xml:lang="en" text="speech" description="diplomatic document / speech" />
+      </category>
+      <category ID="e99ac6c2265d">
+        <label xml:lang="en" text="summary" description="diplomatic document / summary" />
+      </category>
+      <category ID="81bc782355dc">
+        <label xml:lang="en" text="treaty of alliance"
+          description="diplomatic document / treaty of alliance" />
+      </category>
+    </category>
+    <category ID="7c4354e895b6">
+      <label xml:lang="en" text="official document" description="official document" />
+      <category ID="94e2975d9064">
+        <label xml:lang="en" text="biographical note"
+          description="official document / biographical note" />
+      </category>
+      <category ID="69abaa63fee2">
+        <label xml:lang="en" text="capitulation" description="official document / capitulation" />
+      </category>
+      <category ID="ab0be9233da2">
+        <label xml:lang="en" text="certificate" description="official document / certificate" />
+      </category>
+      <category ID="ff19c5aa1271">
+        <label xml:lang="en" text="certificate of achievement"
+          description="official document / certificate of achievement" />
+      </category>
+      <category ID="7c8982e0dc21">
+        <label xml:lang="en" text="charter" description="official document / charter" />
+      </category>
+      <category ID="0e389407aec7">
+        <label xml:lang="en" text="contract" description="official document / contract" />
+      </category>
+      <category ID="2f07e1f49345">
+        <label xml:lang="en" text="customs tariff" description="official document / customs tariff" />
+      </category>
+      <category ID="54c6e0ba67e1">
+        <label xml:lang="en" text="decree (ukaz)" description="official document / decree (ukaz)" />
+      </category>
+      <category ID="070f2b59357d">
+        <label xml:lang="en" text="inventory of property"
+          description="official document / inventory of property" />
+      </category>
+      <category ID="0019d0173d94">
+        <label xml:lang="en" text="letter" description="official document / letter" />
+      </category>
+      <category ID="7486d5d5b67f">
+        <label xml:lang="en" text="letter of marque"
+          description="official document / letter of marque" />
+      </category>
+      <category ID="87b853fd2ba4">
+        <label xml:lang="en" text="letter of recommendation"
+          description="official document / letter of recommendation" />
+      </category>
+      <category ID="121962587f39">
+        <label xml:lang="en" text="license" description="official document / license" />
+      </category>
+      <category ID="c0c8966d747a">
+        <label xml:lang="en" text="manifesto" description="official document / manifesto" />
+      </category>
+      <category ID="1207fc5a3b25">
+        <label xml:lang="en" text="memorial" description="official document / memorial" />
+      </category>
+      <category ID="302c699a4566">
+        <label xml:lang="en" text="oath" description="official document / oath" />
+      </category>
+      <category ID="468da71dca49">
+        <label xml:lang="en" text="official record"
+          description="official document / official record" />
+      </category>
+      <category ID="ec8572fc2720">
+        <label xml:lang="en" text="order" description="official document / order" />
+      </category>
+      <category ID="784a4daba887">
+        <label xml:lang="en" text="petition" description="official document / petition" />
+      </category>
+      <category ID="ea3df449c770">
+        <label xml:lang="en" text="power of attorney"
+          description="official document / power of attorney" />
+      </category>
+      <category ID="64f077a96360">
+        <label xml:lang="en" text="privilegium" description="official document / privilegium" />
+      </category>
+      <category ID="fc2c4e97e4fa">
+        <label xml:lang="en" text="project" description="official document / project" />
+      </category>
+      <category ID="d1723bbd91eb">
+        <label xml:lang="en" text="regulation" description="official document / regulation" />
+      </category>
+      <category ID="76f01790d4fe">
+        <label xml:lang="en" text="report" description="official document / report" />
+      </category>
+      <category ID="a613d337917d">
+        <label xml:lang="en" text="resolution" description="official document / resolution" />
+      </category>
+      <category ID="8c0904995b53">
+        <label xml:lang="en" text="request" description="official document / request" />
+      </category>
+      <category ID="ff76e7e912ef">
+        <label xml:lang="en" text="rescript" description="official document / rescript" />
+      </category>
+      <category ID="6199a42fa343">
+        <label xml:lang="en" text="service reference"
+          description="official document / service reference" />
+      </category>
+      <category ID="83691e1f6bb2">
+        <label xml:lang="en" text="staff list" description="official document / staff list" />
+      </category>
+      <category ID="5cc624749d42">
+        <label xml:lang="en" text="statement" description="official document / statement" />
+      </category>
+      <category ID="d708f639b7c0">
+        <label xml:lang="en" text="statute" description="official document / statute" />
+      </category>
+      <category ID="1a538f74f5b4">
+        <label xml:lang="en" text="summary" description="official document / summary" />
+      </category>
+      <category ID="dae490e0a638">
+        <label xml:lang="en" text="testament" description="official document / testament" />
+      </category>
+      <category ID="401f9f01fa47">
+        <label xml:lang="en" text="proclamation" description="official document / proclamation" />
+      </category>
+      <category ID="ac453e4e0dee">
+        <label xml:lang="en" text="journal of the ceremonial"
+          description="official document / journal of the ceremonial" />
+      </category>
+    </category>
+    <category ID="2806e8b814b3">
+      <label xml:lang="en" text="transfer document" description="transfer document" />
+      <category ID="9fb7f9f805aa">
+        <label xml:lang="en" text="travelling certificate/passport"
+          description="transfer document / travelling certificate/passport" />
+      </category>
+    </category>
+    <category ID="99075014c5b4">
+      <label xml:lang="en" text="investigative and legal document"
+        description="investigative and legal document" />
+      <category ID="823f9c2fbdf4">
+        <label xml:lang="en" text="interrogation"
+          description="investigative and legal document / interrogation" />
+      </category>
+      <category ID="736dded7e2a7">
+        <label xml:lang="en" text="judgement (court proceeding)"
+          description="investigative and legal document / judgement (court proceeding)" />
+      </category>
+      <category ID="eca25c8247b2">
+        <label xml:lang="en" text="matrimonial cause"
+          description="investigative and legal document / matrimonial cause" />
+      </category>
+    </category>
+    <category ID="2465bf5ea542">
+      <label xml:lang="en" text="fiction" description="fiction" />
+      <category ID="43673eb1372f">
+        <label xml:lang="en" text="prose" description="fiction / prose" />
+      </category>
+      <category ID="74c7c156305e">
+        <label xml:lang="en" text="speech" description="fiction / speech" />
+      </category>
+      <category ID="999410f14151">
+        <label xml:lang="en" text="drama" description="fiction / drama" />
+      </category>
+    </category>
+    <category ID="63e9ac8dfb31">
+      <label xml:lang="en" text="financial document" description="financial document" />
+      <category ID="3f2bdbca197c">
+        <label xml:lang="en" text="bill of exchange"
+          description="financial document / bill of exchange" />
+      </category>
+      <category ID="617f73a1b14d">
+        <label xml:lang="en" text="bill of sale" description="financial document / bill of sale" />
+      </category>
+      <category ID="dfb262c7e875">
+        <label xml:lang="en" text="customs declaration"
+          description="financial document / customs declaration" />
+      </category>
+      <category ID="8559cf902386">
+        <label xml:lang="en" text="delivery order" description="financial document / delivery order" />
+      </category>
+      <category ID="fc87b0d1efa9">
+        <label xml:lang="en" text="expenditure account"
+          description="financial document / expenditure account" />
+      </category>
+      <category ID="d18e69f44c25">
+        <label xml:lang="en" text="invoice" description="financial document / invoice" />
+      </category>
+      <category ID="208cdf649b76">
+        <label xml:lang="en" text="obligation" description="financial document / obligation" />
+      </category>
+      <category ID="0506f5aa316e">
+        <label xml:lang="en" text="receipt" description="financial document / receipt" />
+      </category>
+      <category ID="74a3f556e25c">
+        <label xml:lang="en" text="debenture" description="financial document / debenture" />
+      </category>
+      <category ID="7cbd255ca1fe">
+        <label xml:lang="en" text="bill" description="financial document / bill" />
+      </category>
+    </category>
+    <category ID="ef521b0b1851">
+      <label xml:lang="en" text="collection of archival materials"
+        description="collection of archival materials" />
+    </category>
+    <category ID="2d44c80d5774">
+      <label xml:lang="en" text="language execise" description="language execise" />
+      <category ID="6aff8e1257cb">
+        <label xml:lang="en" text="letter" description="language execise / letter" />
+      </category>
+      <category ID="cca9b8c213a4">
+        <label xml:lang="en" text="translation" description="language execise / translation" />
+      </category>
+    </category>
+    <category ID="3c9e55ef1002">
+      <label xml:lang="en" text="other" description="other" />
+    </category>
+  </categories>
+</mycoreclass>
