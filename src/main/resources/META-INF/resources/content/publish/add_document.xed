@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MyCoReWebPage>
+  <section title="Dokument zur Edition hinzufügen" xml:lang="de">
+    <h1>Dokument zur Edition hinzufügen</h1>
+    <br></br>
+  </section>
+
+  <section title="Add Document to Edition" xml:lang="en">
+    <h1>Add Document to Edition</h1>
+    <br></br>
+
+  </section>
+
+  <section xml:lang="all">
+
+
+    <xed:form xmlns:xed="http://www.mycore.de/xeditor"
+      xmlns:cmd="http://www.cdlib.org/inside/diglib/copyrightMD" method="post" role="form"
+      class="form-horizontal">
+
+      <xed:preload uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" />
+      <xed:preload uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-admins-includes.xed" />
+      <xed:preload uri="xslStyle:editor/mir2xeditor:webapp:editor/ditav-editor-includes.xed" />
+
+      <xed:preload uri="{$MIR.EditorForms.CustomIncludes}" />
+
+      <xed:include ref="in.out" />
+
+      <xed:bind xpath="/mycoreobject">
+        <xed:include ref="mycore.common" />
+
+        <xed:include ref="failed-validation-messages" />
+        <!-- General Information -->
+        <xed:bind
+          xpath="metadata/def.modsContainer[@class='MCRMetaXML'][@notinherit='true']/modsContainer/mods:mods">
+          <legend class="mir-fieldset-legend">
+            <xed:output i18n="lod.editor.general_information.legend" />
+          </legend>
+          <div class="mir-fieldset-content">
+            <xed:bind xpath="mods:typeOfResource/@mcr:categId" initially="typeOfResource:text" />
+            <xed:bind xpath="../../../../service">                        <!-- document state -->
+              <xed:include ref="status" />
+            </xed:bind>
+            <xed:include ref="lod.edition.bind" />                        <!-- bind host edition -->
+            <xed:include ref="identifier.intern" />                       <!-- internal identifier (ID) -->
+            <xed:include ref="lod.genre" />                               <!-- metadata type -->
+            <xed:include ref="lod.document_classification" />             <!-- lod document classification -->
+          </div>
+
+          <!-- Title Information -->
+          <xed:include ref="title.complex.repeated" />                  <!-- title / original title -->
+
+          <!-- Summary Section -->
+          <xed:include ref="lod.abstract.repeated" />                   <!-- summary -->
+
+          <!-- Correspondence Description -->
+          <!-- Author / Sender Information -->
+          <legend class="mir-fieldset-legend">
+            <xed:output i18n="lod.editor.author_sender_information.legend" />
+          </legend>
+          <div class="mir-fieldset-content">
+            <xed:include ref="lod.authorsender.repeated" />              <!-- author /sender -->
+            <xed:include ref="date.range.created.datetimepicker" />       <!-- Date -->
+            <xed:include ref="creator.place" />                           <!-- Location -->
+          </div>
+
+          <!-- Receiver Information -->
+          <legend class="mir-fieldset-legend">
+            <xed:output i18n="lod.editor.receiver_information.legend" />
+          </legend>
+          <div class="mir-fieldset-content">
+            <xed:include ref="lod.recipient.repeated" />
+            <xed:include ref="date.range.received.datetimepicker" />      <!-- Date -->
+            <xed:include ref="lod.place.received" />                      <!-- GeoData Sender -->
+          </div>
+
+          <!-- Language Usage Section -->
+          <legend class="mir-fieldset-legend">
+            <xed:output i18n="lod.editor.language_usage.legend" />
+          </legend>
+          <div class="mir-fieldset-content">
+            <xed:include ref="language" />                                <!-- Language -->
+            <xed:include ref="lod.translation.repeated" />                <!-- Translation -->
+            <xed:include ref="lod.translator.repeated" />                 <!-- Translator -->
+          </div>
+
+          <!-- Archive Information Section -->
+          <legend class="mir-fieldset-legend">
+            <xed:output i18n="lod.editor.archive_information.legend" />
+          </legend>
+          <div class="mir-fieldset-content">
+            <xed:include ref="lod.archives" />                          <!-- archive information -->
+            <xed:include ref="shelfmark" />                             <!-- archive number -->
+            <xed:include ref="extent" />                                <!-- number of folios -->
+          </div>
+
+          <xed:include ref="rights" />
+          <!-- Comment Section -->
+          <xed:include ref="comment.complex" />                         <!-- Comments -->
+          <xed:include ref="author_desc.repeated" />                    <!-- Author of the Description -->
+
+
+          <xed:include ref="cancel.submit" />
+          <xed:include ref="cleanup-rules" />
+          <xed:include ref="validation-rules" />
+
+          <xed:include ref="javascript" />
+          <!-- frame for modal window -->
+          <xed:include ref="modal.name" />
+          <xed:include ref="modal.body" />
+
+        </xed:bind>
+
+      </xed:bind>
+
+    </xed:form>
+
+  </section>
+</MyCoReWebPage>

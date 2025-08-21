@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="lod_archives">
+  <label xml:lang="de" text="Archivliste" />
+  <label xml:lang="en" text="List of Archives" />
+  <label xml:lang="x-uri" text="https://ditav.gbv.de/api/v2/classifications/lod_archives" />
+  <categories>
+    <category ID="bbp">
+      <label xml:lang="en" text="BBP" description="Bibliothèque polonaise de Paris" />
+    </category>
+    <category ID="nlrmss">
+      <label xml:lang="en" text="NLR Mss" description="National Library of Russia" />
+    </category>
+    <category ID="avpri">
+      <label xml:lang="en" text="AVPRI" description="Archive of Foreign Policy of the Russian Empire" />
+    </category>
+    <category ID="rgia">
+      <label xml:lang="en" text="RGIA" description="Russian State Historical Archive" />
+    </category>
+    <category ID="niorgb">
+      <label xml:lang="en" text="NIOR RGB"
+        description="" />
+    </category>
+    <category ID="rgada">
+      <label xml:lang="en" text="RGADA" description="Russian State Archive of Ancient Files" />
+    </category>
+    <category ID="ags">
+      <label xml:lang="en" text="AGS" description="General Archive of Simancas" />
+    </category>
+    <category ID="na_russia">
+      <label xml:lang="en" text="NA Kew" description="National Archives, Kew" />
+    </category>
+    <category ID="ahn">
+      <label xml:lang="en" text="AHN" description="National Historical Archive" />
+    </category>
+  </categories>
+</mycoreclass>

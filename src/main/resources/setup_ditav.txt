@@ -1,1 +1,5 @@
 update classification from uri resource:classifications/rfc5646.xml
+update classification from uri resource:classifications/lod_archives.xml
+update classification from uri resource:classifications/lod_document_classification.xml
+update classification from uri resource:classifications/marcrelator.xml
+update classification from uri resource:classifications/mir_genres.xml

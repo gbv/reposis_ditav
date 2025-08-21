@@ -2,37 +2,64 @@
 <!DOCTYPE MyCoReWebPage>
 <MyCoReWebPage>
 
-  <section title="Willkommen bei MIR!" xml:lang="de">
-        <div class="jumbotwo" >
-            <div class="row">
+  <section title="Willkommen beim digitalen Text-Archiv der VZG!" xml:lang="de">
+    <head>
+      <meta name="title" content="Willkommen beim digitalen Text-Archiv der VZG!" />
+      <meta name="description" content="DiTaV Startseite" />
+    </head>
 
-                <div class="col-12">
-                    <h2>Mods Institutional Repository (MIR)</h2>
-                </div>
+    <div class="container">
+      
+      <h2>Willkommen beim digitalen Textarchiv der VZG!</h2>
 
-                <div class="col-md-4">
-                    <h3><span class="fas fa-check"></span> fertig</h3>
-                    <p>MIR ist eine MyCoRe-Software, die mit nur wenigen Anpassungen
-                    - so wie sie ist - als Repositorium eingesetzt werden kann.</p>
-                    <p><a class="btn btn-secondary" href="https://www.mycore.de/documentation/getting_started/gs_mir_install/" role="button">weitere Informationen »</a></p>
-                </div>
-                <div class="col-md-4">
-                    <h3><span class="fas fa-bolt"></span> mächtig</h3>
-                    <p>MIR verwendet das mächtige und bewährte MODS-Datenmodell. Den
-                    Kern der Webanwendung bildet MyCoRe mit einer Vielzahl von Funktionen.</p>
-                    <p><a class="btn btn-secondary" href="https://www.mycore.de/site/features/" role="button">weitere Informationen »</a></p>
-                </div>
-                <div class="col-md-4">
-                    <h3><span class="fas fa-heart"></span> lebendig</h3>
-                    <p>MIR basiert auf dem Software-Kern MyCoRe, der kontinuierlich
-                    weiter entwickelt wird. Eine lebendige Community setzt MIR in
-                    ihren Anwendungen ein.</p>
-                    <p><a class="btn btn-secondary" href="https://www.mycore.de/site/community/contact/" role="button">weitere Informationen »</a></p>
-                </div>
-            </div>
-        </div>
+      <p>Herzlich willkommen auf den Seiten des Digitalen Text-Archivs. Unser Archiv dient 
+        der Aufbewahrung, Pflege und Bereitstellung von digitalen Texten. Das Archiv befindet 
+        sich noch im Aufbau, sowohl technisch als auch inhaltlich.
+      </p>
+
+      <h3>Über das Projekt:</h3>
+      <p>Das "Digitale Text-Archiv" ist eine wegweisende Plattform, die es ermöglicht,
+        Digitale Texte im TEI (Text Encoding Initiative) Format und zugehörige Digitalisate zu
+        speichern und zu verwalten. TEI bietet eine standardisierte Möglichkeit, komplexe textuelle
+        Informationen zu strukturieren und zu annotieren,wodurch die tiefe Analyse und Auswertung 
+        von Texten ermöglicht wird.
+      </p>
+
+      <h3>Unsere Mission:</h3>
+      <p>Unsere Mission ist es, den Zugang zu hochwertigen digitalen Texten zu erleichtern und
+        die langfristige Erhaltung von kulturellem Erbe sicherzustellen. Wir streben danach,
+        Forscher*innen, Studierende, Wissenschaftler*innen und die breite Öffentlichkeit mit einem
+        benutzerfreundlichen Portal zu unterstützen, das den reichen Schatz der digitalen Texte 
+        im GBV zugänglich macht.
+      </p>
+
+      <h3>Was bieten wir:</h3>
+
+      <ul>
+        <li>
+          <b>Umfassende Sammlung:</b> Unser Archiv beherbergt eine breite Palette von digitalen
+          Texten, die verschiedene Themen, Epochen und Kulturen abdecken.</li>
+        <li>
+          <b>Leistungsstarke Suchfunktionen:</b> Durchsuchen Sie die Sammlung mithilfe von
+          Suchparametern, um gezielt nach Text zu suchen, die Ihre Forschungsinteressen ansprechen.</li>
+        <li>
+          <b>TEI-konforme Speicherung:</b> Alle Texte werden im TEI-Format gespeichert, um eine
+          reiche Annotation und Analyse zu ermöglichen.</li>
+        <li>
+          <b>Kollaborative Plattform:</b> Die Plattform fördert die Zusammenarbeit zwischen
+          Forscher:innen und ermöglicht den Austausch von Wissen und Ideen.</li>
+        <li>
+          <b>Portalanbindung:</b> Wir ermöglichen die Auslieferung ausgewählter Texte an Portale, um
+          eine breitere Sichtbarkeit zu gewährleisten.</li>
+      </ul>
+
+      <h3>Wie Sie teilnehmen können:</h3>
+      <p>Wenn Sie digitale Texte erstellt haben oder interessiert sind, Ihre Texte
+        beizusteuern, laden wir Sie herzlich ein, sich mit uns in Verbindung zu setzen. Zusammen können 
+        wir dazu beitragen, die Reichweite und Bedeutung Ihrer Arbeit zu vergrößern.
+      </p>
+    </div>
+
   </section>
-  <meta>
-    <log date="2015-05-22" time="11:12" labelPath=" » Start" lastEditor="Kathleen Neumann" />
-  </meta>
+  <meta></meta>
 </MyCoReWebPage>

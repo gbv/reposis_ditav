@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MyCoReWebPage>
+  <section title="LOD-Dokument erstellen" xml:lang="de" />
+  <section title="Create LOD document" xml:lang="en" />
+  <section xml:lang="all">
+
+    <xed:form xmlns:xed="http://www.mycore.de/xeditor"
+      xmlns:cmd="http://www.cdlib.org/inside/diglib/copyrightMD" method="post" role="form"
+      class="form-horizontal">
+
+      <xed:preload uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" />
+      <xed:preload uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-admins-includes.xed" />
+      <xed:preload uri="xslStyle:editor/mir2xeditor:webapp:editor/ditav-editor-includes.xed" />
+  
+      <xed:preload uri="{$MIR.EditorForms.CustomIncludes}" />
+
+      <xed:include ref="in.out" />
+
+      <xed:bind xpath="/mycoreobject">
+        <xed:include ref="mycore.common" />
+        <xed:bind xpath="@ID" initially="edition_mods_00000000" />
+
+
+        <xed:bind
+          xpath="metadata/def.modsContainer[@class='MCRMetaXML'][@notinherit='true']/modsContainer/mods:mods">
+          <xed:bind xpath="mods:typeOfResource/@mcr:categId" initially="typeOfResource:text" />
+          <xed:include ref="genres.edition" />
+          <xed:include ref="cleanup-rules" />
+          <xed:include ref="validation-rules" />
+
+          <xed:include ref="javascript" />
+          <!-- frame for modal window -->
+          <xed:include ref="modal.name" />
+          <xed:include ref="modal.body" />
+
+        </xed:bind>
+
+      </xed:bind>
+
+    </xed:form>
+
+  </section>
+</MyCoReWebPage>
