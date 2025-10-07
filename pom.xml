@@ -54,6 +54,10 @@
   <dependencies>
     <dependency>
       <groupId>org.mycore</groupId>
+      <artifactId>mycore-base</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.mycore</groupId>
       <artifactId>mycore-viewer</artifactId>
     </dependency>
     <dependency>
