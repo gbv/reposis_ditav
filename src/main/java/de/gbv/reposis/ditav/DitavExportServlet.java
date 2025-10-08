@@ -59,8 +59,8 @@ public class DitavExportServlet extends MCRZipServlet {
 
 
     private static class CompressVisitor extends SimpleFileVisitor<Path> {
-        private DitavExportServlet impl;
-        private ZipArchiveOutputStream container;
+        private final DitavExportServlet impl;
+        private final ZipArchiveOutputStream container;
 
         CompressVisitor(DitavExportServlet impl, ZipArchiveOutputStream container) {
             this.impl = impl;
@@ -68,7 +68,7 @@ public class DitavExportServlet extends MCRZipServlet {
         }
 
         public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {
-            this.impl.sendCompressedDirectory(MCRPath.toMCRPath(dir), attrs, this.container);
+            this.impl.sendCompressedDirectory(MCRPath.ofPath(dir), attrs, this.container);
             return super.preVisitDirectory(dir, attrs);
         }
 
@@ -76,7 +76,7 @@ public class DitavExportServlet extends MCRZipServlet {
         public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
             String lowerCaseName = file.toString().toLowerCase(Locale.ROOT);
             if(lowerCaseName.endsWith(".xml") || lowerCaseName.endsWith(".pdf")) {
-                this.impl.sendCompressedFile(MCRPath.toMCRPath(file), attrs, this.container);
+                this.impl.sendCompressedFile(MCRPath.ofPath(file), attrs, this.container);
             }
 
             return super.visitFile(file, attrs);
