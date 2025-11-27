@@ -2,37 +2,55 @@
 <mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="lod_archives">
-  <label xml:lang="de" text="Archivliste" />
-  <label xml:lang="en" text="List of Archives" />
+  <label xml:lang="de" text="(LOD) Archivliste" />
+  <label xml:lang="en" text="(LOD) List of Archives" />
+  <label xml:lang="fr" text="(LOD) Liste des archives" />
   <label xml:lang="x-uri" text="https://ditav.gbv.de/api/v2/classifications/lod_archives" />
   <categories>
-    <category ID="bbp">
-      <label xml:lang="en" text="BBP" description="Bibliothèque polonaise de Paris" />
+    <category ID="bpp">
+      <label xml:lang="de" text="BPP" description="Polnische Bibliothek in Paris" />
+      <label xml:lang="en" text="BPP" description="Polish Library in Paris" />
+      <label xml:lang="fr" text="BPP" description="Bibliothèque polonaise de Paris" />
     </category>
     <category ID="nlrmss">
+      <label xml:lang="de" text="NLR Mss" description="Nationalbibliothek Russland" />
       <label xml:lang="en" text="NLR Mss" description="National Library of Russia" />
+      <label xml:lang="fr" text="NLR Mss" description="Bibliothèque nationale de Russie" />
     </category>
     <category ID="avpri">
+      <label xml:lang="de" text="AVPRI" description="Archiv für auswärtige Politik des Russischen Kaiserreichs" />
       <label xml:lang="en" text="AVPRI" description="Archive of Foreign Policy of the Russian Empire" />
+      <label xml:lang="fr" text="AVPRI" description="Archives de la politique étrangère de l'Empire russe" />
     </category>
     <category ID="rgia">
+      <label xml:lang="de" text="RGIA" description="Russisches Staatsarchiv für Geschichte" />
       <label xml:lang="en" text="RGIA" description="Russian State Historical Archive" />
+      <label xml:lang="fr" text="RGIA" description="Archives d'État historiques russes" />
     </category>
     <category ID="niorgb">
-      <label xml:lang="en" text="NIOR RGB"
-        description="" />
+      <label xml:lang="de" text="NIOR RGB" description="Nationales Institut für die Geschichte des russischen Auslands" />
+      <label xml:lang="en" text="NIOR RGB" description="National Institute for the History of Russian Abroad" />
+      <label xml:lang="fr" text="NIOR RGB" description="Institut national pour l'histoire de l'étranger russe" />
     </category>
     <category ID="rgada">
+      <label xml:lang="de" text="RGADA" description="Russisches Staatsarchiv für alte Akten" />
       <label xml:lang="en" text="RGADA" description="Russian State Archive of Ancient Files" />
+      <label xml:lang="fr" text="RGADA" description="Archives d'État russes des documents anciens" />
     </category>
     <category ID="ags">
+      <label xml:lang="de" text="AGS" description="Generales Archiv von Simancas" />
       <label xml:lang="en" text="AGS" description="General Archive of Simancas" />
+      <label xml:lang="fr" text="AGS" description="Archives générales de Simancas" />
     </category>
     <category ID="na_russia">
+      <label xml:lang="de" text="NA Kew" description="Nationalarchiv, Kew" />
       <label xml:lang="en" text="NA Kew" description="National Archives, Kew" />
+      <label xml:lang="fr" text="NA Kew" description="Archives nationales de Russie" />
     </category>
     <category ID="ahn">
+      <label xml:lang="de" text="AHN" description="Historisches Nationalarchiv" />
       <label xml:lang="en" text="AHN" description="National Historical Archive" />
+      <label xml:lang="fr" text="AHN" description="Archives historiques nationales" />
     </category>
   </categories>
 </mycoreclass>
