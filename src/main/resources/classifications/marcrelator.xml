@@ -53,6 +53,12 @@
         <label xml:lang="fr" text="Programmeur" description="Une personne ou une institution responsable de la création et/ou de la maintenance des documents de conception de programmes informatiques, du code source, des fichiers numériques exécutables par machine et de la documentation de support." />
         <label xml:lang="x-miless" text="programmer" />
       </category>
+      <category ID="exp">
+        <label xml:lang="de" text="Experte(in), Sachverständige(r)" description="Eine Person oder Organisation, die für die Beschreibung und Bewertung des Wertes von Gütern, insbesondere von seltenen Gegenständen, Kunstwerken usw. verantwortlich ist." />
+        <label xml:lang="en" text="Expert" description="Use for a person or organization in charge of the description and appraisal of the value of goods, particularly rare items, works of art, etc. " />
+        <label xml:lang="fr" text="Expert" description="Une personne ou une institution chargée de la description et de l'évaluation de la valeur des biens, en particulier des objets rares, des œuvres d'art, etc." />
+        <label xml:lang="x-miless" text="expert" />
+      </category>
       <category ID="isb">
         <label xml:lang="de" text="Herausgebendes Organ" description="Eine Person, Familie oder Organisation, die ein Werk herausgeben, z.B. ein offizielles Organ einer Körperschaft." />
         <label xml:lang="en" text="Issuing body" description="A person, family or organization issuing a work, such as an official organ of the body" />
@@ -253,6 +259,12 @@
       <label xml:lang="en" text="Other" description="A role that has no equivalent in the list." />
       <label xml:lang="fr" text="Autre" description="Un rôle qui n'a pas d'équivalent dans la liste." />
       <label xml:lang="x-miless" text="other" />
+      <category ID="rcp">
+        <label xml:lang="de" text="Empfänger(in)" description="Eine Person oder Institution, die eine Ressource empfängt, z. B. einen Brief, ein Geschenk, eine Auszeichnung oder eine Ehrung." />
+        <label xml:lang="en" text="Recipient" description="Use for a person or organization receiving a resource, such as a letter, gift, award, or honor." />
+        <label xml:lang="fr" text="Destinataire" description="Une personne ou une institution recevant une ressource, telle qu'une lettre, un cadeau, une récompense ou un honneur." />
+        <label xml:lang="x-miless" text="recipient" />
+      </category>
     </category>
   </categories>
 </mycoreclass>
