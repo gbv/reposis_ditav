@@ -47,6 +47,12 @@
         <label xml:lang="fr" text="Interprète" description="Une personne ou une institution qui joue dans une performance, par exemple un acteur, un musicien, un danseur, un chanteur, un orateur, etc." />
         <label xml:lang="x-miless" text="performer" />
       </category>
+      <category ID="sng">
+        <label xml:lang="de" text="Sänger(in)" description="Eine Person oder Institution, die für die vokale Darbietung eines Werkes verantwortlich ist." />
+        <label xml:lang="en" text="Singer" description="Use for a person or organization responsible for the vocal performance of a work." />
+        <label xml:lang="fr" text="Chanteur" description="Une personne ou une institution responsable de la performance vocale d'une œuvre." />
+        <label xml:lang="x-miless" text="singer" />
+      </category>
       <category ID="prg">
         <label xml:lang="de" text="Programmierung" description="Eine Person oder Institution, die für die Erstellung und/oder Wartung von Entwürfen, Quellcode, maschinell ausführbaren Dateien und unterstützender Dokumentation eines Computerprogramms verantwortlich ist." />
         <label xml:lang="en" text="Programmer" description="Use for a person or organization responsible for the creation and/or maintenance of computer program design documents, source code, and machine-executable digital files and supporting documentation." />
