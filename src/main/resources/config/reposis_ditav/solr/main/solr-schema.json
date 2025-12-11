@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "add-dynamic-field": {
+      "name": "mods.identifier.type.*",
+      "type": "strings",
+      "multiValued": true,
+      "stored": true,
+      "indexed": true
+    }
+  }
+]
