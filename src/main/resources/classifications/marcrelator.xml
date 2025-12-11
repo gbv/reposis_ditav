@@ -47,11 +47,23 @@
         <label xml:lang="fr" text="Interprète" description="Une personne ou une institution qui joue dans une performance, par exemple un acteur, un musicien, un danseur, un chanteur, un orateur, etc." />
         <label xml:lang="x-miless" text="performer" />
       </category>
+      <category ID="sng">
+        <label xml:lang="de" text="Sänger(in)" description="Eine Person oder Institution, die für die vokale Darbietung eines Werkes verantwortlich ist." />
+        <label xml:lang="en" text="Singer" description="Use for a person or organization responsible for the vocal performance of a work." />
+        <label xml:lang="fr" text="Chanteur" description="Une personne ou une institution responsable de la performance vocale d'une œuvre." />
+        <label xml:lang="x-miless" text="singer" />
+      </category>
       <category ID="prg">
         <label xml:lang="de" text="Programmierung" description="Eine Person oder Institution, die für die Erstellung und/oder Wartung von Entwürfen, Quellcode, maschinell ausführbaren Dateien und unterstützender Dokumentation eines Computerprogramms verantwortlich ist." />
         <label xml:lang="en" text="Programmer" description="Use for a person or organization responsible for the creation and/or maintenance of computer program design documents, source code, and machine-executable digital files and supporting documentation." />
         <label xml:lang="fr" text="Programmeur" description="Une personne ou une institution responsable de la création et/ou de la maintenance des documents de conception de programmes informatiques, du code source, des fichiers numériques exécutables par machine et de la documentation de support." />
         <label xml:lang="x-miless" text="programmer" />
+      </category>
+      <category ID="exp">
+        <label xml:lang="de" text="Experte(in), Sachverständige(r)" description="Eine Person oder Organisation, die für die Beschreibung und Bewertung des Wertes von Gütern, insbesondere von seltenen Gegenständen, Kunstwerken usw. verantwortlich ist." />
+        <label xml:lang="en" text="Expert" description="Use for a person or organization in charge of the description and appraisal of the value of goods, particularly rare items, works of art, etc. " />
+        <label xml:lang="fr" text="Expert" description="Une personne ou une institution chargée de la description et de l'évaluation de la valeur des biens, en particulier des objets rares, des œuvres d'art, etc." />
+        <label xml:lang="x-miless" text="expert" />
       </category>
       <category ID="isb">
         <label xml:lang="de" text="Herausgebendes Organ" description="Eine Person, Familie oder Organisation, die ein Werk herausgeben, z.B. ein offizielles Organ einer Körperschaft." />
@@ -253,6 +265,12 @@
       <label xml:lang="en" text="Other" description="A role that has no equivalent in the list." />
       <label xml:lang="fr" text="Autre" description="Un rôle qui n'a pas d'équivalent dans la liste." />
       <label xml:lang="x-miless" text="other" />
+      <category ID="rcp">
+        <label xml:lang="de" text="Empfänger(in)" description="Eine Person oder Institution, die eine Ressource empfängt, z. B. einen Brief, ein Geschenk, eine Auszeichnung oder eine Ehrung." />
+        <label xml:lang="en" text="Recipient" description="Use for a person or organization receiving a resource, such as a letter, gift, award, or honor." />
+        <label xml:lang="fr" text="Destinataire" description="Une personne ou une institution recevant une ressource, telle qu'une lettre, un cadeau, une récompense ou un honneur." />
+        <label xml:lang="x-miless" text="recipient" />
+      </category>
     </category>
   </categories>
 </mycoreclass>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="translation">
+  <label xml:lang="de" text="Übersetzung" />
+  <label xml:lang="en" text="Translation" />
+  <label xml:lang="fr" text="Traduction" />
+  <label xml:lang="x-uri" text="https://ditav.gbv.de/api/v2/classifications/translation" />
+  <categories>
+    <category ID="yes">
+      <label xml:lang="de" text="Ja" />
+      <label xml:lang="en" text="Yes" />
+      <label xml:lang="fr" text="Oui" />
+    </category>
+    <category ID="no">
+      <label xml:lang="de" text="Nein" />
+      <label xml:lang="en" text="No" />
+      <label xml:lang="fr" text="Non" />
+    </category>
+    <category ID="not">
+      <label xml:lang="de" text="Keine Angaben" />
+      <label xml:lang="en" text="Not specified" />
+      <label xml:lang="fr" text="Non spécifié" />
+    </category>
+  </categories>
+</mycoreclass>

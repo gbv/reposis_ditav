@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="mir_institutes">
+  <label xml:lang="de" text="Beispiel-Einrichtungen" description="Liste der Einrichtungen" />
+  <label xml:lang="en" text="Sample Institutions" description="A list of institutions" />
+  <label xml:lang="x-uri" text="https://ditav.gbv.de/api/v2/classifications/mir_institutes" />
+  <categories>
+    <category ID="mws">
+      <label xml:lang="de" text="Max-Weber-Stiftung" />
+      <label xml:lang="en" text="Max Weber Foundation" />
+      <url xlink:href="https://www.maxweberstiftung.de/" xlink:type="locator" />
+      <category ID="mws.dhi-paris">
+        <label xml:lang="de" text="Deutsches Historisches Institut Paris" />
+        <label xml:lang="en" text="German Historical Institute Paris" />
+        <url xlink:href="https://dhi-paris.fr/" xlink:type="locator" />
+      </category>
+      <category ID="mws.oii">
+        <label xml:lang="de" text="Orient-Institut Instanbul" />
+        <label xml:lang="en" text="Orient-Institut Istanbul" />
+        <url xlink:href="https://www.oiist.org/" xlink:type="locator" />
+      </category>
+      <category ID="mws.mwsno">
+        <label xml:lang="de" text="Max Weber Netzwerk Osteuropa" />
+        <label xml:lang="en" text="Max Weber Network Eastern Europe" />
+        <url xlink:href="https://mwsosteuropa.hypotheses.org/" xlink:type="locator" />
+      </category>
+    </category>
+  </categories>
+</mycoreclass>

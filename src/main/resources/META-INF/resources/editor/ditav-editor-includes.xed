@@ -2,14 +2,378 @@
 
 <xed:template xmlns:xed="http://www.mycore.de/xeditor" xmlns:mir="http://www.mycore.de/mir">
 
-  <!-- ========== templates ========== -->
-  <xed:template id="genres.edition">
+  <xed:modify ref="admin.fields">
+    <xed:include ref="gazin_genres" after="sdnb.repeat" />
+    <xed:include ref="lod_archives" after="gazin_genres" />
+    <xed:include ref="lod_document_classification" after="lod_archives" />
+    <xed:include ref="koloe_document_classification" after="lod_document_classification" />
+    <xed:include ref="ditav_translation" after="comment.complex" />
+    <xed:include ref="ditav_transcription" after="ditav_translation" />
+    <xed:include ref="ditav_translation_available" after="ditav_transcription" />
+    <xed:include ref="ditav_scan_available" after="ditav_transcription" />
+    <xed:include ref="sdnb.repeat.optional" after="sdnb.repeat" />
+    <xed:remove ref="sdnb.repeat" />
+  </xed:modify>
+
+  <!-- ============ admin ============== -->
+
+
+  <xed:template id="ditav.admin.fields">
     <xed:include ref="failed-validation-messages" />
 
     <xed:bind xpath="../../../../service">
       <xed:include ref="status" />
     </xed:bind>
-    <xed:include ref="author.repeated" />                         <!-- Editor -->
+
+    <xed:include ref="genre" />
+    <xed:include ref="toc-layout" />
+    <xed:include ref="title.complex.repeated" />
+    <xed:include ref="name.extended.full.repeated" />
+    <xed:include ref="conference.itemsearch" />
+    <xed:include ref="date.range.extended.datetimepicker" />
+    <xed:include ref="place" />
+    <xed:include ref="publisher" />
+    <xed:include ref="creator.place" />
+    <xed:include ref="creator" />
+    <xed:include ref="edition" />
+    <xed:include ref="extent" />
+    <xed:include ref="type.of.resource" />
+    <xed:include ref="language" />
+    <xed:include ref="geographicAndCartographics" />
+    <xed:include ref="identifier.managed" />
+    <xed:include ref="identifier.repeated" />
+    <xed:include ref="shelfmark" />
+    <xed:include ref="link.repeated" />
+    <xed:include ref="embargo" />
+    <xed:include ref="access" />
+    <xed:include ref="rights" />
+    <xed:include ref="copyrightMD" />
+    <xed:include ref="institutes" />
+    <xed:include ref="subject.complex" />
+    <xed:include ref="abstract.repeated" />
+    <xed:include ref="comment.complex" />
+    <xed:include ref="related.item.search.of.all.items" />
+    <xed:include ref="related.item.other.search.of.all.items" />
+
+    <xed:include ref="cancel.submit" />
+    <xed:include ref="cleanup-rules" />
+    <xed:include ref="validation-rules" />
+
+    <xed:include ref="javascript" />
+    <!-- frame for modal window -->
+    <xed:include ref="modal.name" />
+    <xed:include ref="modal.body" />
+  </xed:template>
+
+  <!-- ========== genres ========== -->
+
+  <xed:template id="ditav.genres.common">
+    <xed:include ref="gazin_genres" after="geographicAndCartographics" />
+    <xed:include ref="lod_archives" after="gazin_genres" />
+    <xed:include ref="lod_document_classification" after="lod_archives" />
+    <xed:include ref="koloe_document_classification" after="lod_document_classification" />
+    <xed:include ref="ditav_translation" after="comment.complex" />
+    <xed:include ref="ditav_transcription" after="ditav_translation" />
+    <xed:include ref="ditav_translation_available" after="ditav_transcription" />
+    <xed:include ref="ditav_scan_available" after="ditav_transcription" />
+  </xed:template>
+
+  <xed:template id="genres.article">
+    <xed:include ref="ditav.admin.fields" />
+    <xed:include ref="ditav.genres.common" />
+  </xed:template>
+
+  <xed:template id="genres.source_material">
+    <xed:include ref="ditav.admin.fields" />
+    <xed:include ref="ditav.genres.common" />
+  </xed:template>
+
+  <xed:template id="genres.archival_material">
+    <xed:include ref="ditav.admin.fields" />
+    <xed:include ref="ditav.genres.common" />
+  </xed:template>
+
+  <xed:template id="genres.autobiography">
+    <xed:include ref="ditav.admin.fields" />
+    <xed:include ref="ditav.genres.common" />
+  </xed:template>
+
+  <xed:template id="genres.diplomatic_document">
+    <xed:include ref="ditav.admin.fields" />
+    <xed:include ref="ditav.genres.common" />
+  </xed:template>
+
+  <xed:template id="genres.ego_document">
+    <xed:include ref="ditav.admin.fields" />
+    <xed:include ref="ditav.genres.common" />
+  </xed:template>
+
+  <xed:template id="genres.fiction">
+    <xed:include ref="ditav.admin.fields" />
+    <xed:include ref="ditav.genres.common" />
+  </xed:template>
+
+  <xed:template id="genres.financial_document">
+    <xed:include ref="ditav.admin.fields" />
+    <xed:include ref="ditav.genres.common" />
+  </xed:template>
+
+  <xed:template id="genres.language_exercise">
+    <xed:include ref="ditav.admin.fields" />
+    <xed:include ref="ditav.genres.common" />
+  </xed:template>
+
+  <xed:template id="genres.legal_document">
+    <xed:include ref="ditav.admin.fields" />
+    <xed:include ref="ditav.genres.common" />
+  </xed:template>
+
+  <xed:template id="genres.letter">
+    <xed:include ref="ditav.admin.fields" />
+    <xed:include ref="ditav.genres.common" />
+  </xed:template>
+
+  <xed:template id="genres.official_document">
+    <xed:include ref="ditav.admin.fields" />
+    <xed:include ref="ditav.genres.common" />
+  </xed:template>
+
+  <xed:template id="genres.other">
+    <xed:include ref="ditav.admin.fields" />
+    <xed:include ref="ditav.genres.common" />
+  </xed:template>
+
+  <xed:template id="genres.training_guide">
+    <xed:include ref="ditav.admin.fields" />
+    <xed:include ref="ditav.genres.common" />
+  </xed:template>
+
+  <xed:template id="genres.transfer_document">
+    <xed:include ref="ditav.admin.fields" />
+    <xed:include ref="ditav.genres.common" />
+  </xed:template>
+
+  <xed:template id="genres.travelogue">
+    <xed:include ref="ditav.admin.fields" />
+    <xed:include ref="ditav.genres.common" />
+  </xed:template>
+
+  <xed:template id="genres.edition">
+    <xed:include ref="ditav.admin.fields" />
+    <xed:include ref="ditav.genres.common" />
+  </xed:template>
+
+  <xed:template id="genres.series">
+    <xed:include ref="ditav.admin.fields" />
+    <xed:include ref="ditav.genres.common" />
+  </xed:template>
+
+  <xed:template id="genres.interview">
+    <xed:include ref="ditav.admin.fields" />
+    <xed:include ref="ditav.genres.common" />
+  </xed:template>
+
+
+  <!-- ========== templates ========== -->
+
+  <!--SDNB  only optional -->
+  <xed:template id="sdnb.repeat.optional">
+    <xed:repeat xpath="mods:classification[@authority='sdnb'][@displayLabel='sdnb']" min="1"
+      max="10" method="build">
+      <div class="form-group row {$xed-validation-marker}">
+        <label class="col-md-3 col-form-label text-right">
+          <xed:output i18n="editor.search.mir.sdnb" /> : </label>
+        <div class="col-md-6">
+          <select class="form-control form-control-inline mir-form__js-select--large">
+            <option value="">
+              <xed:output i18n="mir.select" />
+            </option>
+            <xed:include uri="xslStyle:items2options:classification:editor:-1:children:SDNB" />
+          </select>
+        </div>
+        <mir:help-pmud help-text="{i18n:mir.help.sdnb}" pmud="true" />
+      </div>
+    </xed:repeat>
+  </xed:template>
+
+  <xed:template id="ditav_translation">
+    <xed:bind
+      xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/translation'][@displayLabel='translation']/@valueURIxEditor">
+      <div class="form-group row {$xed-validation-marker}">
+        <label class="col-md-3 col-form-label text-right">
+          <xed:output i18n="ditav.form.translation.label" />
+        </label>
+        <div class="col-md-6">
+          <select class="form-control form-control-inline nameType">
+            <option value="">
+              <xed:output i18n="mir.select.optional" />
+            </option>
+            <xed:include uri="xslStyle:items2options:classification:editor:-1:children:translation" />
+          </select>
+        </div>
+        <mir:help-pmud help-text="{i18n:ditav.form.help.translation}" pmud="false" />
+      </div>
+    </xed:bind>
+  </xed:template>
+
+  <xed:template id="ditav_transcription">
+    <xed:bind
+      xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/transcription'][@displayLabel='transcription']/@valueURIxEditor">
+      <div class="form-group row {$xed-validation-marker}">
+        <label class="col-md-3 col-form-label text-right">
+          <xed:output i18n="ditav.form.transcription.label" />
+        </label>
+        <div class="col-md-6">
+          <select class="form-control form-control-inline nameType">
+            <option value="">
+              <xed:output i18n="mir.select.optional" />
+            </option>
+            <xed:include
+              uri="xslStyle:items2options:classification:editor:-1:children:transcription" />
+          </select>
+        </div>
+        <mir:help-pmud help-text="{i18n:ditav.form.help.transcription}" pmud="false" />
+      </div>
+    </xed:bind>
+  </xed:template>
+
+  <xed:template id="ditav_translation_available">
+    <xed:bind
+      xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/translation_available'][@displayLabel='translation_available']/@valueURIxEditor">
+      <div class="form-group row {$xed-validation-marker}">
+        <label class="col-md-3 col-form-label text-right">
+          <xed:output i18n="ditav.form.translation_available.label" />
+        </label>
+        <div class="col-md-6">
+          <select class="form-control form-control-inline nameType">
+            <option value="">
+              <xed:output i18n="mir.select.optional" />
+            </option>
+            <xed:include
+              uri="xslStyle:items2options:classification:editor:-1:children:translation_available" />
+          </select>
+        </div>
+        <mir:help-pmud help-text="{i18n:ditav.form.help.translation_available}" pmud="false" />
+      </div>
+    </xed:bind>
+  </xed:template>
+
+  <xed:template id="ditav_scan_available">
+    <xed:bind
+      xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/scan_available'][@displayLabel='transcription']/@valueURIxEditor">
+      <div class="form-group row {$xed-validation-marker}">
+        <label class="col-md-3 col-form-label text-right">
+          <xed:output i18n="ditav.form.scan_available.label" />
+        </label>
+        <div class="col-md-6">
+          <select class="form-control form-control-inline nameType">
+            <option value="">
+              <xed:output i18n="mir.select.optional" />
+            </option>
+            <xed:include
+              uri="xslStyle:items2options:classification:editor:-1:children:scan_available" />
+          </select>
+        </div>
+        <mir:help-pmud help-text="{i18n:ditav.form.help.scan_available}" pmud="false" />
+      </div>
+    </xed:bind>
+  </xed:template>
+
+  <xed:template id="gazin_genres">
+    <xed:bind
+      xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/gazin_genres'][@displayLabel='gazin_genres']/@valueURIxEditor">
+      <div class="form-group row {$xed-validation-marker}">
+        <label class="col-md-3 col-form-label text-right">
+          <xed:output i18n="gazin_genre.label" />
+        </label>
+        <div class="col-md-6">
+          <select class="form-control form-control-inline">
+            <option value="">
+              <xed:output i18n="mir.select.optional" />
+            </option>
+            <xed:include uri="xslStyle:items2options:classification:editor:-1:children:gazin_genres" />
+          </select>
+        </div>
+        <mir:help-pmud help-text="{i18n:gazin_genre.help}" pmud="false" />
+      </div>
+    </xed:bind>
+  </xed:template>
+
+  <xed:template id="lod_archives">
+    <xed:bind
+      xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/lod_archives'][@displayLabel='lod_archives']/@valueURIxEditor">
+      <div class="form-group row {$xed-validation-marker}">
+        <label class="col-md-3 col-form-label text-right">
+          <xed:output i18n="lod_archives.label" />
+        </label>
+        <div class="col-md-6">
+          <select class="form-control form-control-inline">
+            <option value="">
+              <xed:output i18n="mir.select.optional" />
+            </option>
+            <xed:include uri="xslStyle:items2options:classification:editor:-1:children:lod_archives" />
+          </select>
+        </div>
+        <mir:help-pmud help-text="{i18n:lod_archives.help}" pmud="false" />
+      </div>
+    </xed:bind>
+  </xed:template>
+
+  <xed:template id="lod_document_classification">
+    <xed:bind
+      xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/lod_document_classification'][@displayLabel='lod_document_classification']/@valueURIxEditor">
+      <div class="form-group row {$xed-validation-marker}">
+        <label class="col-md-3 col-form-label text-right">
+          <xed:output i18n="lod_document_classification.label" />
+        </label>
+        <div class="col-md-6">
+          <select class="form-control form-control-inline">
+            <option value="">
+              <xed:output i18n="mir.select.optional" />
+            </option>
+            <xed:include
+              uri="xslStyle:items2options:classification:editor:-1:children:lod_document_classification" />
+          </select>
+        </div>
+        <mir:help-pmud help-text="{i18n:lod_document_classification.help}" pmud="false" />
+      </div>
+    </xed:bind>
+  </xed:template>
+
+  <xed:template id="koloe_document_classification">
+    <xed:bind
+      xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/koloe_document_classification'][@displayLabel='koloe_document_classification']/@valueURIxEditor">
+      <div class="form-group row {$xed-validation-marker}">
+        <label class="col-md-3 col-form-label text-right">
+          <xed:output i18n="koloe_document_classification.label" />
+        </label>
+        <div class="col-md-6">
+          <select class="form-control form-control-inline">
+            <option value="">
+              <xed:output i18n="mir.select.optional" />
+            </option>
+            <xed:include
+              uri="xslStyle:items2options:classification:editor:-1:children:koloe_document_classification" />
+          </select>
+        </div>
+        <mir:help-pmud help-text="{i18n:koloe_document_classification.help}" pmud="false" />
+      </div>
+    </xed:bind>
+  </xed:template>
+
+  <xed:template id="genres.edition">
+    <xed:include ref="failed-validation-messages" />
+
+    <!-- General Information -->
+    <legend class="mir-fieldset-legend">
+      <xed:output i18n="edition.editor.add_edition" />
+    </legend>
+
+    <xed:bind xpath="../../../../service">
+      <xed:include ref="status" />
+    </xed:bind>
+    <!--<xed:include
+    ref="author.repeated" />-->                         <!-- Editor -->
 
 
     <xed:include ref="title.complex.repeated" />                  <!-- Title -->
@@ -27,9 +391,7 @@
     <xed:include ref="validation-rules" />
 
     <xed:include ref="javascript" />
-    <!-- frame for modal window -->
-    <xed:include ref="modal.name" />
-    <xed:include ref="modal.body" />
+
   </xed:template>
 
   <xed:template id="edition.lod">
@@ -168,7 +530,8 @@
       xpath="mods:originInfo[@eventType='creation']/mods:dateCreated[@encoding='w3cdtf']"
       label="mir.date.created" help-text="{i18n:mir.help.date.created.range}"
       class="datetimepicker" placeholder="{i18n:mir.placeholder.date}" />
-    <!--ToDo: Kalendertyp zur Maske hinzufügen-->
+    <!--ToDo:
+    Kalendertyp zur Maske hinzufügen-->
     <!--     <xed:bind xpath="mods:originInfo[@eventType='creation']/mods:dateCreated">
       <div class="col-md-2">
         <xed:bind xpath="@calendar">
