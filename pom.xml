@@ -90,6 +90,11 @@
     </dependency>
     <dependency>
       <groupId>org.mycore.mir</groupId>
+      <artifactId>mir-module</artifactId>
+      <version>${mycore.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.mycore.mir</groupId>
       <artifactId>mir-layout</artifactId>
       <version>${mycore.version}</version>
     </dependency>
