@@ -75,7 +75,12 @@ public class DitavExtendedMIRStrategy extends MIRStrategy {
         // so we check for role directly
         String userID = MCRUserManager.getCurrentUser().getUserID();
         MCRUser user = MCRUserManager.getUser(userID);
-        if (user != null && user.isUserInRole(role)) {
+
+        /*
+         * do not use user.isUserInRole(role) because it will allow users in mws.mwsno to edit everything
+         * under qed, because mws.mwsno is a child of mws
+         */
+        if (user != null && user.getExternalRoleIDs().contains(role)) {
           LOGGER.info("User {} has role {} for path {}, granting permission {}",
               MCRUserManager.getCurrentUser().getUserName(), role, path, permission);
           return true;
