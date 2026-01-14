@@ -94,6 +94,11 @@
       <version>${mycore.version}</version>
     </dependency>
     <dependency>
+      <groupId>org.mycore.mir</groupId>
+      <artifactId>mir-module</artifactId>
+      <version>${mycore.version}</version>
+    </dependency>
+    <dependency>
       <groupId>jakarta.servlet</groupId>
       <artifactId>jakarta.servlet-api</artifactId>
       <scope>provided</scope>
