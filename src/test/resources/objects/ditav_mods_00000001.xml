@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><mycoreobject xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="datamodel-mods.xsd" ID="ditav_mods_00000001" version="2024.06.2-SNAPSHOT" label="ditav_mods_00000001">
+  <structure>
+  </structure>
+  <metadata>
+    <def.modsContainer class="MCRMetaXML" heritable="false" notinherit="true">
+      <modsContainer inherited="0">
+        <mods:mods xmlns:mods="http://www.loc.gov/mods/v3">
+          <mods:typeOfResource>mixed material</mods:typeOfResource>
+          <mods:genre type="intern" authorityURI="http://www.mycore.org/classifications/mir_genres" valueURI="http://www.mycore.org/classifications/mir_genres#edition"/>
+          <mods:name type="corporate" authorityURI="https://ditav.gbv.de/api/v2/classifications/mir_institutes" valueURI="https://ditav.gbv.de/api/v2/classifications/mir_institutes#mws.oii" xlink:type="simple">
+            <mods:role>
+              <mods:roleTerm authority="marcrelator" type="code">his</mods:roleTerm>
+            </mods:role>
+          </mods:name>
+          <mods:titleInfo xml:lang="de" type="translated" xlink:type="simple">
+            <mods:title>Dengbêj Gazîn: Die Lieder einer Kurdin</mods:title>
+          </mods:titleInfo>
+          <mods:titleInfo xml:lang="ku" type="translated" xlink:type="simple">
+            <mods:title>Dengbêj Gazîn: Stranên Jineke Kurd</mods:title>
+          </mods:titleInfo>
+          <mods:titleInfo xml:lang="tr" type="translated" xlink:type="simple">
+            <mods:title>Dengbêj Gazîn: Bir Kürt Kadının Şarkıları</mods:title>
+          </mods:titleInfo>
+          <mods:titleInfo xml:lang="en" xlink:type="simple">
+            <mods:title>Dengbêj Gazîn: Songs of a Kurdish Woman</mods:title>
+          </mods:titleInfo>
+          <mods:classification generator="mir_genres2marcgt-mycore" authority="marcgt">series</mods:classification>
+          <mods:classification generator="mir_genres2diniPublType-mycore" authorityURI="http://www.mycore.org/classifications/diniPublType" valueURI="http://www.mycore.org/classifications/diniPublType#other"/>
+          <mods:classification generator="mir_genres2diniPublType2022-mycore" authorityURI="http://www.mycore.org/classifications/diniPublType2022" valueURI="http://www.mycore.org/classifications/diniPublType2022#SourceEdition"/>
+          <mods:name type="personal" xlink:type="simple">
+            <mods:displayForm>Çakir, Nihat Argun</mods:displayForm>
+            <mods:role>
+              <mods:roleTerm authority="marcrelator" type="code">edt</mods:roleTerm>
+            </mods:role>
+            <mods:nameIdentifier type="gnd" typeURI="https://d-nb.info/gnd/">1263816711</mods:nameIdentifier>
+            <mods:nameIdentifier type="viaf" typeURI="https://viaf.org/viaf/">2132165930962268530006</mods:nameIdentifier>
+            <mods:namePart type="family">Çakir</mods:namePart>
+            <mods:namePart type="given">Nihat</mods:namePart>
+            <mods:namePart type="given">Argun</mods:namePart>
+          </mods:name>
+          <mods:name type="personal" xlink:type="simple">
+            <mods:displayForm>Dengbêj Gazîn</mods:displayForm>
+            <mods:role>
+              <mods:roleTerm authority="marcrelator" type="code">art</mods:roleTerm>
+            </mods:role>
+            <mods:namePart type="given">Dengbêj</mods:namePart>
+            <mods:namePart type="family">Gazîn</mods:namePart>
+          </mods:name>
+          <mods:originInfo eventType="publication">
+            <mods:dateIssued encoding="w3cdtf">2025</mods:dateIssued>
+            <mods:place>
+              <mods:placeTerm type="text">Bonn</mods:placeTerm>
+            </mods:place>
+            <mods:publisher>perspectivia.net</mods:publisher>
+          </mods:originInfo>
+          <mods:originInfo eventType="creation">
+            <mods:place>
+              <mods:placeTerm type="text">Van</mods:placeTerm>
+            </mods:place>
+          </mods:originInfo>
+          <mods:language>
+            <mods:languageTerm authority="rfc5646" type="code">tr</mods:languageTerm>
+          </mods:language>
+          <mods:language>
+            <mods:languageTerm authority="rfc5646" type="code">ku</mods:languageTerm>
+          </mods:language>
+          <mods:subject xlink:type="simple">
+            <mods:geographic authority="gnd" valueURI="https://d-nb.info/gnd/7859805-9">Provinz Van (Türkei, Süd)</mods:geographic>
+          </mods:subject>
+          <mods:accessCondition type="restriction on access" xlink:href="http://www.mycore.org/classifications/mir_access#unlimited" xlink:type="simple"/>
+          <mods:accessCondition type="use and reproduction" xlink:href="http://www.mycore.org/classifications/mir_licenses#cc_by_4.0" xlink:type="simple"/>
+          <mods:abstract altRepGroup="ca-813d-8c366469001d" xml:lang="ku" contentType="text/xml" altFormat="data:text/xml;charset=UTF-8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48YWJzdHJhY3QgYWx0UmVwR3JvdXA9ImNhLTgxM2QtOGMzNjY0NjkwMDFkIiB4bWw6bGFuZz0ia3UiPiZsdDtwJmd0O0V2IGVkw65zeW9uYSBoYSBqaSBiZXJoZW3Dqm4gZGVuZ2LDqmphIG5hdmRhciAmbHQ7c3Ryb25nJmd0O0Rlbmdiw6pqIEdhesOubiZsdDsvc3Ryb25nJmd0OyAoMTk1OeKAkzIwMTgpIHDDqmsgdMOqLiBLdXJkIHh3ZWRpecOqIG3DrnJhc2VrZSDDp2FuZGEgZGV2a8OuIHlhIGdlbGVrw64gZGV3bGVtZW5kIGluLiBEZW5nYsOqaiB5ZWsgamkgw65jcmFrZXLDqm4gcsOqemRhciDDqm4gw6dhbmRhIGRldmvDriB5YSBrdXJkw64gbmUuIERpIHJlcGVydHVhcmEgZGVuZ2LDqmphbiBkZSBraWxhbcOqbi9zdHJhbsOqbiB0YXLDrnjDriwgZGVzdGFuIMO7IGLDu3llcsOqbiDFn2V4c8OuIGJpIGF3YXlla8OuIHN0cmFuw64gaGVuZS4gRGkgdmVndWhhc3RpbmEgZMOucm9rYSBrdXJkYW4gw7sgcGFyYXN0aW5hIGRld2xlbWVuZGl5YSB6aW1hbsOqIGt1cmTDriBkZSByb2xla2UgZ2VsZWvDriBnaXLDrm5nIGtldGl5ZSBzZXIgbWlsw6ogZGVuZ2LDqmphbi4gSmkgYmVyIGFzdGVuZ2l5w6puIGNpdmFrw64gZGVuZ2LDqmrDqm4gamluIGppIGJvIGRlbWVrZSBkaXLDqmogbmlrYXJpYsO7biBzdHJhbsOqbiB4d2UgbGkgcWFkYSBnacWfdMOuIGJpZ290YW5hLiBFdiBlZMOuc3lvbiDDp2F2a2FuaXlla2Uga8OqbWTDrnTDriB5YSBsaSBzZXIgcMOqamF2b3lhIMOnw6praXJpbmEga2lsYW1hbi9zdHJhbmFuIGUuIEV2IHhlYmF0IGrEsWkgMjEwIHRvbWFyw6puIGRlbmfDriBnb3RpbsOqbiBraWxhbWFuL3N0cmFuYW4gecOqbiBiaSBrdXJkw64gw7sgd2VyZ2Vyw6puIHdhbiDDqm4gYmkgdGlya8OuIHDDqmsgdMOqLiZsdDsvcCZndDs8L2Fic3RyYWN0Pg" xlink:type="simple"/>
+          <mods:abstract altRepGroup="ca-813d-8c366469001d" xml:lang="ku" xlink:type="simple">Ev edîsyona ha ji berhemên dengbêja navdar Dengbêj Gazîn (1959–2018) pêk tê. Kurd xwediyê mîraseke çanda devkî ya gelekî dewlemend in. Dengbêj yek ji îcrakerên rêzdar ên çanda devkî ya kurdî ne. Di repertuara dengbêjan de kilamên/stranên tarîxî, destan û bûyerên şexsî bi awayekî stranî hene. Di veguhastina dîroka kurdan û parastina dewlemendiya zimanê kurdî de roleke gelekî girîng ketiye ser milê dengbêjan. Ji ber astengiyên civakî dengbêjên jin ji bo demeke dirêj nikaribûn stranên xwe li qada giştî bigotana. Ev edîsyon çavkaniyeke kêmdîtî ya li ser pêjavoya çêkirina kilaman/stranan e. Ev xebat jıi 210 tomarên dengî gotinên kilaman/stranan yên bi kurdî û wergerên wan ên bi tirkî pêk tê.</mods:abstract>
+          <mods:abstract altRepGroup="03-9c33-66369f56e28f" xml:lang="tr" contentType="text/xml" altFormat="data:text/xml;charset=UTF-8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48YWJzdHJhY3QgYWx0UmVwR3JvdXA9IjAzLTljMzMtNjYzNjlmNTZlMjhmIiB4bWw6bGFuZz0idHIiPiZsdDtwJmd0O0J1IGVkaXN5b24gVGF0dmFuIGRvxJ91bWx1LCBkw7ZuZW1pbmluIGVuIHRhbsSxbm3EscWfIGthZMSxbiBkZW5nYsOqamxlcmluZGVuIGJpcmkga2FidWwgZWRpbGVuICZsdDtzdHJvbmcmZ3Q7RGVuZ2LDqmogR2F6w65u4oCZaW4mbHQ7L3N0cm9uZyZndDsgKDE5NTnigJMyMDE4KSByZXBlcnR1dmFyxLFuZGFuIGJpciBzZcOna2lkZW4gb2x1xZ9tYWt0YWTEsXIuIEvDvHJ0bGVyIHNvbiBkZXJlY2UgemVuZ2luIGJpciBzw7Z6bMO8IGvDvGx0w7xyIG1pcmFzxLFuYSBzYWhpcHRpci4gRGVuZ2LDqmpsZXIgYnUgc8O2emzDvCBnZWxlbmXEn2luIGVuIHNheWfEsW4gaWNyYWPEsWxhcsSxbmRhbmTEsXIgdmUgcmVwZXJ0dWFybGFyxLEgdGFyaWjDriBvbGF5bGFyLCBkZXN0YW5sYXIgdmUga2nFn2lzZWwgZGVuZXlpbWxlcmluIG1lbG9kaWsgYmlyIGFubGF0xLFtbGEgaWNyYXPEsW5kYW4gb2x1xZ91ci4gRGVuZ2LDqmpsZXIgS8O8cnQgdGFyaWhpbmluIGt1xZ9ha3RhbiBrdcWfYcSfYSBha3RhcsSxbG1hc8SxIHZlIEvDvHJ0w6dlbmluIHplbmdpbmxpxJ9pbmluIG11aGFmYXphIGVkaWxtZXNpbmRlIGhheWF0aSBiaXIgcm9sIG95bmFtxLHFn2xhcmTEsXIuIFRvcGx1bXNhbCBub3JtbGFyIEvDvHJ0IGthZMSxbiBpY3JhY8SxbGFyxLFuIGthbXVzYWwgYWxhbmRhIGVzZXJsZXJpbmkgaWNyYSBldG1lbGVyaW5pbiDDtm7DvG5kZSBiaXIgZW5nZWwgb2xtdcWfdHVyLiBCdSBlZGlzeW9uIGJpciBrYWTEsW4gZGVuZ2LDqmppbiB5YXJhdMSxbSBzw7xyZWNpbmUgZGFpciBheiBidWx1bmFuIGJpciBrYXluYWsgdGXFn2tpbCBldG1la3RlZGlyLiAyMTAgc2VzIGtheWTEsW5kYW4gb2x1xZ9hbiBidSDDp2FsxLHFn21hLCBrZW5kaSBrdcWfYcSfxLFuxLFuIGVuIGV0a2lsZXlpY2kgS8O8cnQga2FkxLFuIHNhbmF0w6fEsWxhcsSxbmRhbiBiaXJpbmluIGVzZXJsZXJpbmkgc3VubWFrdGFkxLFyLiBCdSBrb2xla3NpeW9uZGEgb3JpamluYWwgc2VzIGthecSxdGxhcsSxbsSxbiB5YW7EsSBzxLFyYSBtZXRpbmxlcmluIEvDvHJ0w6dlIHRyYW5za3JpcHNpeW9ubGFyxLEgdmUgVMO8cmvDp2Ugw6dldmlyaWxlcmkgdmUgYnVubGFyYSBkYWlyIGVsZcWfdGlyZWwgZWRpdG9yeWVsIG5vdGxhciB5ZXIgYWxtYWt0YWTEsXIuJmx0Oy9wJmd0OzwvYWJzdHJhY3Q+" xlink:type="simple"/>
+          <mods:abstract altRepGroup="03-9c33-66369f56e28f" xml:lang="tr" xlink:type="simple">Bu edisyon Tatvan doğumlu, döneminin en tanınmış kadın dengbêjlerinden biri kabul edilen Dengbêj Gazîn’in (1959–2018) repertuvarından bir seçkiden oluşmaktadır. Kürtler son derece zengin bir sözlü kültür mirasına sahiptir. Dengbêjler bu sözlü geleneğin en saygın icracılarındandır ve repertuarları tarihî olaylar, destanlar ve kişisel deneyimlerin melodik bir anlatımla icrasından oluşur. Dengbêjler Kürt tarihinin kuşaktan kuşağa aktarılması ve Kürtçenin zenginliğinin muhafaza edilmesinde hayati bir rol oynamışlardır. Toplumsal normlar Kürt kadın icracıların kamusal alanda eserlerini icra etmelerinin önünde bir engel olmuştur. Bu edisyon bir kadın dengbêjin yaratım sürecine dair az bulunan bir kaynak teşkil etmektedir. 210 ses kaydından oluşan bu çalışma, kendi kuşağının en etkileyici Kürt kadın sanatçılarından birinin eserlerini sunmaktadır. Bu koleksiyonda orijinal ses kayıtlarının yanı sıra metinlerin Kürtçe transkripsiyonları ve Türkçe çevirileri ve bunlara dair eleştirel editoryel notlar yer almaktadır.</mods:abstract>
+          <mods:abstract altRepGroup="0e-8f37-550e29a1a6eb" xml:lang="en" contentType="text/xml" altFormat="data:text/xml;charset=UTF-8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48YWJzdHJhY3QgYWx0UmVwR3JvdXA9IjBlLThmMzctNTUwZTI5YTFhNmViIiB4bWw6bGFuZz0iZW4iPiZsdDtwJmd0O0t1cmRpc2ggY29tbXVuaXRpZXMgZHJhdyBvbiBhbiBpbW1lbnNlbHkgcmljaCBvcmFsIGhlcml0YWdlLiBUaGlzIGVkaXRpb24gcHJlc2VudHMgdGhlIG11c2ljYWwgcmVwZXJ0b2lyZSBvZiZhbXA7I3hhMDsmbHQ7c3Ryb25nJmd0O0Rlbmdiw6pqIEdhesOubiZsdDsvc3Ryb25nJmd0OyAoMTk1OS0yMDE4KSwgYSBzaW5nZXItcG9ldCBmcm9tIFRldHdhbiAoVGF0dmFuKSBhbmQgb25lIG9mIHRoZSBtb3N0IGZhbW91cyBmZW1hbGUgS3VyZGlzaCBkZW5nYsOqanMgb2YgaGVyIHRpbWUuIERlbmdiw6pqcyBhcmUgYW1vbmdzdCB0aGUgbW9zdCBwcmVzdGlnaW91cyBvZiBLdXJkaXNoIG9yYWwgcGVyZm9ybWVyczogdGhleSByZWNvdW50IGhpc3RvcmljIGV2ZW50cywgbGVnZW5kYXJ5IHN0b3JpZXMsIGFuZCBwZXJzb25hbCBleHBlcmllbmNlcyB0aHJvdWdoIG1lbG9kaXplZCBzcGVlY2guIERlbmdiw6pqcyBoYXZlIGJlZW4gaW50ZWdyYWwgZm9yIHRoZSB0cmFuc21pc3Npb24gb2YgS3VyZGlzaCBoaXN0b3J5IGFuZCB0aGV5IGhhdmUgcHJlc2VydmVkIHRoZSByaWNobmVzcyBvZiBLdXJkaXNoIGxhbmd1YWdlLiBUaGlzIGVkaXRpb24gZ2l2ZXMgcmFyZSBpbnNpZ2h0IGludG8gdGhlIGNyZWF0aXZlIHByb2Nlc3Mgb2YgYSBmZW1hbGUgZGVuZ2LDqmouIER1ZSB0byByZXN0cmljdGl2ZSBzb2NpYWwgbm9ybXMsIEt1cmRpc2ggd29tZW4gc2luZ2VycyBoYXZlIGZvdW5kIGl0IGRpZmZpY3VsdCB0byBwZXJmb3JtIGluIHB1YmxpYy4gQmFzZWQgb24gMjEwIHNvdW5kIHJlY29yZGluZ3MsIHRoaXMgZWRpdGlvbiBwcmVzZW50cyB0aGUgd29yayBvZiBvbmUgb2YgdGhlIG1vc3Qgb3V0c3RhbmRpbmcgS3VyZGlzaCBmZW1hbGUgc2luZ2VycyBvZiBoZXIgZ2VuZXJhdGlvbi4gSXQgbWFrZXMgYXZhaWxhYmxlIHRoZSBvcmlnaW5hbCBzb3VuZCByZWNvcmRpbmdzLCBhbG9uZ3NpZGUgdGhlaXIgS3VyZGlzaCB0cmFuc2NyaXB0aW9ucyBhbmQgVHVya2lzaCB0cmFuc2xhdGlvbnMsIGNvbXBsZW1lbnRlZCBieSBjcml0aWNhbCBlZGl0b3JpYWwgY29tbWVudHMuJmx0Oy9wJmd0OzwvYWJzdHJhY3Q+" xlink:type="simple"/>
+          <mods:abstract altRepGroup="0e-8f37-550e29a1a6eb" xml:lang="en" xlink:type="simple">Kurdish communities draw on an immensely rich oral heritage. This edition presents the musical repertoire of Dengbêj Gazîn (1959-2018), a singer-poet from Tetwan (Tatvan) and one of the most famous female Kurdish dengbêjs of her time. Dengbêjs are amongst the most prestigious of Kurdish oral performers: they recount historic events, legendary stories, and personal experiences through melodized speech. Dengbêjs have been integral for the transmission of Kurdish history and they have preserved the richness of Kurdish language. This edition gives rare insight into the creative process of a female dengbêj. Due to restrictive social norms, Kurdish women singers have found it difficult to perform in public. Based on 210 sound recordings, this edition presents the work of one of the most outstanding Kurdish female singers of her generation. It makes available the original sound recordings, alongside their Kurdish transcriptions and Turkish translations, complemented by critical editorial comments.</mods:abstract>
+          <mods:identifier type="doi">10.58137/003-2025-0</mods:identifier>
+          <mods:identifier type="qedid">002-2025</mods:identifier>
+          <mods:location>
+            <mods:url>https://qed.perspectivia.net/documents/</mods:url>
+          </mods:location>
+        </mods:mods>
+      </modsContainer>
+    </def.modsContainer>
+  </metadata>
+  <service>
+    <servdates class="MCRMetaISO8601Date">
+      <servdate type="createdate" inherited="0">2025-12-17T13:33:01.360Z</servdate>
+      <servdate type="modifydate" inherited="0">2025-12-17T13:47:56.399Z</servdate>
+    </servdates>
+    <servflags class="MCRMetaLangText">
+      <servflag type="createdby" inherited="0" form="plain">administrator</servflag>
+      <servflag type="modifiedby" inherited="0" form="plain">administrator</servflag>
+    </servflags>
+    <servstates class="MCRMetaClassification">
+      <servstate inherited="0" classid="state" categid="published"/>
+    </servstates>
+  </service>
+</mycoreobject>

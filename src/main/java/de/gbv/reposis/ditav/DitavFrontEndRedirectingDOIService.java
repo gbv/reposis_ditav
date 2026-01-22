@@ -18,8 +18,23 @@ public class DitavFrontEndRedirectingDOIService extends MCRDOIService {
       throw new IllegalArgumentException("Object must be of type MCRObject");
     }
     MCRMODSWrapper mods = new MCRMODSWrapper((MCRObject) obj);
+
+    Element genreElement = mods.getElement("mods:genre[@type='intern']");
+    boolean isEdition = false;
+    if (genreElement != null) {
+      String valueURI = genreElement.getAttributeValue("valueURI");
+      if (valueURI != null) {
+        isEdition = valueURI.endsWith("#edition");
+      }
+    }
+
+    String xPath = "mods:location/mods:url";
+    if (!isEdition) {
+      xPath = "mods:relatedItem[@type='host']/" + xPath;
+    }
+
     String urlPrefix = Optional.ofNullable(
-            mods.getElement("mods:relatedItem[@type='host']/mods:location/mods:url"))
+            mods.getElement(xPath))
         .map(Element::getTextNormalize)
         .orElseThrow(() -> new IllegalArgumentException(
             "Parent MODS metadata does not contain required URL element"));
