@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+             xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="identifier">
+  <label xml:lang="de" text="Identifikatoren" />
+  <label xml:lang="en" text="Identifier" />
+  <label xml:lang="x-uri" text="http://www.mycore.org/classifications/identifier" />
+  <categories>
+    <category ID="qedid">
+      <label xml:lang="de" text="QED ID" />
+      <label xml:lang="en" text="QED ID" />
+      <label xml:lang="fr" text="QED ID" />
+    </category>
+    <category ID="isbn">
+      <label xml:lang="de" text="ISBN" />
+      <label xml:lang="en" text="ISBN" />
+    </category>
+    <category ID="issn">
+      <label xml:lang="de" text="ISSN" />
+      <label xml:lang="en" text="ISSN" />
+    </category>
+    <category ID="zdbid">
+      <label xml:lang="de" text="ZDB-ID" />
+      <label xml:lang="en" text="ZDB-ID" />
+    </category>
+    <category ID="doi">
+      <label xml:lang="de" text="DOI" />
+      <label xml:lang="en" text="DOI" />
+    </category>
+    <category ID="hdl">
+      <label xml:lang="de" text="Handle" />
+      <label xml:lang="en" text="Handle" />
+    </category>
+    <category ID="urn">
+      <label xml:lang="de" text="URN" />
+      <label xml:lang="en" text="URN" />
+    </category>
+    <category ID="uri">
+      <label xml:lang="de" text="URI" />
+      <label xml:lang="en" text="URI" />
+    </category>
+    <category ID="intern">
+      <label xml:lang="de" text="internal ID" />
+      <label xml:lang="en" text="interne ID" />
+    </category>
+    <category ID="project">
+      <label xml:lang="de" text="Project ID" />
+      <label xml:lang="en" text="Projekt ID" />
+    </category>
+    <category ID="patent">
+      <label xml:lang="de" text="Patent number" />
+      <label xml:lang="en" text="Patentnummer" />
+    </category>
+    <category ID="ppn">
+      <label xml:lang="de" text="PPN" />
+      <label xml:lang="en" text="PPN" />
+    </category>
+  </categories>
+</mycoreclass>
