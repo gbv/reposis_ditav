@@ -4,6 +4,7 @@ package de.gbv.reposis.ditav;
 import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.HashMap;
 import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,7 +24,8 @@ public class DitavFrontEndRedirectingDOIServiceTest extends MCRTestCase {
 
   public static final String TEST_NUMBER_PART_2 = "4321";
   public static final String TEST_OBJECT_ID_2 = "ditav_test_0000" + TEST_NUMBER_PART_2;
-  public static final String TEST_URL_PREFIX = "https://qed.perspectivia.net/documents/";
+  public static final String TEST_URL_PREFIX = "https://qed.perspectivia.net/";
+  public static final String SUB_PATH = "documents/";
 
   private MCRObject object1;
   private MCRObject object2;
@@ -33,6 +35,9 @@ public class DitavFrontEndRedirectingDOIServiceTest extends MCRTestCase {
   public void setUp() throws Exception {
     super.setUp();
     service = new DitavFrontEndRedirectingDOIService();
+    HashMap<String, String> subPath = new HashMap<>();
+    subPath.put("TeiPageSubPath", SUB_PATH);
+    service.setProperties(subPath);
 
     try (InputStream is = DitavFrontEndRedirectingDOIServiceTest.class.getClassLoader()
         .getResourceAsStream("objects/ditav_mods_00000004.xml")) {
@@ -53,11 +58,13 @@ public class DitavFrontEndRedirectingDOIServiceTest extends MCRTestCase {
   @Test
   public void getRegisteredURI() throws URISyntaxException {
     URI registeredURI1 = service.getRegisteredURI(object1);
-    Assert.assertEquals(TEST_URL_PREFIX + TEST_NUMBER_PART_1, registeredURI1.toString());
+    Assert.assertEquals(TEST_URL_PREFIX + SUB_PATH + TEST_NUMBER_PART_1,
+        registeredURI1.toString());
     LOGGER.info("Registered URI 1: {}", registeredURI1);
 
     URI registeredURI2 = service.getRegisteredURI(object2);
-    Assert.assertEquals(TEST_URL_PREFIX + TEST_NUMBER_PART_2, registeredURI2.toString());
+    // the edition need to point to the base URL only, without sub path and number
+    Assert.assertEquals(TEST_URL_PREFIX, registeredURI2.toString());
     LOGGER.info("Registered URI 2: {}", registeredURI2);
   }
   @Override

@@ -78,7 +78,7 @@
           <mods:identifier type="doi">10.58137/003-2025-0</mods:identifier>
           <mods:identifier type="qedid">002-2025</mods:identifier>
           <mods:location>
-            <mods:url>https://qed.perspectivia.net/documents/</mods:url>
+            <mods:url>https://qed.perspectivia.net/</mods:url>
           </mods:location>
         </mods:mods>
       </modsContainer>

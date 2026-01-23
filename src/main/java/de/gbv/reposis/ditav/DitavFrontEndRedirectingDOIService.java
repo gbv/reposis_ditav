@@ -12,6 +12,8 @@ import org.mycore.pi.doi.MCRDOIService;
 public class DitavFrontEndRedirectingDOIService extends MCRDOIService {
 
 
+  public static final String SUB_PATH_PROPERTY = "TeiPageSubPath";
+
   @Override
   public URI getRegisteredURI(MCRBase obj) throws URISyntaxException {
     if (!(obj instanceof MCRObject)) {
@@ -28,6 +30,8 @@ public class DitavFrontEndRedirectingDOIService extends MCRDOIService {
       }
     }
 
+    String teiPageSubPath = getProperties().get(SUB_PATH_PROPERTY);
+
     String xPath = "mods:location/mods:url";
     if (!isEdition) {
       xPath = "mods:relatedItem[@type='host']/" + xPath;
@@ -40,7 +44,14 @@ public class DitavFrontEndRedirectingDOIService extends MCRDOIService {
             "Parent MODS metadata does not contain required URL element"));
 
     String extractedNumber = Integer.valueOf(obj.getId().getNumberAsInteger()).toString();
-    return new URI(urlPrefix).resolve(extractedNumber);
+    URI uri = new URI(urlPrefix);
+
+    // the teiPageSubPath is only appended for the tei files in the edition
+    if (!isEdition && teiPageSubPath != null && !teiPageSubPath.isEmpty()) {
+      return uri.resolve(teiPageSubPath).resolve(extractedNumber);
+    }
+
+    return uri;
   }
 
 }
