@@ -6,6 +6,23 @@
 // set the defaults for all responsive levels here
 // no (xl) media query necessary (desktop first)
 
+.internal_links {
+  padding-left: 2rem;
+  li {
+    display: inline;
+    &:before {
+      content: ' • ';
+      padding: 0 3px;
+    }
+    &:first-child::before {
+      content: '';
+      padding-left: 0px;
+    }
+  }
+  .dropdown-item {
+    display: inline;
+  }
+}
 
 // Large devices (desktops) and below: <= 1200px
 @include media-breakpoint-down(lg) {

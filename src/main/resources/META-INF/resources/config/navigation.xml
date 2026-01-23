@@ -11,10 +11,6 @@
       <label xml:lang="de">Start</label>
       <label xml:lang="en">Start</label>
     </item>
-    <item href="/content/brand/impressum.xml" type="intern">
-      <label xml:lang="de">Impressum</label>
-      <label xml:lang="en">Impressum</label>
-    </item>
     <item href="/content/brand/contact.xml" type="intern">
       <label xml:lang="de">Kontakt</label>
       <label xml:lang="en">Contact</label>
@@ -23,6 +19,18 @@
   <menu id="below" dir="/content/below">
     <label xml:lang="de">Footer-Menü</label>
     <label xml:lang="en">Footer menu</label>
+    <item href="https://www.gbv.de/datenschutz" type="extern">
+      <label xml:lang="de">Datenschutz</label>
+      <label xml:lang="en">Data Protection</label>
+    </item>
+    <item href="https://www.gbv.de/impressum" type="extern">
+      <label xml:lang="de">Impressum</label>
+      <label xml:lang="en">Impressum</label>
+    </item>
+        <item href="https://www.gbv.de/erklaerung-zur-barrierefreiheit" type="extern">
+      <label xml:lang="de">Barrierefreiheit</label>
+      <label xml:lang="en">Accessibility</label>
+    </item>
   </menu>
   <menu id="search">
     <!-- search menu  -->
