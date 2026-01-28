@@ -21,10 +21,10 @@
   <parent>
     <groupId>de.gbv.reposis</groupId>
     <artifactId>reposis_mir_parent</artifactId>
-    <version>2024.06-SNAPSHOT</version>
+    <version>2025.06-SNAPSHOT</version>
   </parent>
   <artifactId>reposis_ditav</artifactId>
-  <version>2024.06-SNAPSHOT</version>
+  <version>2025.06-SNAPSHOT</version>
   <properties>
     <MCR.AppName>ditav</MCR.AppName>
   </properties>
@@ -105,14 +105,9 @@
     <dependency>
       <groupId>jakarta.servlet</groupId>
       <artifactId>jakarta.servlet-api</artifactId>
-      <scope>provided</scope>
     </dependency>
-
     <!-- enable theese if you write code using them
-        <dependency>
-          <groupId>jakarta.servlet</groupId>
-          <artifactId>jakarta.servlet-api</artifactId>
-        </dependency>
+
         <dependency>
             <groupId>org.mycore</groupId>
             <artifactId>mycore-base</artifactId>
