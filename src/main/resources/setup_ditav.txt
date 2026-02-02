@@ -1,6 +1,14 @@
-update classification from uri resource:classifications/rfc5646.xml
+update classification from uri resource:classifications/gzn_genres.xml
+update classification from uri resource:classifications/identifier.xml
+update classification from uri resource:classifications/koloe_document_classification.xml
 update classification from uri resource:classifications/lod_archives.xml
 update classification from uri resource:classifications/lod_document_classification.xml
 update classification from uri resource:classifications/marcrelator.xml
 update classification from uri resource:classifications/mir_genres.xml
 update classification from uri resource:classifications/mir_institutes.xml
+update classification from uri resource:classifications/noteTypes.xml
+update classification from uri resource:classifications/rfc5646.xml
+update classification from uri resource:classifications/scan_available.xml
+update classification from uri resource:classifications/transcription.xml
+update classification from uri resource:classifications/translation.xml
+update classification from uri resource:classifications/translation_available.xml
