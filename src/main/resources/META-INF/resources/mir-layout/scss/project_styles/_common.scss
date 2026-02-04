@@ -9,6 +9,14 @@
 // no (xl) media query necessary (desktop first)
 
 
+// Testenvironment watermark
+#testenvironment::after {
+  content: "- TEST -";
+  color: rgba(200,0,0,0.6);
+  z-index: 9999;
+  padding-left: 1rem;
+}
+
 
 // Large devices (desktops) and below: <= 1200px
 @include media-breakpoint-down(lg) {
