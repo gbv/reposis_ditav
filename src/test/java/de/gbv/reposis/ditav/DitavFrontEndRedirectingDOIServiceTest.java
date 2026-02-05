@@ -1,21 +1,31 @@
 package de.gbv.reposis.ditav;
 
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.HashMap;
-import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.Assert;
-import org.junit.Test;
-import org.mycore.common.MCRTestCase;
+import org.jdom2.JDOMException;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.mycore.common.MCRTestConfiguration;
+import org.mycore.common.MCRTestProperty;
 import org.mycore.datamodel.metadata.MCRObject;
 import org.mycore.datamodel.metadata.MCRObjectID;
+import org.mycore.test.MyCoReTest;
 
 
-public class DitavFrontEndRedirectingDOIServiceTest extends MCRTestCase {
+@MyCoReTest
+@MCRTestConfiguration(
+    properties = {
+        @MCRTestProperty(key = "MCR.Metadata.Type.mods", string = "true"),
+        @MCRTestProperty(key = "MCR.Metadata.Type.test", string = "true"),
+    }
+)
+public class DitavFrontEndRedirectingDOIServiceTest {
 
   private static final Logger LOGGER = LogManager.getLogger();
 
@@ -31,9 +41,11 @@ public class DitavFrontEndRedirectingDOIServiceTest extends MCRTestCase {
   private MCRObject object2;
   private DitavFrontEndRedirectingDOIService service;
 
-  @Override
-  public void setUp() throws Exception {
-    super.setUp();
+
+
+  @Test
+  public void getRegisteredURI() throws URISyntaxException, IOException, JDOMException {
+
     service = new DitavFrontEndRedirectingDOIService();
     HashMap<String, String> subPath = new HashMap<>();
     subPath.put("TeiPageSubPath", SUB_PATH);
@@ -46,32 +58,23 @@ public class DitavFrontEndRedirectingDOIServiceTest extends MCRTestCase {
 
     object1.setId(MCRObjectID.getInstance(TEST_OBJECT_ID_1));
 
-
     try (InputStream is = DitavFrontEndRedirectingDOIServiceTest.class.getClassLoader()
         .getResourceAsStream("objects/ditav_mods_00000001.xml")) {
       object2 = new MCRObject(new org.jdom2.input.SAXBuilder().build(is));
     }
 
     object2.setId(MCRObjectID.getInstance(TEST_OBJECT_ID_2));
-  }
 
-  @Test
-  public void getRegisteredURI() throws URISyntaxException {
     URI registeredURI1 = service.getRegisteredURI(object1);
-    Assert.assertEquals(TEST_URL_PREFIX + SUB_PATH + TEST_NUMBER_PART_1,
+
+    Assertions.assertEquals(TEST_URL_PREFIX + SUB_PATH + TEST_NUMBER_PART_1,
         registeredURI1.toString());
     LOGGER.info("Registered URI 1: {}", registeredURI1);
 
     URI registeredURI2 = service.getRegisteredURI(object2);
     // the edition need to point to the base URL only, without sub path and number
-    Assert.assertEquals(TEST_URL_PREFIX, registeredURI2.toString());
+    Assertions.assertEquals(TEST_URL_PREFIX, registeredURI2.toString());
     LOGGER.info("Registered URI 2: {}", registeredURI2);
-  }
-  @Override
-  protected Map<String, String> getTestProperties() {
-    Map<String, String> properties = super.getTestProperties();
-    properties.put("MCR.Metadata.Type.mods", "true");
-    return properties;
   }
 
 

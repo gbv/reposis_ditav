@@ -6,10 +6,8 @@ import java.nio.file.Files;
 import java.util.List;
 import java.util.Objects;
 
-import org.apache.commons.lang3.stream.Streams;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.jdom2.Attribute;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
@@ -18,9 +16,9 @@ import org.jdom2.input.SAXBuilder;
 import org.jdom2.xpath.XPathExpression;
 import org.jdom2.xpath.XPathFactory;
 import org.mycore.datamodel.metadata.MCRDerivate;
+import org.mycore.datamodel.metadata.MCRExpandedObject;
 import org.mycore.datamodel.metadata.MCRMetaEnrichedLinkID;
 import org.mycore.datamodel.metadata.MCRMetadataManager;
-import org.mycore.datamodel.metadata.MCRObject;
 import org.mycore.datamodel.metadata.MCRObjectID;
 import org.mycore.datamodel.niofs.MCRPath;
 import org.mycore.iiif.image.impl.MCRIIIFImageNotFoundException;
@@ -41,7 +39,7 @@ public class DitavTEIIIIFThumbnailImpl extends MCRThumbnailImageImpl {
     if (MCRObjectID.isValid(id)) {
       MCRObjectID objectID = MCRObjectID.getInstance(id);
       if (!MCRDerivate.OBJECT_TYPE.equals(objectID.getTypeId())) {
-        MCRObject mcrObject = MCRMetadataManager.retrieveMCRObject(objectID);
+        MCRExpandedObject mcrObject = MCRMetadataManager.retrieveMCRExpandedObject(objectID);
 
         for (MCRMetaEnrichedLinkID derlink : mcrObject.getStructure().getDerivates()) {
           MCRObjectID derID = derlink.getXLinkHrefID();

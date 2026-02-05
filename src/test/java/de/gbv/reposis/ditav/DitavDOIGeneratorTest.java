@@ -2,21 +2,40 @@ package de.gbv.reposis.ditav;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Map;
 import org.jdom2.Document;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
-import org.junit.Assert;
-import org.junit.Test;
-import org.mycore.common.MCRTestCase;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.mycore.common.MCRTestConfiguration;
+import org.mycore.common.MCRTestProperty;
 import org.mycore.common.config.MCRConfiguration2;
 import org.mycore.datamodel.metadata.MCRObject;
 import org.mycore.pi.MCRGenericPIGenerator;
 import org.mycore.pi.MCRPIGenerator;
 import org.mycore.pi.doi.MCRDigitalObjectIdentifier;
 import org.mycore.pi.exceptions.MCRPersistentIdentifierException;
+import org.mycore.test.MyCoReTest;
 
-public class DitavDOIGeneratorTest extends MCRTestCase {
+@MyCoReTest
+@MCRTestConfiguration(
+    properties = {
+        @MCRTestProperty(key = "MCR.Metadata.Type.mods", string = "true"),
+        @MCRTestProperty(key = "MCR.Metadata.Type.test", string = "true"),
+        @MCRTestProperty(key = "MCR.PI.Generator.Ditav", classNameOf = MCRGenericPIGenerator.class),
+        @MCRTestProperty(key = "MCR.PI.Generator.Ditav.GeneralPattern", string = "10.58137/$1-$2"),
+        @MCRTestProperty(key = "MCR.PI.Generator.Ditav.Type", string = "doi"),
+        @MCRTestProperty(
+            key = "MCR.PI.Generator.Ditav.XPath.1",
+            string = "/mycoreobject/metadata/def.modsContainer/modsContainer/mods:mods/mods:identifier[@type='qedid']|/mycoreobject/metadata/def.modsContainer/modsContainer/mods:mods/mods:relatedItem[@type='host']/mods:identifier[@type='qedid']"
+        ),
+        @MCRTestProperty(
+            key = "MCR.PI.Generator.Ditav.XPath.2",
+            string = "string(number(substring-after(substring-after(/mycoreobject/@ID, '_'), '_')))"
+        )
+    }
+)
+public class DitavDOIGeneratorTest {
 
   @Test
   public void testDOI() throws IOException, JDOMException, MCRPersistentIdentifierException {
@@ -30,7 +49,7 @@ public class DitavDOIGeneratorTest extends MCRTestCase {
       Document doc = new SAXBuilder().build(is);
       MCRObject mcrObject = new MCRObject(doc);
       MCRDigitalObjectIdentifier doi = gen.generate(mcrObject, null);
-      Assert.assertEquals("DOI should match", "10.58137/002-2025-4", doi.asString());
+      Assertions.assertEquals("10.58137/002-2025-4", doi.asString(), "DOI should match");
     }
 
     try (InputStream is = DitavDOIGeneratorTest.class.getClassLoader()
@@ -41,7 +60,7 @@ public class DitavDOIGeneratorTest extends MCRTestCase {
       Document doc = new SAXBuilder().build(is);
       MCRObject mcrObject = new MCRObject(doc);
       MCRDigitalObjectIdentifier doi = gen.generate(mcrObject, null);
-      Assert.assertEquals("DOI should match", "10.58137/002-2025-5", doi.asString());
+      Assertions.assertEquals( "10.58137/002-2025-5", doi.asString(), "DOI should match");
     }
 
     try (InputStream is = DitavDOIGeneratorTest.class.getClassLoader()
@@ -52,26 +71,9 @@ public class DitavDOIGeneratorTest extends MCRTestCase {
       Document doc = new SAXBuilder().build(is);
       MCRObject mcrObject = new MCRObject(doc);
       MCRDigitalObjectIdentifier doi = gen.generate(mcrObject, null);
-      Assert.assertEquals("DOI should match", "10.58137/002-2025-1", doi.asString());
+      Assertions.assertEquals( "10.58137/002-2025-1", doi.asString(), "DOI should match");
     }
 
   }
 
-
-  @Override
-  protected Map<String, String> getTestProperties() {
-    Map<String, String> properties = super.getTestProperties();
-    properties.put("MCR.Metadata.Type.mods", "true");
-
-    properties.put("MCR.PI.Generator.Ditav", MCRGenericPIGenerator.class.getName());
-    properties.put("MCR.PI.Generator.Ditav.GeneralPattern", "10.58137/$1-$2");
-    properties.put("MCR.PI.Generator.Ditav.Type", "doi");
-    properties.put("MCR.PI.Generator.Ditav.XPath.1",
-        "/mycoreobject/metadata/def.modsContainer/modsContainer/mods:mods/mods:identifier[@type='qedid']|/mycoreobject/metadata/def.modsContainer/modsContainer/mods:mods/mods:relatedItem[@type='host']/mods:identifier[@type='qedid']");
-    properties.put("MCR.PI.Generator.Ditav.XPath.2",
-        "string(number(substring-after(substring-after(/mycoreobject/@ID, '_'), '_')))");
-
-
-    return properties;
-  }
 }

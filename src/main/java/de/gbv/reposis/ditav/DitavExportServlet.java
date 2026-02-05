@@ -2,9 +2,9 @@ package de.gbv.reposis.ditav;
 
 import jakarta.servlet.ServletOutputStream;
 import org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream;
+import org.mycore.datamodel.metadata.MCRExpandedObject;
 import org.mycore.datamodel.metadata.MCRMetaEnrichedLinkID;
 import org.mycore.datamodel.metadata.MCRMetadataManager;
-import org.mycore.datamodel.metadata.MCRObject;
 import org.mycore.datamodel.metadata.MCRObjectID;
 import org.mycore.datamodel.niofs.MCRPath;
 import org.mycore.frontend.servlets.MCRServletJob;
@@ -45,7 +45,7 @@ public class DitavExportServlet extends MCRZipServlet {
                     throw new IllegalArgumentException("Only MODS objects can be downloaded");
                 }
 
-                MCRObject object = MCRMetadataManager.retrieveMCRObject(id);
+                MCRExpandedObject object = MCRMetadataManager.retrieveMCRExpandedObject(id);
                 MCRMetaEnrichedLinkID derivateLink = object.getStructure().getDerivates().stream().findFirst()
                         .orElseThrow(() -> new IllegalArgumentException("No derivate found"));
 
