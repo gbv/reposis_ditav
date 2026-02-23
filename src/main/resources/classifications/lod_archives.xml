@@ -8,31 +8,39 @@
   <categories>
     <category ID="bbp">
       <label xml:lang="en" text="BBP" description="Bibliothèque polonaise de Paris" />
+      <label xml:lang="de" text="BBP" description="Bibliothèque polonaise de Paris" />
     </category>
     <category ID="nlrmss">
       <label xml:lang="en" text="NLR Mss" description="National Library of Russia" />
+      <label xml:lang="de" text="NLR Mss" description="National Library of Russia" />
     </category>
     <category ID="avpri">
       <label xml:lang="en" text="AVPRI" description="Archive of Foreign Policy of the Russian Empire" />
+      <label xml:lang="de" text="AVPRI" description="Archive of Foreign Policy of the Russian Empire" />
     </category>
     <category ID="rgia">
       <label xml:lang="en" text="RGIA" description="Russian State Historical Archive" />
+      <label xml:lang="de" text="RGIA" description="Russian State Historical Archive" />
     </category>
     <category ID="niorgb">
-      <label xml:lang="en" text="NIOR RGB"
-        description="" />
+      <label xml:lang="en" text="NIOR RGB" description="National Institute of Russian and East European Studies" />
+      <label xml:lang="de" text="NIOR RGB" description="National Institute of Russian and East European Studies" />
     </category>
     <category ID="rgada">
       <label xml:lang="en" text="RGADA" description="Russian State Archive of Ancient Files" />
+      <label xml:lang="de" text="RGADA" description="Russian State Archive of Ancient Files" />
     </category>
     <category ID="ags">
       <label xml:lang="en" text="AGS" description="General Archive of Simancas" />
+      <label xml:lang="de" text="AGS" description="General Archive of Simancas" />
     </category>
     <category ID="na_russia">
       <label xml:lang="en" text="NA Kew" description="National Archives, Kew" />
+      <label xml:lang="de" text="NA Kew" description="National Archives, Kew" />
     </category>
     <category ID="ahn">
       <label xml:lang="en" text="AHN" description="National Historical Archive" />
+      <label xml:lang="de" text="AHN" description="National Historical Archive" />
     </category>
   </categories>
 </mycoreclass>

@@ -87,6 +87,11 @@
         <label xml:lang="x-hosts" text="standalone edition" />
         <label xml:lang="x-mapping" text="marcgt:official_document diniPublType:other diniPublType2022:SourceMaterial" />
       </category>
+      <category ID="office_records">
+        <label xml:lang="en" text="office records" description="office records" />
+        <label xml:lang="de" text="Amtsunterlagen" description="Amtsunterlagen" />
+        <label xml:lang="fr" text="documents officiels" description="documents officiels" />
+      </category>
       <category ID="other">
         <label xml:lang="de" text="Sonstiges" />
         <label xml:lang="en" text="Other" />
