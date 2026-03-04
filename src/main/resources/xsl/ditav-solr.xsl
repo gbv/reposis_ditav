@@ -17,6 +17,13 @@
         <xsl:value-of select="text()" />
       </field>
     </xsl:for-each>
+
+    <xsl:for-each select="metadata/def.modsContainer/modsContainer/mods:mods/mods:titleInfo[@xml:lang]">
+      <field name="ditav.mods.title.lang.{@xml:lang}">
+        <xsl:value-of select="mods:title" />
+      </field>
+    </xsl:for-each>
+
   </xsl:template>
 
 
