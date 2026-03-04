@@ -37,5 +37,14 @@
       "source": "mods.nameByRole.personal.rcp",
       "dest": "ditav.mods.recipient.facet"
     }
-  } 
+  },
+  {
+    "add-dynamic-field": {
+      "name": "ditav.mods.title.lang.*",
+      "type": "strings",
+      "multiValued": true,
+      "stored": true,
+      "indexed": true
+    }
+  }
 ]
