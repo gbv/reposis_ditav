@@ -18,24 +18,12 @@
     }
   },
   {
-    "add-copy-field": {
-      "source": "mods.author",
-      "dest": "ditav.mods.author.facet"
-    }
-  },
-  {
     "add-field": {
       "name": "ditav.mods.recipient.facet",
       "type": "strings",
       "multiValued": true,
       "stored": true,
       "indexed": true
-    }
-  },
-  {
-    "add-copy-field": {
-      "source": "mods.nameByRole.personal.rcp",
-      "dest": "ditav.mods.recipient.facet"
     }
   },
   {

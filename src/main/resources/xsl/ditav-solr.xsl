@@ -24,6 +24,18 @@
       </field>
     </xsl:for-each>
 
+    <xsl:for-each select="metadata/def.modsContainer/modsContainer/mods:mods/mods:originInfo[@eventType = 'created']/mods:agent[count(mods:role/mods:roleTerm[@authority='marcrelator' and text() = 'aut']) &gt; 0]">
+      <field name="ditav.mods.author.facet">
+        <xsl:value-of select="mods:displayForm" />
+      </field>
+    </xsl:for-each>
+
+    <xsl:for-each select="metadata/def.modsContainer/modsContainer/mods:mods/mods:originInfo[@eventType = 'received']/mods:agent[count(mods:role/mods:roleTerm[@authority='marcrelator' and text() = 'rcp']) &gt; 0]">
+      <field name="ditav.mods.recipient.facet">
+        <xsl:value-of select="mods:displayForm" />
+      </field>
+    </xsl:for-each>
+
   </xsl:template>
 
 
