@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><mycoreobject xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="datamodel-mods.xsd" ID="lod_mods_00014883" version="2025.12.2-SNAPSHOT" label="">
+  <structure>
+
+  </structure>
+  <metadata>
+    <def.modsContainer class="MCRMetaXML" heritable="false" notinherit="true">
+      <modsContainer inherited="0">
+        <mods:mods xmlns:mods="http://www.loc.gov/mods/v3">
+          <mods:genre type="intern" authorityURI="http://www.mycore.org/classifications/mir_genres" valueURI="http://www.mycore.org/classifications/mir_genres#diplomatic_document"/>
+          <mods:titleInfo xml:lang="en" type="translated" xlink:type="simple">
+            <mods:title>Letter from Golitsyn to Grimaldo</mods:title>
+          </mods:titleInfo>
+          <mods:originInfo eventType="created">
+            <mods:agent xlink:type="simple">
+              <mods:displayForm>Golitsyn, Sergei Dmitrievich</mods:displayForm>
+              <mods:namePart type="family">Golitsyn</mods:namePart>
+              <mods:namePart type="given">Sergei Dmitrievich</mods:namePart>
+              <mods:role>
+                <mods:roleTerm authority="marcrelator" type="code">aut</mods:roleTerm>
+              </mods:role>
+              <mods:nameIdentifier type="dante" typeURI="https://uri.gbv.de/terminology/lod/5175d188-5b53-45d6-a69b-1f226c9a99bb">p0318</mods:nameIdentifier>
+            </mods:agent>
+            <mods:place>
+              <mods:placeTerm>Madrid</mods:placeTerm>
+              <mods:placeIdentifier>https://www.geonames.org/3117735</mods:placeIdentifier>
+            </mods:place>
+            <mods:displayDate>10/11/1725 [n.s.]</mods:displayDate>
+          </mods:originInfo>
+          <mods:originInfo eventType="received">
+            <mods:agent xlink:type="simple">
+              <mods:displayForm>Grimaldo, Marquis of, José</mods:displayForm>
+              <mods:namePart type="family">Grimaldo, Marquis of</mods:namePart>
+              <mods:namePart type="given">José</mods:namePart>
+              <mods:role>
+                <mods:roleTerm authority="marcrelator" type="code">rcp</mods:roleTerm>
+              </mods:role>
+              <mods:nameIdentifier type="dante" typeURI="https://uri.gbv.de/terminology/lod/c0b34bcd-1281-41d2-9eba-4562dd902687">p0214</mods:nameIdentifier>
+            </mods:agent>
+          </mods:originInfo>
+          <mods:identifier type="intern">sp_ags_estado_6610_0004</mods:identifier>
+        </mods:mods>
+      </modsContainer>
+    </def.modsContainer>
+  </metadata>
+  <service>
+    <servdates class="MCRMetaISO8601Date">
+      <servdate type="createdate" inherited="0">2026-02-26T00:09:11.081Z</servdate>
+      <servdate type="modifydate" inherited="0">2026-02-26T00:09:11.081Z</servdate>
+      <servdate type="effectivemodifydate" inherited="0">2026-03-01T23:26:32.806Z</servdate>
+    </servdates>
+    <servflags class="MCRMetaLangText">
+      <servflag type="createdby" inherited="0" form="plain">administrator</servflag>
+      <servflag type="modifiedby" inherited="0" form="plain">administrator</servflag>
+    </servflags>
+    <servstates class="MCRMetaClassification">
+      <servstate inherited="0" classid="state" categid="published"/>
+    </servstates>
+  </service>
+</mycoreobject>
