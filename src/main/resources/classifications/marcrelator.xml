@@ -48,7 +48,7 @@
         <label xml:lang="x-miless" text="performer" />
       </category>
       <category ID="sng">
-        <label xml:lang="de" text="Sänger(in)" description="Eine Person oder Institution, die für die vokale Darbietung eines Werkes verantwortlich ist." />
+        <label xml:lang="de" text="Gesang" description="Eine Person oder Institution, die für die vokale Darbietung eines Werkes verantwortlich ist." />
         <label xml:lang="en" text="Singer" description="Use for a person or organization responsible for the vocal performance of a work." />
         <label xml:lang="fr" text="Chanteur" description="Une personne ou une institution responsable de la performance vocale d'une œuvre." />
         <label xml:lang="x-miless" text="singer" />
@@ -138,9 +138,9 @@
         <label xml:lang="x-miless" text="funder" />
       </category>
       <category ID="trl">
-        <label xml:lang="de" text="Übersetzer(in)" description="Eine Person oder Institution, die eine Text von einer Sprache in eine andere, oder eine ältere Form einer Sprache in eine modernere übersetzt." />
-        <label xml:lang="en" text="Translator" description="Use for a person or organization who renders a text from one language into another, or from an older form of a language into the modern form." />
-        <label xml:lang="fr" text="Traducteur" description="Une personne ou une institution qui traduit un texte d'une langue à une autre, ou une forme ancienne d'une langue à une forme plus moderne." />
+        <label xml:lang="de" text="Übersetzung" description="Eine Person oder Institution, die eine Text von einer Sprache in eine andere, oder eine ältere Form einer Sprache in eine modernere übersetzt." />
+        <label xml:lang="en" text="Translation" description="Use for a person or organization who renders a text from one language into another, or from an older form of a language into the modern form." />
+        <label xml:lang="fr" text="Traduction" description="Une personne ou une institution qui traduit un texte d'une langue à une autre, ou une forme ancienne d'une langue à une forme plus moderne." />
         <label xml:lang="x-miless" text="translator" />
       </category>
       <category ID="trc">
