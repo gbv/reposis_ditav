@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<xed:template xmlns:xed="http://www.mycore.de/xeditor" xmlns:mir="http://www.mycore.de/mir">
+<xed:template xmlns:xed="http://www.mycore.de/xeditor"
+  xmlns:mir="http://www.mycore.de/mir">
 
   <xed:modify ref="admin.fields">
     <xed:include ref="gazin_genres" after="sdnb.repeat" />
@@ -45,18 +46,14 @@
     <xed:include ref="identifier.repeated" />
     <xed:include ref="lod_archives" />
     <xed:include ref="shelfmark" />
-    <!--<xed:include
-    ref="link.repeated" />-->
-    <!--<xed:include
-    ref="embargo" />-->
+    <!--<xed:include ref="link.repeated" />-->
+    <!--<xed:include ref="embargo" />-->
     <xed:include ref="rights" />
-    <!--<xed:include
-    ref="copyrightMD" /> -->
+    <!--<xed:include ref="copyrightMD" /> -->
     <!-- <xed:include ref="institutes" /> -->
     <xed:include ref="subject.complex" />
     <!-- <xed:include ref="abstract.repeated" /> -->
-    <!--<xed:include
-    ref="related.item.search.of.all.items" />-->
+    <!--<xed:include ref="related.item.search.of.all.items" />-->
     <xed:include ref="ditav_translation" />
     <xed:include ref="ditav_transcription" />
     <xed:include ref="ditav_translation_available" />
@@ -137,8 +134,7 @@
     </xed:bind>
 
     <xed:include ref="lod.frontend" />
-    <!--<xed:include
-    ref="lod.internal" />-->
+    <xed:include ref="lod.internal" />
     <xed:include ref="lod.edition.bind" />
     <xed:include ref="lod.relItemsearch.edition" />
 
@@ -154,11 +150,11 @@
   </xed:template>
 
   <xed:template id="genres.archival_material">
-    <xed:include ref="ditav.lod.common" />
+    <xed:include ref="ditav.lod.edition" />
   </xed:template>
 
   <xed:template id="genres.autobiography">
-    <xed:include ref="ditav.lod.common" />
+    <xed:include ref="ditav.lod.edition" />
   </xed:template>
 
   <xed:template id="genres.diplomatic_document">
@@ -166,51 +162,51 @@
   </xed:template>
 
   <xed:template id="genres.ego_document">
-    <xed:include ref="ditav.lod.common" />
+    <xed:include ref="ditav.lod.edition" />
   </xed:template>
 
   <xed:template id="genres.fiction">
-    <xed:include ref="ditav.lod.common" />
+    <xed:include ref="ditav.lod.edition" />
   </xed:template>
 
   <xed:template id="genres.financial_document">
-    <xed:include ref="ditav.lod.common" />
+    <xed:include ref="ditav.lod.edition" />
   </xed:template>
 
   <xed:template id="genres.language_exercise">
-    <xed:include ref="ditav.lod.common" />
+    <xed:include ref="ditav.lod.edition" />
   </xed:template>
 
   <xed:template id="genres.legal_document">
-    <xed:include ref="ditav.lod.common" />
+    <xed:include ref="ditav.lod.edition" />
   </xed:template>
 
   <xed:template id="genres.letter">
-    <xed:include ref="ditav.lod.common" />
+    <xed:include ref="ditav.lod.edition" />
   </xed:template>
 
   <xed:template id="genres.official_document">
-    <xed:include ref="ditav.lod.common" />
+    <xed:include ref="ditav.lod.edition" />
   </xed:template>
 
   <xed:template id="genres.other">
-    <xed:include ref="ditav.lod.common" />
+    <xed:include ref="ditav.lod.edition" />
   </xed:template>
 
   <xed:template id="genres.training_guide">
-    <xed:include ref="ditav.lod.common" />
+    <xed:include ref="ditav.lod.edition" />
   </xed:template>
 
   <xed:template id="genres.transfer_document">
-    <xed:include ref="ditav.lod.common" />
+    <xed:include ref="ditav.lod.edition" />
   </xed:template>
 
   <xed:template id="genres.travelogue">
-    <xed:include ref="ditav.lod.common" />
+    <xed:include ref="ditav.lod.edition" />
   </xed:template>
 
   <xed:template id="genres.edition">
-    <xed:include ref="ditav.lod.common" />
+    <xed:include ref="ditav.lod.edition" />
   </xed:template>
 
   <xed:template id="genres.series">
@@ -218,7 +214,7 @@
   </xed:template>
 
   <xed:template id="genres.interview">
-    <xed:include ref="ditav.lod.common" />
+    <xed:include ref="ditav.lod.edition" />
   </xed:template>
 
   <!-- LOD templates -->
@@ -235,15 +231,10 @@
       <!-- Title (Language) -->
       <xed:bind xpath="mods:titleInfo">
         <div class="mir-form-group row align-items-center mb-0 {$xed-validation-marker}">
-          <label
-            class="col-md-3 col-form-label mir-formgroup-label form-label d-flex justify-content-end align-items-center gap-2 text-nowrap pe-3">
+          <label class="col-md-3 col-form-label mir-formgroup-label form-label d-flex justify-content-end align-items-center gap-2 text-nowrap pe-3">
             <xed:output i18n="lod.editor.title.label" />
-            <xed:bind xpath="@xml:lang"
-              initially="en">
-              <select
-                class="form-control form-control-inline lang-select form-select ms-1 flex-grow-1"
-                data-dlang="{$MCR.Metadata.DefaultLang}"
-                data-langs="{$MCR.Metadata.Languages}">
+            <xed:bind xpath="@xml:lang" initially="en">
+              <select class="form-control form-control-inline lang-select form-select ms-1 flex-grow-1" data-dlang="{$MCR.Metadata.DefaultLang}" data-langs="{$MCR.Metadata.Languages}">
                 <xed:choose>
                   <xed:when test="string-length(.) &gt; 0">
                     <option value="{.}" selected="">
@@ -261,8 +252,7 @@
           </label>
           <div class="col-md-6 d-flex align-items-center">
             <xed:bind xpath="mods:title">
-              <input type="text" class="form-control"
-                placeholder="{i18n:mir.editor.title.placeholder}" />
+              <input type="text" class="form-control" placeholder="{i18n:mir.editor.title.placeholder}" />
             </xed:bind>
           </div>
           <div class="col-md-3 text-nowrap">
@@ -274,15 +264,10 @@
       <!-- Translated title (Language) -->
       <xed:repeat xpath="mods:titleInfo[@type='translated']" min="1" max="6">
         <div class="mir-form-group row align-items-center {$xed-validation-marker}">
-          <label
-            class="col-md-3 col-form-label mir-formgroup-label form-label d-flex justify-content-end align-items-center gap-2 text-nowrap pe-3">
+          <label class="col-md-3 col-form-label mir-formgroup-label form-label d-flex justify-content-end align-items-center gap-2 text-nowrap pe-3">
             <xed:output i18n="lod.editor.title-translated.label" />
-            <xed:bind xpath="@xml:lang"
-              initially="en">
-              <select
-                class="form-control form-control-inline lang-select form-select ms-1 flex-grow-1"
-                data-dlang="{$MCR.Metadata.DefaultLang}"
-                data-langs="{$MCR.Metadata.Languages}">
+            <xed:bind xpath="@xml:lang" initially="en">
+              <select class="form-control form-control-inline lang-select form-select ms-1 flex-grow-1" data-dlang="{$MCR.Metadata.DefaultLang}" data-langs="{$MCR.Metadata.Languages}">
                 <xed:choose>
                   <xed:when test="string-length(.) &gt; 0">
                     <option value="{.}" selected="">
@@ -300,8 +285,7 @@
           </label>
           <div class="col-md-6 d-flex align-items-center">
             <xed:bind xpath="mods:title">
-              <input type="text" class="form-control"
-                placeholder="{i18n:lod.editor.title-in-language.placeholder}" />
+              <input type="text" class="form-control" placeholder="{i18n:lod.editor.title-in-language.placeholder}" />
             </xed:bind>
           </div>
           <div class="col-md-3 text-nowrap">
@@ -314,54 +298,39 @@
       <xed:bind xpath="mods:originInfo[@eventType='created']">
 
         <xed:repeat xpath="mods:agent[@type='personal']" min="0" max="10">
-          <div
-            class="mir-form-group row align-items-center {$xed-validation-marker} border rounded p-3 mb-3">
+          <div class="mir-form-group row align-items-center {$xed-validation-marker} mb-3">
             <xed:bind xpath="mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']">
               <input type="hidden" value="aut" />
             </xed:bind>
-            <label
-              class="col-md-3 col-form-label mir-formgroup-label form-label d-flex justify-content-end align-items-center gap-2 text-nowrap pe-3">
+            <label class="col-md-3 col-form-label mir-formgroup-label form-label d-flex justify-content-end align-items-center gap-2 text-nowrap pe-3">
               <xed:output i18n="lod.editor.originInfo.created.author" />
             </label>
             <div class="col-md-6 d-flex align-items-center">
               <xed:bind xpath="mods:displayForm">
-                <input type="text" class="form-control"
-                  placeholder="{i18n:mir.editor.title.placeholder}" />
+                <input type="text" class="form-control" placeholder="{i18n:mir.editor.title.placeholder}" />
               </xed:bind>
             </div>
             <div class="col-md-3 text-nowrap">
               <mir:help-pmud help-text="{i18n:lod.editor.agent.displayForm.help}" pmud="true" />
             </div>
-            <div
-              class="col-md-3 col-form-label mir-formgroup-label form-label d-flex justify-content-end align-items-center gap-2 text-nowrap pe-3"></div>
+            <div class="col-md-3 col-form-label mir-formgroup-label form-label d-flex justify-content-end align-items-center gap-2 text-nowrap pe-3"></div>
             <div class="col-md-6 align-items-center">
               <details>
                 <summary class="btn btn-outline-secondary btn-sm">
                   <xed:output i18n="lod.editor.agent.details" />
                 </summary>
                 <div class="mt-2 border rounded p-3">
-                  <mir:textfield xpath="mods:namePart[@type='family']"
-                    label="mir.editor.subject.name.editor.namePart.type.family"
-                    help-text="{i18n:mir.help.name.family}" />
+                  <mir:textfield xpath="mods:namePart[@type='family']" label="mir.editor.subject.name.editor.namePart.type.family" help-text="{i18n:mir.help.name.family}" />
 
-                  <mir:textfield xpath="mods:namePart[@type='given']"
-                    label="mir.editor.subject.name.editor.namePart.type.given"
-                    help-text="{i18n:mir.help.name.given}" />
+                  <mir:textfield xpath="mods:namePart[@type='given']" label="mir.editor.subject.name.editor.namePart.type.given" help-text="{i18n:mir.help.name.given}" />
 
-                  <mir:textfield xpath="mods:nameIdentifier[@type='dante']"
-                    label="lod.editor.agent.nameIdentifier"
-                    help-text="{i18n:lod.editor.agent.nameIdentifier.help}"
-                    placeholder="{i18n:lod.editor.agent.nameIdentifier.uuid}" />
+                  <mir:textfield xpath="mods:nameIdentifier[@type='dante']" label="lod.editor.agent.nameIdentifier" help-text="{i18n:lod.editor.agent.nameIdentifier.help}" placeholder="{i18n:lod.editor.agent.nameIdentifier.uuid}" />
 
-                  <xed:bind xpath="mods:nameIdentifier[@type='dante']/@typeURI"
-                    initially="https://uri.gbv.de/terminology/lod_persons/">
+                  <xed:bind xpath="mods:nameIdentifier[@type='dante']/@typeURI" initially="https://uri.gbv.de/terminology/lod_persons/">
                     <input type="hidden" />
                   </xed:bind>
 
-                  <mir:textfield xpath="mods:description"
-                    label="lod.editor.agent.description"
-                    help-text="{i18n:lod.editor.agent.description.help}"
-                    placeholder="{i18n:lod.editor.agent.description.placeholder}" />
+                  <mir:textfield xpath="mods:description" label="lod.editor.agent.description" help-text="{i18n:lod.editor.agent.description.help}" placeholder="{i18n:lod.editor.agent.description.placeholder}" />
                 </div>
               </details>
             </div>
@@ -370,50 +339,34 @@
         </xed:repeat>
 
         <!-- Date of creation -->
-        <mir:textfield xpath="mods:displayDate"
-          label="lod.editor.originInfo.created.displayDate"
-          help-text="{i18n:lod.editor.originInfo.created.displayDate.help}"
-          placeholder="{i18n:lod.editor.originInfo.created.displayDate.placeholder}" />
+        <mir:textfield xpath="mods:displayDate" label="lod.editor.originInfo.created.displayDate" help-text="{i18n:lod.editor.originInfo.created.displayDate.help}" placeholder="{i18n:lod.editor.originInfo.created.displayDate.placeholder}" />
 
         <!-- Place of creation -->
         <xed:repeat xpath="mods:place" min="0" max="10">
 
-          <div
-            class="mir-form-group row align-items-center {$xed-validation-marker} border rounded p-3 mb-3">
-            <label
-              class="col-md-3 col-form-label mir-formgroup-label form-label d-flex justify-content-end align-items-center gap-2 text-nowrap pe-3">
+          <div class="mir-form-group row align-items-center {$xed-validation-marker} mb-3">
+            <label class="col-md-3 col-form-label mir-formgroup-label form-label d-flex justify-content-end align-items-center gap-2 text-nowrap pe-3">
               <xed:output i18n="lod.editor.originInfo.created.placeTerm" />
             </label>
             <div class="col-md-6 d-flex align-items-center">
               <xed:bind xpath="mods:placeTerm">
-                <input type="text" class="form-control"
-                  placeholder="{i18n:lod.editor.originInfo.created.placeTerm.placeholder}" />
+                <input type="text" class="form-control" placeholder="{i18n:lod.editor.originInfo.created.placeTerm.placeholder}" />
               </xed:bind>
             </div>
             <div class="col-md-3 text-nowrap">
-              <mir:help-pmud help-text="{i18n:lod.editor.originInfo.created.placeTerm.help}"
-                pmud="true" />
+              <mir:help-pmud help-text="{i18n:lod.editor.originInfo.created.placeTerm.help}" pmud="true" />
             </div>
 
-            <div
-              class="col-md-3 col-form-label mir-formgroup-label form-label d-flex justify-content-end align-items-center gap-2 text-nowrap pe-3"></div>
+            <div class="col-md-3 col-form-label mir-formgroup-label form-label d-flex justify-content-end align-items-center gap-2 text-nowrap pe-3"></div>
             <div class="col-md-6 align-items-center">
               <details>
                 <summary class="btn btn-outline-secondary btn-sm">
                   <xed:output i18n="lod.editor.agent.details" />
                 </summary>
                 <div class="mt-2 border rounded p-3">
-                  <mir:textfield
-                    xpath="mods:placeIdentifier"
-                    label="lod.editor.originInfo.created.placeIdentifier"
-                    help-text="{i18n:lod.editor.originInfo.created.placeIdentifier.help}"
-                    placeholder="{i18n:lod.editor.originInfo.created.placeIdentifier.placeholder}" />
+                  <mir:textfield xpath="mods:placeIdentifier" label="lod.editor.originInfo.created.placeIdentifier" help-text="{i18n:lod.editor.originInfo.created.placeIdentifier.help}" placeholder="{i18n:lod.editor.originInfo.created.placeIdentifier.placeholder}" />
 
-                  <mir:textfield
-                    xpath="mods:cartographics/coordinates"
-                    label="lod.editor.originInfo.created.coordinates"
-                    help-text="{i18n:mir.help.place}"
-                    placeholder="{i18n:lod.editor.originInfo.created.coordinates.placeholder}" />
+                  <mir:textfield xpath="mods:cartographics/coordinates" label="lod.editor.originInfo.created.coordinates" help-text="{i18n:mir.help.place}" placeholder="{i18n:lod.editor.originInfo.created.coordinates.placeholder}" />
                 </div>
               </details>
             </div>
@@ -426,54 +379,39 @@
       <xed:bind xpath="mods:originInfo[@eventType='received']">
 
         <xed:repeat xpath="mods:agent[@type='personal']" min="0" max="10">
-          <div
-            class="mir-form-group row align-items-center {$xed-validation-marker} border rounded p-3 mb-3">
+          <div class="mir-form-group row align-items-center {$xed-validation-marker} mb-3">
             <xed:bind xpath="mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']">
               <input type="hidden" value="rcp" />
             </xed:bind>
-            <label
-              class="col-md-3 col-form-label mir-formgroup-label form-label d-flex justify-content-end align-items-center gap-2 text-nowrap pe-3">
+            <label class="col-md-3 col-form-label mir-formgroup-label form-label d-flex justify-content-end align-items-center gap-2 text-nowrap pe-3">
               <xed:output i18n="lod.editor.originInfo.received.recipient" />
             </label>
             <div class="col-md-6 d-flex align-items-center">
               <xed:bind xpath="mods:displayForm">
-                <input type="text" class="form-control"
-                  placeholder="{i18n:mir.editor.title.placeholder}" />
+                <input type="text" class="form-control" placeholder="{i18n:mir.editor.title.placeholder}" />
               </xed:bind>
             </div>
             <div class="col-md-3 text-nowrap">
               <mir:help-pmud help-text="{i18n:lod.editor.agent.displayForm.help}" pmud="true" />
             </div>
-            <div
-              class="col-md-3 col-form-label mir-formgroup-label form-label d-flex justify-content-end align-items-center gap-2 text-nowrap pe-3"></div>
+            <div class="col-md-3 col-form-label mir-formgroup-label form-label d-flex justify-content-end align-items-center gap-2 text-nowrap pe-3"></div>
             <div class="col-md-6 align-items-center">
               <details>
                 <summary class="btn btn-outline-secondary btn-sm">
                   <xed:output i18n="lod.editor.agent.details" />
                 </summary>
                 <div class="mt-2 border rounded p-3">
-                  <mir:textfield xpath="mods:namePart[@type='family']"
-                    label="mir.editor.subject.name.editor.namePart.type.family"
-                    help-text="{i18n:mir.help.name.family}" />
+                  <mir:textfield xpath="mods:namePart[@type='family']" label="mir.editor.subject.name.editor.namePart.type.family" help-text="{i18n:mir.help.name.family}" />
 
-                  <mir:textfield xpath="mods:namePart[@type='given']"
-                    label="mir.editor.subject.name.editor.namePart.type.given"
-                    help-text="{i18n:mir.help.name.given}" />
+                  <mir:textfield xpath="mods:namePart[@type='given']" label="mir.editor.subject.name.editor.namePart.type.given" help-text="{i18n:mir.help.name.given}" />
 
-                  <mir:textfield xpath="mods:nameIdentifier[@type='dante']"
-                    label="lod.editor.agent.nameIdentifier"
-                    help-text="{i18n:lod.editor.agent.nameIdentifier.help}"
-                    placeholder="{i18n:lod.editor.agent.nameIdentifier.uuid}" />
+                  <mir:textfield xpath="mods:nameIdentifier[@type='dante']" label="lod.editor.agent.nameIdentifier" help-text="{i18n:lod.editor.agent.nameIdentifier.help}" placeholder="{i18n:lod.editor.agent.nameIdentifier.uuid}" />
 
-                  <xed:bind xpath="mods:nameIdentifier[@type='dante']/@typeURI"
-                    initially="https://uri.gbv.de/terminology/lod_persons/">
+                  <xed:bind xpath="mods:nameIdentifier[@type='dante']/@typeURI" initially="https://uri.gbv.de/terminology/lod_persons/">
                     <input type="hidden" />
                   </xed:bind>
 
-                  <mir:textfield xpath="mods:description"
-                    label="lod.editor.agent.description"
-                    help-text="{i18n:lod.editor.agent.description.help}"
-                    placeholder="{i18n:lod.editor.agent.description.placeholder}" />
+                  <mir:textfield xpath="mods:description" label="lod.editor.agent.description" help-text="{i18n:lod.editor.agent.description.help}" placeholder="{i18n:lod.editor.agent.description.placeholder}" />
                 </div>
               </details>
             </div>
@@ -482,50 +420,34 @@
         </xed:repeat>
 
         <!-- Date of reception -->
-        <mir:textfield xpath="mods:displayDate"
-          label="lod.editor.originInfo.received.displayDate"
-          help-text="{i18n:lod.editor.originInfo.received.displayDate.help}"
-          placeholder="{i18n:lod.editor.originInfo.received.displayDate.placeholder}" />
+        <mir:textfield xpath="mods:displayDate" label="lod.editor.originInfo.received.displayDate" help-text="{i18n:lod.editor.originInfo.received.displayDate.help}" placeholder="{i18n:lod.editor.originInfo.received.displayDate.placeholder}" />
 
         <!-- Place of reception -->
         <xed:repeat xpath="mods:place" min="0" max="10">
 
-          <div
-            class="mir-form-group row align-items-center {$xed-validation-marker} border rounded p-3 mb-3">
-            <label
-              class="col-md-3 col-form-label mir-formgroup-label form-label d-flex justify-content-end align-items-center gap-2 text-nowrap pe-3">
+          <div class="mir-form-group row align-items-center {$xed-validation-marker} mb-3">
+            <label class="col-md-3 col-form-label mir-formgroup-label form-label d-flex justify-content-end align-items-center gap-2 text-nowrap pe-3">
               <xed:output i18n="lod.editor.originInfo.received.placeTerm" />
             </label>
             <div class="col-md-6 d-flex align-items-center">
               <xed:bind xpath="mods:placeTerm">
-                <input type="text" class="form-control"
-                  placeholder="{i18n:lod.editor.originInfo.received.placeTerm.placeholder}" />
+                <input type="text" class="form-control" placeholder="{i18n:lod.editor.originInfo.received.placeTerm.placeholder}" />
               </xed:bind>
             </div>
             <div class="col-md-3 text-nowrap">
-              <mir:help-pmud help-text="{i18n:lod.editor.originInfo.received.placeTerm.help}"
-                pmud="true" />
+              <mir:help-pmud help-text="{i18n:lod.editor.originInfo.received.placeTerm.help}" pmud="true" />
             </div>
 
-            <div
-              class="col-md-3 col-form-label mir-formgroup-label form-label d-flex justify-content-end align-items-center gap-2 text-nowrap pe-3"></div>
+            <div class="col-md-3 col-form-label mir-formgroup-label form-label d-flex justify-content-end align-items-center gap-2 text-nowrap pe-3"></div>
             <div class="col-md-6 align-items-center">
               <details>
                 <summary class="btn btn-outline-secondary btn-sm">
                   <xed:output i18n="lod.editor.agent.details" />
                 </summary>
                 <div class="mt-2 border rounded p-3">
-                  <mir:textfield
-                    xpath="mods:placeIdentifier"
-                    label="lod.editor.originInfo.received.placeIdentifier"
-                    help-text="{i18n:lod.editor.originInfo.received.placeIdentifier.help}"
-                    placeholder="{i18n:lod.editor.originInfo.received.placeIdentifier.placeholder}" />
+                  <mir:textfield xpath="mods:placeIdentifier" label="lod.editor.originInfo.received.placeIdentifier" help-text="{i18n:lod.editor.originInfo.received.placeIdentifier.help}" placeholder="{i18n:lod.editor.originInfo.received.placeIdentifier.placeholder}" />
 
-                  <mir:textfield
-                    xpath="mods:cartographics/coordinates"
-                    label="lod.editor.originInfo.received.coordinates"
-                    help-text="{i18n:mir.help.place}"
-                    placeholder="{i18n:lod.editor.originInfo.received.coordinates.placeholder}" />
+                  <mir:textfield xpath="mods:cartographics/coordinates" label="lod.editor.originInfo.received.coordinates" help-text="{i18n:mir.help.place}" placeholder="{i18n:lod.editor.originInfo.received.coordinates.placeholder}" />
                 </div>
               </details>
             </div>
@@ -544,82 +466,20 @@
       <xed:include ref="lod_document_classification" />
 
       <!-- Topic -->
-      <mir:textfield
-        xpath="mods:subject/mods:topic"
-        label="lod.editor.subject.topic.label" help-text="{i18n:lod.editor.subject.topic.help}" />
-
-      <!-- Cited persons -->
-
-
-      <!-- Cited institutions -->
-      <xed:repeat xpath="mods:subject" min="0" max="20">
-        <xed:repeat xpath="mods:name" min="1" max="1">
-          <div
-            class="mir-form-group row align-items-center {$xed-validation-marker} border rounded p-3 mb-3">
-            <label class="col-md-3 col-form-label">
-              <xed:bind xpath="@type">
-                <select class="form-control form-select" data-mapping="lod_subject_type">
-                  <option value="">
-                    <xed:output i18n="lod.editor.subject.type.label" />
-                  </option>
-                  <option value="personal">
-                    <xed:output i18n="lod.editor.subject.type.person" />
-                  </option>
-                  <option value="corporate">
-                    <xed:output i18n="lod.editor.subject.type.corporate" />
-                  </option>
-                </select>
-              </xed:bind>
-            </label>
-            <xed:bind xpath="mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']">
-              <input type="hidden" value="asn" />
+      <xed:repeat xpath="mods:subject" min="1" max="25">
+        <div class="mir-form-group row {$xed-validation-marker}">
+          <label class="col-md-3 col-form-label text-end form-label">
+            <xed:output i18n="lod.editor.subject.topic.label" />
+          </label>
+          <div class="col-md-6">
+            <xed:bind xpath="mods:topic">
+              <input type="text" class="form-control" placeholder="{i18n:lod.editor.subject.topic.placeholder}" />
             </xed:bind>
-            <div class="col-md-6 d-flex align-items-center">
-              <xed:bind xpath="mods:displayForm">
-                <input type="text" class="form-control"
-                  placeholder="{i18n:mir.editor.title.placeholder}" />
-              </xed:bind>
-            </div>
-
-            <div class="col-md-3 text-nowrap">
-              <mir:help-pmud help-text="{i18n:lod.editor.agent.displayForm.help}" pmud="true" />
-            </div>
-
-            <div
-              class="col-md-3 col-form-label mir-formgroup-label form-label d-flex justify-content-end align-items-center gap-2 text-nowrap pe-3"></div>
-            <div class="col-md-6 align-items-center">
-              <details>
-                <summary class="btn btn-outline-secondary btn-sm">
-                  <xed:output i18n="lod.editor.agent.details" />
-                </summary>
-                <div class="mt-2 border rounded p-3">
-                  <mir:textfield xpath="mods:namePart[@type='family']"
-                    label="mir.editor.subject.name.editor.namePart.type.family"
-                    help-text="{i18n:mir.help.name.family}" />
-
-                  <mir:textfield xpath="mods:namePart[@type='given']"
-                    label="mir.editor.subject.name.editor.namePart.type.given"
-                    help-text="{i18n:mir.help.name.given}" />
-
-                  <mir:textfield xpath="mods:nameIdentifier[@type='dante']"
-                    label="lod.editor.agent.nameIdentifier"
-                    help-text="{i18n:lod.editor.agent.nameIdentifier.help}"
-                    placeholder="{i18n:lod.editor.agent.nameIdentifier.uuid}" />
-
-                  <xed:bind xpath="mods:nameIdentifier[@type='dante']/@typeURI"
-                    initially="https://uri.gbv.de/terminology/lod_persons/">
-                    <input type="hidden" />
-                  </xed:bind>
-
-                  <mir:textfield xpath="mods:description"
-                    label="lod.editor.agent.description"
-                    help-text="{i18n:lod.editor.agent.description.help}"
-                    placeholder="{i18n:lod.editor.agent.description.placeholder}" />
-                </div>
-              </details>
-            </div>
           </div>
-        </xed:repeat>
+          <div class="col-md-3">
+            <mir:help-pmud help-text="{i18n:lod.editor.subject.topic.help}" pmud="false" />
+          </div>
+        </div>
       </xed:repeat>
 
 
@@ -627,25 +487,17 @@
       <xed:include ref="ditav_translation" />
 
       <!-- Comment -->
-      <mir:textfield xpath="mods:note[@type='source_note']" label="lod.editor.note.comment.label"
-        help-text="{i18n:lod.editor.note.comment.help}"
-        placeholder="{i18n:lod.editor.note.comment.placeholder}" />
+      <mir:textfield xpath="mods:note[@type='source_note']" label="lod.editor.note.comment.label" help-text="{i18n:lod.editor.note.comment.help}" placeholder="{i18n:lod.editor.note.comment.placeholder}" />
 
       <!-- Comment on language -->
-      <mir:textfield xpath="mods:note[@type='language']" label="lod.editor.note.language.label"
-        help-text="{i18n:lod.editor.note.language.help}"
-        placeholder="{i18n:lod.editor.note.language.placeholder}" />
+      <mir:textfield xpath="mods:note[@type='language']" label="lod.editor.note.language.label" help-text="{i18n:lod.editor.note.language.help}" placeholder="{i18n:lod.editor.note.language.placeholder}" />
 
 
       <!-- Original or copy -->
-      <mir:textfield xpath="mods:note[@type='original_or_copy']"
-        label="lod.editor.note.originalOrCopy.label"
-        help-text="{i18n:lod.editor.note.originalOrCopy.help}"
-        placeholder="{i18n:lod.editor.note.originalOrCopy.placeholder}" />
+      <mir:textfield xpath="mods:note[@type='original_or_copy']" label="lod.editor.note.originalOrCopy.label" help-text="{i18n:lod.editor.note.originalOrCopy.help}" placeholder="{i18n:lod.editor.note.originalOrCopy.placeholder}" />
 
       <!-- Number of folios in the record -->
-      <mir:textfield xpath="mods:physicalDescription/mods:extent" label="lod.editor.extent.label"
-        help-text="{i18n:lod.editor.extent.help}" placeholder="{i18n:lod.editor.extent.placeholder}" />
+      <mir:textfield xpath="mods:physicalDescription/mods:extent" label="lod.editor.extent.label" help-text="{i18n:lod.editor.extent.help}" placeholder="{i18n:lod.editor.extent.placeholder}" />
 
       <xed:include ref="lod_archives" />
 
@@ -656,24 +508,15 @@
   </xed:template>
 
   <xed:template id="lod.internal">
-    <fieldset>
-      <legend class="mir-fieldset-legend">
+    <div class="border rounded p-3 mb-4">
+      <h2>
         <xed:output i18n="lod.editor.section.internal" />
-      </legend>
-      <xed:include ref="genre" />
-      <xed:include ref="originInfo.agents.received" />
-      <xed:include ref="ditav_translation" after="comment.complex" />
-      <xed:include ref="ditav_transcription" after="ditav_translation" />
-      <xed:include ref="ditav_translation_available" after="ditav_transcription" />
-      <xed:include ref="ditav_scan_available" after="ditav_transcription" />
-      <xed:include ref="note.complex" />
-      <xed:include ref="identifier.managed" />
-      <xed:include ref="identifier.other" />
-      <xed:include ref="link.repeated" />
+      </h2>
+      <xed:include ref="ditav_transcription" />
+      <xed:include ref="ditav_translation_available" />
+      <xed:include ref="ditav_scan_available" />
       <xed:include ref="rights" />
-      <xed:include ref="comment.complex" />
-      <xed:include ref="related.item.other.search.of.all.items" />
-    </fieldset>
+    </div>
   </xed:template>
 
   <xed:template id="genre.base">
@@ -695,9 +538,7 @@
   <xed:template id="title.original">
     <xed:bind xpath="mods:titleInfo">
       <div class="mir-fieldset-content">
-        <mir:textfield xpath="mods:title" label="mir.title.type.original"
-          placeholder="{i18n:mir.placeholder.title.main}" help-text="{i18n:mir.help.title}"
-          class="required" required="true" required-i18n="mir.validation.title" />
+        <mir:textfield xpath="mods:title" label="mir.title.type.original" placeholder="{i18n:mir.placeholder.title.main}" help-text="{i18n:mir.help.title}" class="required" required="true" required-i18n="mir.validation.title" />
       </div>
     </xed:bind>
   </xed:template>
@@ -713,8 +554,7 @@
             <div class="row g-2 align-items-center">
               <div class="col-8">
                 <xed:bind xpath="mods:title">
-                  <input type="text" class="form-control"
-                    placeholder="{i18n:mir.placeholder.title.main}" />
+                  <input type="text" class="form-control" placeholder="{i18n:mir.placeholder.title.main}" />
                 </xed:bind>
               </div>
               <div class="col-4">
@@ -743,8 +583,7 @@
             <div class="row g-2 align-items-center">
               <div class="col-8">
                 <xed:bind xpath="mods:title">
-                  <input type="text" class="form-control"
-                    placeholder="{i18n:mir.placeholder.title.translated}" />
+                  <input type="text" class="form-control" placeholder="{i18n:mir.placeholder.title.translated}" />
                 </xed:bind>
               </div>
               <div class="col-4">
@@ -773,8 +612,7 @@
             </label>
             <div class="col-md-6">
               <xed:bind xpath="mods:title">
-                <input type="text" class="form-control"
-                  placeholder="{i18n:mir.placeholder.title.translated}" />
+                <input type="text" class="form-control" placeholder="{i18n:mir.placeholder.title.translated}" />
               </xed:bind>
             </div>
             <mir:help-pmud help-text="{i18n:mir.help.sdnb}" pmud="true" />
@@ -799,11 +637,11 @@
   <!--SDNB
   only optional -->
   <xed:template id="sdnb.repeat.optional">
-    <xed:repeat xpath="mods:classification[@authority='sdnb'][@displayLabel='sdnb']" min="1"
-      max="10" method="build">
-      <div class="form-group row {$xed-validation-marker}">
+    <xed:repeat xpath="mods:classification[@authority='sdnb'][@displayLabel='sdnb']" min="1" max="10" method="build">
+      <div class="mir-form-group row {$xed-validation-marker}">
         <label class="col-md-3 col-form-label text-right">
-          <xed:output i18n="editor.search.mir.sdnb" /> : </label>
+          <xed:output i18n="editor.search.mir.sdnb" />
+ : </label>
         <div class="col-md-6">
           <select class="form-control form-control-inline mir-form__js-select--large">
             <option value="">
@@ -818,9 +656,8 @@
   </xed:template>
 
   <xed:template id="ditav_translation">
-    <xed:bind
-      xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/translation'][@displayLabel='translation']/@valueURIxEditor">
-      <div class="form-group row {$xed-validation-marker}">
+    <xed:bind xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/translation'][@displayLabel='translation']/@valueURIxEditor">
+      <div class="mir-form-group row {$xed-validation-marker}">
         <label class="col-md-3 col-form-label text-end form-label">
           <xed:output i18n="ditav.form.translation.label" />
         </label>
@@ -838,9 +675,8 @@
   </xed:template>
 
   <xed:template id="ditav_transcription">
-    <xed:bind
-      xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/transcription'][@displayLabel='transcription']/@valueURIxEditor">
-      <div class="form-group row {$xed-validation-marker}">
+    <xed:bind xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/transcription'][@displayLabel='transcription']/@valueURIxEditor">
+      <div class="mir-form-group row {$xed-validation-marker}">
         <label class="col-md-3 col-form-label text-end form-label">
           <xed:output i18n="ditav.form.transcription.label" />
         </label>
@@ -849,8 +685,7 @@
             <option value="">
               <xed:output i18n="mir.select.optional" />
             </option>
-            <xed:include
-              uri="xslStyle:items2options:classification:editor:-1:children:transcription" />
+            <xed:include uri="xslStyle:items2options:classification:editor:-1:children:transcription" />
           </select>
         </div>
         <mir:help-pmud help-text="{i18n:ditav.form.transcription.help}" pmud="false" />
@@ -859,9 +694,8 @@
   </xed:template>
 
   <xed:template id="ditav_translation_available">
-    <xed:bind
-      xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/translation_available'][@displayLabel='translation_available']/@valueURIxEditor">
-      <div class="form-group row {$xed-validation-marker}">
+    <xed:bind xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/translation_available'][@displayLabel='translation_available']/@valueURIxEditor">
+      <div class="mir-form-group row {$xed-validation-marker}">
         <label class="col-md-3 col-form-label text-end form-label">
           <xed:output i18n="ditav.form.translation_available.label" />
         </label>
@@ -870,8 +704,7 @@
             <option value="">
               <xed:output i18n="mir.select.optional" />
             </option>
-            <xed:include
-              uri="xslStyle:items2options:classification:editor:-1:children:translation_available" />
+            <xed:include uri="xslStyle:items2options:classification:editor:-1:children:translation_available" />
           </select>
         </div>
         <mir:help-pmud help-text="{i18n:ditav.form.translation_available.help}" pmud="false" />
@@ -880,9 +713,8 @@
   </xed:template>
 
   <xed:template id="ditav_scan_available">
-    <xed:bind
-      xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/scan_available'][@displayLabel='scan_available']/@valueURIxEditor">
-      <div class="form-group row {$xed-validation-marker}">
+    <xed:bind xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/scan_available'][@displayLabel='scan_available']/@valueURIxEditor">
+      <div class="mir-form-group row {$xed-validation-marker}">
         <label class="col-md-3 col-form-label text-end form-label">
           <xed:output i18n="ditav.form.scan_available.label" />
         </label>
@@ -891,8 +723,7 @@
             <option value="">
               <xed:output i18n="mir.select.optional" />
             </option>
-            <xed:include
-              uri="xslStyle:items2options:classification:editor:-1:children:scan_available" />
+            <xed:include uri="xslStyle:items2options:classification:editor:-1:children:scan_available" />
           </select>
         </div>
         <mir:help-pmud help-text="{i18n:ditav.form.scan_available.help}" pmud="false" />
@@ -901,9 +732,8 @@
   </xed:template>
 
   <xed:template id="gazin_genres">
-    <xed:bind
-      xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/gazin_genres'][@displayLabel='gazin_genres']/@valueURIxEditor">
-      <div class="form-group row {$xed-validation-marker}">
+    <xed:bind xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/gazin_genres'][@displayLabel='gazin_genres']/@valueURIxEditor">
+      <div class="mir-form-group row {$xed-validation-marker}">
         <label class="col-md-3 col-form-label text-right">
           <xed:output i18n="gazin_genre.label" />
         </label>
@@ -921,9 +751,8 @@
   </xed:template>
 
   <xed:template id="lod_archives">
-    <xed:bind
-      xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/lod_archives'][@displayLabel='lod_archives']/@valueURIxEditor">
-      <div class="form-group row {$xed-validation-marker}">
+    <xed:bind xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/lod_archives'][@displayLabel='lod_archives']/@valueURIxEditor">
+      <div class="mir-form-group row {$xed-validation-marker}">
         <label class="col-md-3 col-form-label text-end form-label">
           <xed:output i18n="lod_archives.label" />
         </label>
@@ -958,9 +787,8 @@
   </xed:template>
 
   <xed:template id="lod_document_classification">
-    <xed:bind
-      xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/lod_document_classification'][@displayLabel='lod_document_classification']/@valueURIxEditor">
-      <div class="form-group row {$xed-validation-marker}">
+    <xed:bind xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/lod_document_classification'][@displayLabel='lod_document_classification']/@valueURIxEditor">
+      <div class="mir-form-group row {$xed-validation-marker}">
         <label class="col-md-3 col-form-label text-end form-label">
           <xed:output i18n="lod_document_classification.subtype.label" />
         </label>
@@ -969,8 +797,7 @@
             <option value="">
               <xed:output i18n="mir.select.optional" />
             </option>
-            <xed:include
-              uri="xslStyle:items2options:classification:editor:-1:children:lod_document_classification" />
+            <xed:include uri="xslStyle:items2options:classification:editor:-1:children:lod_document_classification" />
           </select>
         </div>
         <mir:help-pmud help-text="{i18n:lod_document_classification.help}" pmud="false" />
@@ -979,11 +806,9 @@
   </xed:template>
 
   <xed:template id="koloe_document_classification">
-    <xed:repeat
-      xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/koloe_document_classification'][@displayLabel='koloe_document_classification']"
-      min="1">
+    <xed:repeat xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/koloe_document_classification'][@displayLabel='koloe_document_classification']" min="1">
       <xed:bind xpath="@valueURIxEditor">
-        <div class="form-group row {$xed-validation-marker}">
+        <div class="mir-form-group row {$xed-validation-marker}">
           <label class="col-md-3 col-form-label">
             <xed:output i18n="koloe_document_classification.label" />
           </label>
@@ -992,8 +817,7 @@
               <option value="">
                 <xed:output i18n="mir.select.optional" />
               </option>
-              <xed:include
-                uri="xslStyle:items2options:classification:editor:-1:children:koloe_document_classification" />
+              <xed:include uri="xslStyle:items2options:classification:editor:-1:children:koloe_document_classification" />
             </select>
           </div>
           <mir:help-pmud help-text="{i18n:koloe_document_classification.help}" pmud="true" />
@@ -1003,11 +827,9 @@
   </xed:template>
 
   <xed:template id="koloe_continents">
-    <xed:repeat
-      xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/koloe_continents'][@displayLabel='koloe_continents']"
-      min="1">
+    <xed:repeat xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/koloe_continents'][@displayLabel='koloe_continents']" min="1">
       <xed:bind xpath="@valueURIxEditor">
-        <div class="form-group row {$xed-validation-marker}">
+        <div class="mir-form-group row {$xed-validation-marker}">
           <label class="col-md-3 col-form-label">
             <xed:output i18n="koloe_continents.label" />
           </label>
@@ -1016,8 +838,7 @@
               <option value="">
                 <xed:output i18n="mir.select.optional" />
               </option>
-              <xed:include
-                uri="xslStyle:items2options:classification:editor:-1:children:koloe_continents" />
+              <xed:include uri="xslStyle:items2options:classification:editor:-1:children:koloe_continents" />
             </select>
           </div>
           <mir:help-pmud help-text="{i18n:koloe_continents.help}" pmud="true" />
@@ -1027,11 +848,9 @@
   </xed:template>
 
   <xed:template id="koloe_period">
-    <xed:repeat
-      xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/koloe_period'][@displayLabel='koloe_period']"
-      min="1">
+    <xed:repeat xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/koloe_period'][@displayLabel='koloe_period']" min="1">
       <xed:bind xpath="@valueURIxEditor">
-        <div class="form-group row {$xed-validation-marker}">
+        <div class="mir-form-group row {$xed-validation-marker}">
           <label class="col-md-3 col-form-label text-right">
             <xed:output i18n="koloe_period.label" />
           </label>
@@ -1040,8 +859,7 @@
               <option value="">
                 <xed:output i18n="mir.select.optional" />
               </option>
-              <xed:include
-                uri="xslStyle:items2options:classification:editor:-1:children:koloe_period" />
+              <xed:include uri="xslStyle:items2options:classification:editor:-1:children:koloe_period" />
             </select>
           </div>
           <mir:help-pmud help-text="{i18n:koloe_period.help}" pmud="true" />
@@ -1051,11 +869,9 @@
   </xed:template>
 
   <xed:template id="koloe_topic_classification">
-    <xed:repeat
-      xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/koloe_topic_classification'][@displayLabel='koloe_topic_classification']"
-      min="1">
+    <xed:repeat xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/koloe_topic_classification'][@displayLabel='koloe_topic_classification']" min="1">
       <xed:bind xpath="@valueURIxEditor">
-        <div class="form-group row {$xed-validation-marker}">
+        <div class="mir-form-group row {$xed-validation-marker}">
           <label class="col-md-3 col-form-label text-right">
             <xed:output i18n="koloe_topic_classification.label" />
           </label>
@@ -1064,8 +880,7 @@
               <option value="">
                 <xed:output i18n="mir.select.optional" />
               </option>
-              <xed:include
-                uri="xslStyle:items2options:classification:editor:-1:children:koloe_topic_classification" />
+              <xed:include uri="xslStyle:items2options:classification:editor:-1:children:koloe_topic_classification" />
             </select>
           </div>
           <mir:help-pmud help-text="{i18n:koloe_topic_classification.help}" pmud="true" />
@@ -1086,18 +901,25 @@
     <xed:bind xpath="../../../../service">
       <xed:include ref="status" />
     </xed:bind>
-    <!--<xed:include
-    ref="author.repeated" />-->                         <!-- Editor -->
+    <!--<xed:include ref="author.repeated" />-->    <!-- Editor -->
 
 
-    <xed:include ref="title.complex.repeated" />                  <!-- Title -->
-    <xed:include ref="research.data.person.repeated" />           <!-- Contributor -->
-    <xed:include ref="date.range.extended.datetimepicker" />      <!-- Date -->
-    <xed:include ref="place" />                                   <!-- Location -->
-    <xed:include ref="creator.place" />                           <!-- Location of interview -->
-    <xed:include ref="geographic.repeated" />                     <!-- places mentioned -->
-    <xed:include ref="extent" />                                  <!-- Size -->
-    <xed:include ref="language" />                                <!-- Language-->
+    <xed:include ref="title.complex.repeated" />
+    <!-- Title -->
+    <xed:include ref="research.data.person.repeated" />
+    <!-- Contributor -->
+    <xed:include ref="date.range.extended.datetimepicker" />
+    <!-- Date -->
+    <xed:include ref="place" />
+    <!-- Location -->
+    <xed:include ref="creator.place" />
+    <!-- Location of interview -->
+    <xed:include ref="geographic.repeated" />
+    <!-- places mentioned -->
+    <xed:include ref="extent" />
+    <!-- Size -->
+    <xed:include ref="language" />
+    <!-- Language-->
 
 
     <xed:include ref="cancel.submit" />
@@ -1114,11 +936,7 @@
   </xed:template>
 
   <xed:template id="edition.relItemsearch">
-    <mir:relItemsearch searchengine="title" genre="edition" responsefield="mods.title"
-      xpath="mods:titleInfo/mods:title" label="mir.title"
-      help-text="{i18n:mir.help.series.title}" class="required" required="true"
-      required-i18n="mir.validation.title.series"
-      placeholder="{i18n:mir.title.placeholder.series.relItemsearch}" />
+    <mir:relItemsearch searchengine="title" genre="edition" responsefield="mods.title" xpath="mods:titleInfo/mods:title" label="mir.title" help-text="{i18n:mir.help.series.title}" class="required" required="true" required-i18n="mir.validation.title.series" placeholder="{i18n:mir.title.placeholder.series.relItemsearch}" />
   </xed:template>
 
   <xed:template id="genres.letter">
@@ -1136,9 +954,8 @@
 
 
   <xed:template id="lod.document_classification">
-    <xed:bind
-      xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/lod_document_classification'][@displayLabel='lod_document_classification']/@valueURIxEditor">
-      <div class="form-group row {$xed-validation-marker}">
+    <xed:bind xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/lod_document_classification'][@displayLabel='lod_document_classification']/@valueURIxEditor">
+      <div class="mir-form-group row {$xed-validation-marker}">
         <label class="col-md-3 col-form-label text-right">
           <xed:output i18n="lod.editor.metadata.lod_document_classification.label" />
         </label>
@@ -1147,20 +964,17 @@
             <option value="">
               <xed:output i18n="mir.select" />
             </option>
-            <xed:include
-              uri="xslStyle:items2options:classification:editor:-1:children:lod_document_classification" />
+            <xed:include uri="xslStyle:items2options:classification:editor:-1:children:lod_document_classification" />
           </select>
         </div>
-        <mir:help-pmud help-text="{i18n:lod.editor.metadata.lod_document_classification.help}"
-          pmud="false" />
+        <mir:help-pmud help-text="{i18n:lod.editor.metadata.lod_document_classification.help}" pmud="false" />
       </div>
     </xed:bind>
   </xed:template>
 
   <xed:template id="lod.archives">
-    <xed:bind
-      xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/lod_archives'][@displayLabel='lod_archives']/@valueURIxEditor">
-      <div class="form-group row {$xed-validation-marker}">
+    <xed:bind xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/lod_archives'][@displayLabel='lod_archives']/@valueURIxEditor">
+      <div class="mir-form-group row {$xed-validation-marker}">
         <label class="col-md-3 col-form-label text-right">
           <xed:output i18n="lod.editor.metadata.lod_archives.label" />
         </label>
@@ -1169,12 +983,10 @@
             <option value="">
               <xed:output i18n="mir.select" />
             </option>
-            <xed:include
-              uri="xslStyle:items2options:classification:editor:-1:children:lod_archives" />
+            <xed:include uri="xslStyle:items2options:classification:editor:-1:children:lod_archives" />
           </select>
         </div>
-        <mir:help-pmud help-text="{i18n:lod.editor.metadata.lod_archives.help}"
-          pmud="false" />
+        <mir:help-pmud help-text="{i18n:lod.editor.metadata.lod_archives.help}" pmud="false" />
       </div>
     </xed:bind>
   </xed:template>
@@ -1195,7 +1007,7 @@
       </legend>
       <xed:repeat xpath="mods:note" min="1" max="5">
         <div class="mir-fieldset-content">
-          <div class="form-group row">
+          <div class="mir-form-group row">
             <label class="col-md-3 col-form-label text-right">
               <xed:output i18n="mir.comment.type" />
             </label>
@@ -1205,8 +1017,7 @@
                   <option value="">
                     <xed:output i18n="mir.select" />
                   </option>
-                  <xed:include
-                    uri="xslStyle:items2options,convertClassificationOptions:classification:editor:-1:children:noteTypes" />
+                  <xed:include uri="xslStyle:items2options,convertClassificationOptions:classification:editor:-1:children:noteTypes" />
                 </select>
               </xed:bind>
             </div>
@@ -1219,8 +1030,7 @@
   </xed:template>
 
   <xed:template id="lod.translator.repeated">
-    <mir:role.repeated role="trl" label="lod.role.translator"
-      help-text="{i18n:lod.role.help}" />
+    <mir:role.repeated role="trl" label="lod.role.translator" help-text="{i18n:lod.role.help}" />
   </xed:template>
 
   <xed:template id="lod.genre.base">
@@ -1240,10 +1050,7 @@
   </xed:template>
 
   <xed:template id="date.range.created.datetimepicker">
-    <mir:dateRange
-      xpath="mods:originInfo[@eventType='creation']/mods:dateCreated[@encoding='w3cdtf']"
-      label="lod.editor.date.created" help-text="{i18n:mir.help.date.created.range}"
-      class="datetimepicker" placeholder="{i18n:mir.placeholder.date}" />
+    <mir:dateRange xpath="mods:originInfo[@eventType='creation']/mods:dateCreated[@encoding='w3cdtf']" label="lod.editor.date.created" help-text="{i18n:mir.help.date.created.range}" class="datetimepicker" placeholder="{i18n:mir.placeholder.date}" />
     <!--ToDo:
     Kalendertyp zur Maske hinzufügen-->
     <!--     <xed:bind xpath="mods:originInfo[@eventType='creation']/mods:dateCreated">
@@ -1264,17 +1071,11 @@
   </xed:template>
 
   <xed:template id="date.range.received.datetimepicker">
-    <mir:dateRange
-      xpath="mods:originInfo[@eventType='received']/mods:dateOther[@type='received'][@encoding='w3cdtf']"
-      label="lod.editor.date.other"
-      help-text="{i18n:mir.help.date.received.range}" class="datetimepicker"
-      placeholder="{i18n:mir.placeholder.date}" />
+    <mir:dateRange xpath="mods:originInfo[@eventType='received']/mods:dateOther[@type='received'][@encoding='w3cdtf']" label="lod.editor.date.other" help-text="{i18n:mir.help.date.received.range}" class="datetimepicker" placeholder="{i18n:mir.placeholder.date}" />
   </xed:template>
 
   <xed:template id="lod.place.received">
-    <mir:textfield
-      xpath="mods:originInfo[@eventType='received']/mods:place/mods:placeTerm[@type='text']"
-      label="mir.place.received" help-text="{i18n:mir.help.place}" />
+    <mir:textfield xpath="mods:originInfo[@eventType='received']/mods:place/mods:placeTerm[@type='text']" label="mir.place.received" help-text="{i18n:mir.help.place}" />
   </xed:template>
 
   <xed:template id="lod.genre">
@@ -1284,10 +1085,9 @@
         <xed:bind xpath="@authorityURI" set="{$mir_genres/label[@xml:lang='x-uri']/@text}" />
       </xed:bind>
     </xed:if>
-    <xed:bind
-      xpath="mods:genre[@type='intern'][@authorityURI=$mir_genres/label[@xml:lang='x-uri']/@text]">
+    <xed:bind xpath="mods:genre[@type='intern'][@authorityURI=$mir_genres/label[@xml:lang='x-uri']/@text]">
       <xed:bind xpath="@valueURIxEditor" initially="{$genre}">
-        <div class="form-group row required {$xed-validation-marker}">
+        <div class="mir-form-group row required {$xed-validation-marker}">
           <xed:include ref="lod.genre.base" />
           <mir:help-pmud help-text="{i18n:lod.editor.genre.help}" pmud="false" />
         </div>
@@ -1296,8 +1096,7 @@
   </xed:template>
 
   <xed:template id="identifier.intern">
-    <mir:textfield xpath="mods:identifier[@type='intern']" label="mir.identifier.intern"
-      help-text="{i18n:mir.help.identifier.intern}" />
+    <mir:textfield xpath="mods:identifier[@type='intern']" label="mir.identifier.intern" help-text="{i18n:mir.help.identifier.intern}" />
   </xed:template>
 
   <xed:template id="lod.abstract.repeated">
@@ -1307,7 +1106,7 @@
       </legend>
       <xed:repeat xpath="mods:abstract" min="1" max="3">
         <div class="mir-fieldset-content">
-          <div class="form-group row">
+          <div class="mir-form-group row">
             <label class="col-md-3 col-form-label text-right">
               <xed:output i18n="lod.abstract.in" />
             </label>
@@ -1318,8 +1117,7 @@
             </div>
             <mir:help-pmud help-text="{i18n:mir.help.abstract.language}" pmud="true" />
           </div>
-          <mir:htmlArea xpath="." label="lod.editor.metadata.abstract.label"
-            help-text="{i18n:mir.help.abstract.ortext}" rows="5" />
+          <mir:htmlArea xpath="." label="lod.editor.metadata.abstract.label" help-text="{i18n:mir.help.abstract.ortext}" rows="5" />
         </div>
       </xed:repeat>
     </fieldset>
@@ -1342,8 +1140,7 @@
   </xed:template>
 
   <xed:template id="author_desc.repeated">
-    <mir:role.repeated role="exp" label="lod.editor.metadata.author_of_description.label"
-      help-text="{i18n:mir.help.role.author}" />
+    <mir:role.repeated role="exp" label="lod.editor.metadata.author_of_description.label" help-text="{i18n:mir.help.role.author}" />
   </xed:template>
 
 
@@ -1359,7 +1156,7 @@
         <div class="mir-fieldset-content">
 
           <!-- Event Type Selector -->
-          <div class="form-group row">
+          <div class="mir-form-group row">
             <label class="col-md-3 col-form-label text-right">
               <xed:output i18n="lod.editor.originInfo.eventType" />
             </label>
@@ -1403,7 +1200,7 @@
         <div class="mir-fieldset-content">
 
           <!-- Event Type Selector -->
-          <div class="form-group row">
+          <div class="mir-form-group row">
             <label class="col-md-3 col-form-label text-right">
               <xed:output i18n="lod.editor.originInfo.eventType" />
             </label>
@@ -1438,7 +1235,7 @@
   </xed:template>
 
   <xed:template id="originInfo.agent.personal">
-    <div class="mir-form-group border rounded p-3 mb-3">
+    <div class="mir-form-group mb-3">
       <fieldset>
         <legend class="mir-fieldset-legend">
           <xed:output i18n="lod.editor.agent.personal.legend" />
@@ -1450,7 +1247,7 @@
         </xed:bind>
 
         <!-- Display Form (full name with search) -->
-        <div class="form-group row">
+        <div class="mir-form-group row">
           <label class="col-md-3 col-form-label text-right">
             <xed:output i18n="editor.label.author" />
           </label>
@@ -1464,17 +1261,13 @@
         </div>
 
         <!-- Family Name -->
-        <mir:textfield xpath="mods:namePart[@type='family']"
-          label="mir.editor.subject.name.editor.namePart.type.family"
-          help-text="{i18n:mir.help.name.family}" />
+        <mir:textfield xpath="mods:namePart[@type='family']" label="mir.editor.subject.name.editor.namePart.type.family" help-text="{i18n:mir.help.name.family}" />
 
         <!-- Given Name -->
-        <mir:textfield xpath="mods:namePart[@type='given']"
-          label="mir.editor.subject.name.editor.namePart.type.given"
-          help-text="{i18n:mir.help.name.given}" />
+        <mir:textfield xpath="mods:namePart[@type='given']" label="mir.editor.subject.name.editor.namePart.type.given" help-text="{i18n:mir.help.name.given}" />
 
         <!-- Role (marcrelator) -->
-        <div class="form-group row">
+        <div class="mir-form-group row">
           <label class="col-md-3 col-form-label text-right">
             <xed:output i18n="mir.role" />
           </label>
@@ -1484,13 +1277,10 @@
                 <option value="">
                   <xed:output i18n="mir.select" />
                 </option>
-                <xed:include
-                  uri="xslStyle:items2options:classification:editor:-1:children:marcrelator" />
+                <xed:include uri="xslStyle:items2options:classification:editor:-1:children:marcrelator" />
               </select>
             </xed:bind>
-            <xed:bind
-              xpath="mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']/@authorityURI"
-              initially="http://id.loc.gov/vocabulary/relators">
+            <xed:bind xpath="mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']/@authorityURI" initially="http://id.loc.gov/vocabulary/relators">
               <input type="hidden" />
             </xed:bind>
           </div>
@@ -1498,29 +1288,22 @@
         </div>
 
         <!-- Name Identifier UUID (DANTE) -->
-        <mir:textfield xpath="mods:nameIdentifier[@type='dante']"
-          label="lod.editor.agent.nameIdentifier"
-          help-text="{i18n:lod.editor.agent.nameIdentifier.help}"
-          placeholder="{i18n:lod.editor.agent.nameIdentifier.uuid}" />
+        <mir:textfield xpath="mods:nameIdentifier[@type='dante']" label="lod.editor.agent.nameIdentifier" help-text="{i18n:lod.editor.agent.nameIdentifier.help}" placeholder="{i18n:lod.editor.agent.nameIdentifier.uuid}" />
 
         <!-- Name Identifier TypeURI (hidden) -->
-        <xed:bind xpath="mods:nameIdentifier[@type='dante']/@typeURI"
-          initially="https://uri.gbv.de/terminology/lod_persons/">
+        <xed:bind xpath="mods:nameIdentifier[@type='dante']/@typeURI" initially="https://uri.gbv.de/terminology/lod_persons/">
           <input type="hidden" />
         </xed:bind>
 
         <!-- Description -->
-        <mir:textfield xpath="mods:description"
-          label="lod.editor.agent.description"
-          help-text="{i18n:lod.editor.agent.description.help}"
-          placeholder="{i18n:lod.editor.agent.description.placeholder}" />
+        <mir:textfield xpath="mods:description" label="lod.editor.agent.description" help-text="{i18n:lod.editor.agent.description.help}" placeholder="{i18n:lod.editor.agent.description.placeholder}" />
 
       </fieldset>
     </div>
   </xed:template>
 
   <xed:template id="originInfo.place">
-    <div class="mir-form-group border rounded p-3 mb-3">
+    <div class="mir-form-group mb-3">
       <fieldset>
         <legend class="mir-fieldset-legend">
           <xed:output i18n="lod.editor.originInfo.place.legend" />
@@ -1529,26 +1312,17 @@
         <xed:bind xpath="mods:place">
 
           <!-- Place Term (text name) -->
-          <mir:textfield xpath="mods:placeTerm[@type='text']"
-            label="mir.place"
-            help-text="{i18n:mir.help.place}"
-            placeholder="{i18n:lod.editor.place.placeholder}" />
+          <mir:textfield xpath="mods:placeTerm[@type='text']" label="mir.place" help-text="{i18n:mir.help.place}" placeholder="{i18n:lod.editor.place.placeholder}" />
 
           <!-- Place Identifier (Geonames URI) -->
-          <mir:textfield xpath="mods:placeIdentifier"
-            label="lod.editor.place.identifier"
-            help-text="{i18n:lod.editor.place.identifier.help}"
-            placeholder="https://www.geonames.org/524894" />
+          <mir:textfield xpath="mods:placeIdentifier" label="lod.editor.place.identifier" help-text="{i18n:lod.editor.place.identifier.help}" placeholder="https://www.geonames.org/524894" />
 
           <xed:bind xpath="mods:placeIdentifier/@type" initially="uri">
             <input type="hidden" />
           </xed:bind>
 
           <!-- Coordinates -->
-          <mir:textfield xpath="mods:cartographics/mods:coordinates"
-            label="lod.editor.place.coordinates"
-            help-text="{i18n:lod.editor.place.coordinates.help}"
-            placeholder="{i18n:lod.editor.place.coordinates.placeholder}" />
+          <mir:textfield xpath="mods:cartographics/mods:coordinates" label="lod.editor.place.coordinates" help-text="{i18n:lod.editor.place.coordinates.help}" placeholder="{i18n:lod.editor.place.coordinates.placeholder}" />
 
         </xed:bind>
       </fieldset>
@@ -1556,7 +1330,7 @@
   </xed:template>
 
   <xed:template id="subject.personal">
-    <div class="mir-form-group border rounded p-3 mb-3">
+    <div class="mir-form-group mb-3">
       <fieldset>
         <legend class="mir-fieldset-legend">
           <xed:output i18n="lod.editor.agent.personal.legend" />
@@ -1567,7 +1341,7 @@
             <input type="hidden" />
           </xed:bind>
 
-          <div class="form-group row">
+          <div class="mir-form-group row">
             <label class="col-md-3 col-form-label text-right">
               <xed:output i18n="editor.label.author" />
             </label>
@@ -1580,21 +1354,13 @@
             <mir:help-pmud help-text="{i18n:lod.editor.agent.displayForm.help}" pmud="true" />
           </div>
 
-          <mir:textfield xpath="mods:namePart[@type='family']"
-            label="mir.editor.subject.name.editor.namePart.type.family"
-            help-text="{i18n:mir.help.name.family}" />
+          <mir:textfield xpath="mods:namePart[@type='family']" label="mir.editor.subject.name.editor.namePart.type.family" help-text="{i18n:mir.help.name.family}" />
 
-          <mir:textfield xpath="mods:namePart[@type='given']"
-            label="mir.editor.subject.name.editor.namePart.type.given"
-            help-text="{i18n:mir.help.name.given}" />
+          <mir:textfield xpath="mods:namePart[@type='given']" label="mir.editor.subject.name.editor.namePart.type.given" help-text="{i18n:mir.help.name.given}" />
 
-          <mir:textfield xpath="mods:nameIdentifier[@type='dante']"
-            label="lod.editor.agent.nameIdentifier"
-            help-text="{i18n:lod.editor.agent.nameIdentifier.help}"
-            placeholder="{i18n:lod.editor.agent.nameIdentifier.uuid}" />
+          <mir:textfield xpath="mods:nameIdentifier[@type='dante']" label="lod.editor.agent.nameIdentifier" help-text="{i18n:lod.editor.agent.nameIdentifier.help}" placeholder="{i18n:lod.editor.agent.nameIdentifier.uuid}" />
 
-          <xed:bind xpath="mods:nameIdentifier[@type='dante']/@typeURI"
-            initially="https://uri.gbv.de/terminology/lod_persons/">
+          <xed:bind xpath="mods:nameIdentifier[@type='dante']/@typeURI" initially="https://uri.gbv.de/terminology/lod_persons/">
             <input type="hidden" />
           </xed:bind>
         </xed:bind>
@@ -1603,7 +1369,7 @@
   </xed:template>
 
   <xed:template id="subject.corporate">
-    <div class="mir-form-group border rounded p-3 mb-3">
+    <div class="mir-form-group mb-3">
       <fieldset>
         <legend class="mir-fieldset-legend">
           <xed:output i18n="mir.publisherOrganization" />
@@ -1614,7 +1380,7 @@
             <input type="hidden" />
           </xed:bind>
 
-          <div class="form-group row">
+          <div class="mir-form-group row">
             <label class="col-md-3 col-form-label text-right">
               <xed:output i18n="mir.publisherOrganization" />
             </label>
@@ -1626,13 +1392,9 @@
             <mir:help-pmud help-text="{i18n:mir.help.editor.organization}" pmud="true" />
           </div>
 
-          <mir:textfield xpath="mods:nameIdentifier[@type='dante']"
-            label="lod.editor.agent.nameIdentifier"
-            help-text="{i18n:lod.editor.agent.nameIdentifier.help}"
-            placeholder="{i18n:lod.editor.agent.nameIdentifier.uuid}" />
+          <mir:textfield xpath="mods:nameIdentifier[@type='dante']" label="lod.editor.agent.nameIdentifier" help-text="{i18n:lod.editor.agent.nameIdentifier.help}" placeholder="{i18n:lod.editor.agent.nameIdentifier.uuid}" />
 
-          <xed:bind xpath="mods:nameIdentifier[@type='dante']/@typeURI"
-            initially="https://uri.gbv.de/terminology/lod_organisations/">
+          <xed:bind xpath="mods:nameIdentifier[@type='dante']/@typeURI" initially="https://uri.gbv.de/terminology/lod_organisations/">
             <input type="hidden" />
           </xed:bind>
         </xed:bind>
