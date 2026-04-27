@@ -33,6 +33,7 @@
 
   </xsl:template>
 
+  <!-- ToDo: Fix subject handling
   <xsl:template match="mods:subject">
     <xsl:variable name="geoCount" select="count(mods:cartographics) + count(mods:geographic)" />
     <xsl:choose>
@@ -53,6 +54,7 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
+  -->
 
   <xsl:template match="mods:titleInfo[string-length(@altRepGroup) &gt; 0]|mods:abstract[string-length(@altRepGroup) &gt; 0]">
     <xsl:choose>
