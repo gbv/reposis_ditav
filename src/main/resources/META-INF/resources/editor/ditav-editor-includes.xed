@@ -64,66 +64,6 @@
 
   <!-- ========== genres ========== -->
 
-  <xed:template id="ditav.genres.common">
-    <xed:include ref="gazin_genres" after="geographicAndCartographics" />
-    <xed:include ref="lod_archives" after="gazin_genres" />
-    <xed:include ref="lod_document_classification" after="lod_archives" />
-    <xed:include ref="koloe_document_classification" after="lod_document_classification" />
-    <xed:include ref="koloe_topic_classification" after="koloe_document_classification" />
-    <xed:include ref="koloe_continents" after="koloe_topic_classification" />
-    <xed:include ref="koloe_period" after="koloe_continents" />
-    <xed:include ref="ditav_translation" after="comment.complex" />
-    <xed:include ref="ditav_transcription" after="ditav_translation" />
-    <xed:include ref="ditav_translation_available" after="ditav_transcription" />
-    <xed:include ref="ditav_scan_available" after="ditav_transcription" />
-  </xed:template>
-
-  <xed:template id="ditav.lod.common">
-
-    <xed:include ref="failed-validation-messages" />
-
-    <xed:bind xpath="../../../../service">
-      <xed:include ref="status" />
-    </xed:bind>
-
-    <h3 class="h5 mt-4 mb-3">
-      <xed:output i18n="lod.editor.section.frontend" />
-    </h3>
-    <xed:include ref="lod.title.original" />
-    <xed:include ref="lod.title.translated" />
-    <xed:include ref="lod.abstract.repeated" />
-    <xed:include ref="lod_document_classification" />
-    <xed:include ref="language" />
-    <xed:include ref="originInfo.agents.created" />
-    <xed:include ref="lod.translator.repeated" />
-    <xed:include ref="date.range.created.datetimepicker" />
-    <xed:include ref="date.range.received.datetimepicker" />
-    <xed:include ref="place" />
-    <xed:include ref="geographicAndCartographics" />
-    <xed:include ref="subject.repeated" />
-    <xed:include ref="extent" />
-    <xed:include ref="creator" />
-    <xed:include ref="lod_archives" />
-    <xed:include ref="shelfmark" />
-
-    <h3 class="h5 mt-4 mb-3">
-      <xed:output i18n="lod.editor.section.internal" />
-    </h3>
-
-    <xed:include ref="genre" />
-    <xed:include ref="originInfo.agents.received" />
-    <xed:include ref="ditav_translation" after="comment.complex" />
-    <xed:include ref="ditav_transcription" after="ditav_translation" />
-    <xed:include ref="ditav_translation_available" after="ditav_transcription" />
-    <xed:include ref="ditav_scan_available" after="ditav_transcription" />
-    <xed:include ref="identifier.managed" />
-    <xed:include ref="identifier.repeated" />
-    <xed:include ref="link.repeated" />
-    <xed:include ref="rights" />
-    <xed:include ref="comment.complex" />
-    <xed:include ref="related.item.other.search.of.all.items" />
-
-  </xed:template>
 
   <xed:template id="ditav.lod.edition">
 
@@ -217,10 +157,8 @@
     <xed:include ref="ditav.lod.edition" />
   </xed:template>
 
-  <!-- LOD templates -->
 
-
-  <!-- ========== templates ========== -->
+  <!-- ========== LOD templates ========== -->
 
   <xed:template id="lod.frontend">
     <div class="border rounded p-3 mb-4">
@@ -229,7 +167,7 @@
       </h2>
 
       <!-- Title (Language) -->
-      <xed:bind xpath="mods:titleInfo">
+      <xed:bind xpath="mods:titleInfo[not(@type)]">
         <div class="mir-form-group row align-items-center mb-0 {$xed-validation-marker}">
           <label class="col-md-3 col-form-label mir-formgroup-label form-label d-flex justify-content-end align-items-center gap-2 text-nowrap pe-3">
             <xed:output i18n="lod.editor.title.label" />
@@ -466,22 +404,9 @@
       <xed:include ref="lod_document_classification" />
 
       <!-- Topic -->
-      <xed:repeat xpath="mods:subject" min="1" max="25">
-        <div class="mir-form-group row {$xed-validation-marker}">
-          <label class="col-md-3 col-form-label text-end form-label">
-            <xed:output i18n="lod.editor.subject.topic.label" />
-          </label>
-          <div class="col-md-6">
-            <xed:bind xpath="mods:topic">
-              <input type="text" class="form-control" placeholder="{i18n:lod.editor.subject.topic.placeholder}" />
-            </xed:bind>
-          </div>
-          <div class="col-md-3">
-            <mir:help-pmud help-text="{i18n:lod.editor.subject.topic.help}" pmud="false" />
-          </div>
-        </div>
-      </xed:repeat>
+      <mir:textfield xpath="mods:subject[@xlink:type='simple']/mods:topic[not(@type)]" label="lod.editor.subject.topic.label" help-text="{i18n:lod.editor.subject.topic.help}" placeholder="{i18n:lod.editor.subject.topic.placeholder}" />
 
+      <mir:textfield xpath="mods:subject[@xlink:type='simple']/mods:name[@type='corporate']" label="lod.editor.subject.corporate.label" help-text="{i18n:lod.editor.subject.corporate.help}" placeholder="{i18n:lod.editor.subject.corporate.placeholder}" />
 
       <!-- Translation -->
       <xed:include ref="ditav_translation" />
@@ -499,9 +424,14 @@
       <!-- Number of folios in the record -->
       <mir:textfield xpath="mods:physicalDescription/mods:extent" label="lod.editor.extent.label" help-text="{i18n:lod.editor.extent.help}" placeholder="{i18n:lod.editor.extent.placeholder}" />
 
+      <!-- Archive -->
       <xed:include ref="lod_archives" />
 
-      <xed:include ref="shelfmark" />
+      <!-- Archive number -->
+      <mir:textfield xpath="mods:location/mods:shelfLocator" label="lod.editor.shelfLocator.label" help-text="{i18n:lod.editor.shelfLocator.help}" placeholder="{i18n:lod.editor.shelfLocator.placeholder}" />
+
+      <!-- License -->
+      <xed:include ref="rights" />
 
 
     </div>
@@ -515,7 +445,6 @@
       <xed:include ref="ditav_transcription" />
       <xed:include ref="ditav_translation_available" />
       <xed:include ref="ditav_scan_available" />
-      <xed:include ref="rights" />
     </div>
   </xed:template>
 
@@ -930,10 +859,6 @@
 
   </xed:template>
 
-  <xed:template id="edition.lod">
-
-
-  </xed:template>
 
   <xed:template id="edition.relItemsearch">
     <mir:relItemsearch searchengine="title" genre="edition" responsefield="mods.title" xpath="mods:titleInfo/mods:title" label="mir.title" help-text="{i18n:mir.help.series.title}" class="required" required="true" required-i18n="mir.validation.title.series" placeholder="{i18n:mir.title.placeholder.series.relItemsearch}" />
@@ -1329,102 +1254,6 @@
     </div>
   </xed:template>
 
-  <xed:template id="subject.personal">
-    <div class="mir-form-group mb-3">
-      <fieldset>
-        <legend class="mir-fieldset-legend">
-          <xed:output i18n="lod.editor.agent.personal.legend" />
-        </legend>
-
-        <xed:bind xpath="mods:name[@type='personal']">
-          <xed:bind xpath="@type" initially="personal">
-            <input type="hidden" />
-          </xed:bind>
-
-          <div class="mir-form-group row">
-            <label class="col-md-3 col-form-label text-right">
-              <xed:output i18n="editor.label.author" />
-            </label>
-            <div class="col-md-6">
-              <xed:bind xpath="mods:displayForm">
-                <input type="hidden" />
-                <div class="nameSearchApp" define-own-identifier="true"></div>
-              </xed:bind>
-            </div>
-            <mir:help-pmud help-text="{i18n:lod.editor.agent.displayForm.help}" pmud="true" />
-          </div>
-
-          <mir:textfield xpath="mods:namePart[@type='family']" label="mir.editor.subject.name.editor.namePart.type.family" help-text="{i18n:mir.help.name.family}" />
-
-          <mir:textfield xpath="mods:namePart[@type='given']" label="mir.editor.subject.name.editor.namePart.type.given" help-text="{i18n:mir.help.name.given}" />
-
-          <mir:textfield xpath="mods:nameIdentifier[@type='dante']" label="lod.editor.agent.nameIdentifier" help-text="{i18n:lod.editor.agent.nameIdentifier.help}" placeholder="{i18n:lod.editor.agent.nameIdentifier.uuid}" />
-
-          <xed:bind xpath="mods:nameIdentifier[@type='dante']/@typeURI" initially="https://uri.gbv.de/terminology/lod_persons/">
-            <input type="hidden" />
-          </xed:bind>
-        </xed:bind>
-      </fieldset>
-    </div>
-  </xed:template>
-
-  <xed:template id="subject.corporate">
-    <div class="mir-form-group mb-3">
-      <fieldset>
-        <legend class="mir-fieldset-legend">
-          <xed:output i18n="mir.publisherOrganization" />
-        </legend>
-
-        <xed:bind xpath="mods:name[@type='corporate']">
-          <xed:bind xpath="@type" initially="corporate">
-            <input type="hidden" />
-          </xed:bind>
-
-          <div class="mir-form-group row">
-            <label class="col-md-3 col-form-label text-right">
-              <xed:output i18n="mir.publisherOrganization" />
-            </label>
-            <div class="col-md-6">
-              <xed:bind xpath="mods:displayForm">
-                <input type="text" size="26" class="form-control form-control-inline" />
-              </xed:bind>
-            </div>
-            <mir:help-pmud help-text="{i18n:mir.help.editor.organization}" pmud="true" />
-          </div>
-
-          <mir:textfield xpath="mods:nameIdentifier[@type='dante']" label="lod.editor.agent.nameIdentifier" help-text="{i18n:lod.editor.agent.nameIdentifier.help}" placeholder="{i18n:lod.editor.agent.nameIdentifier.uuid}" />
-
-          <xed:bind xpath="mods:nameIdentifier[@type='dante']/@typeURI" initially="https://uri.gbv.de/terminology/lod_organisations/">
-            <input type="hidden" />
-          </xed:bind>
-        </xed:bind>
-      </fieldset>
-    </div>
-  </xed:template>
-
-  <xed:template id="subject.repeated">
-    <fieldset>
-      <legend class="mir-fieldset-legend">
-        <xed:output i18n="mir.subject.topic.complex" />
-      </legend>
-
-      <xed:repeat xpath="mods:subject" min="0" max="10">
-        <div class="mir-fieldset-content">
-          <xed:bind xpath="@xlink:type" initially="simple">
-            <input type="hidden" />
-          </xed:bind>
-          <xed:choose>
-            <xed:when test="mods:name[@type='corporate']">
-              <xed:include ref="subject.corporate" />
-            </xed:when>
-            <xed:otherwise>
-              <xed:include ref="subject.personal" />
-            </xed:otherwise>
-          </xed:choose>
-        </div>
-      </xed:repeat>
-    </fieldset>
-  </xed:template>
 
   <!-- ========== validation ========== -->
 
