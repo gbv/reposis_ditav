@@ -80,6 +80,12 @@
 
   </xed:template>
 
+  <xed:template id="genres.submit">
+    <xed:include ref="cancel.submit" />
+    <xed:include ref="cleanup-rules" />
+    <xed:include ref="ditav-cleanup-rules" />
+    <xed:include ref="validation-rules" />
+  </xed:template>
 
   <xed:template id="genres.article">
     <xed:include ref="ditav.admin.fields" />
@@ -514,9 +520,43 @@
 
       <!-- License -->
       <xed:include ref="rights" />
-
-
     </div>
+
+  </xed:template>
+
+  <xed:template id="language">
+    <xed:repeat xpath="mods:language" max="5">
+      <div class="mir-form-group row {$xed-validation-marker}">
+        <label class="col-md-3 col-form-label text-end form-label">
+          <xed:output i18n="mir.language" />
+        </label>
+        <div class="col-md-6">
+          <xed:bind xpath="mods:languageTerm[@authority='rfc5646'][@type='code']" initially="de">
+            <div class="controls">
+              <xed:include ref="lang.list" />
+            </div>
+          </xed:bind>
+        </div>
+        <mir:help-pmud help-text="{i18n:mir.help.language}" pmud="true" />
+      </div>
+    </xed:repeat>
+  </xed:template>
+
+    <xed:template id="lang.list">
+    <select class="lang-select form-select w-100" style="min-width:0;" data-dlang="{$MCR.Metadata.DefaultLang}" data-langs="{$MCR.Metadata.Languages}">
+      <xed:choose>
+        <xed:when test="string-length(.) &gt; 0">
+          <option value="{.}" selected="">
+            <xed:output value="." />
+          </option>
+        </xed:when>
+        <xed:otherwise>
+          <option value="{$MCR.Metadata.DefaultLang}" selected="">
+            <xed:output value="{$MCR.Metadata.DefaultLang}" />
+          </option>
+        </xed:otherwise>
+      </xed:choose>
+    </select>
   </xed:template>
 
   <xed:template id="lod.internal">
@@ -898,6 +938,8 @@
         </div>
       </xed:bind>
     </xed:repeat>
+
+
   </xed:template>
 
 
@@ -1339,5 +1381,13 @@
 
   <!-- ========== validation ========== -->
 
+  <!-- ========== Cleanup Rules ========== -->
+<xed:template id="ditav-cleanup-rules">
+    <xed:cleanup>
+      <!-- Cleanup rules for agent elements -->
+      <xed:cleanup-rule xpath="//mods:agent" relevant-if="(mods:namePart|mods:displayForm|mods:nameIdentifier|mods:description) or (string-length(@valueURI) &gt; 0) or (string-length(@valueURIxEditor) &gt; 0)" />
+      <xed:cleanup-rule xpath="//mods:agent/@authorityURI" relevant-if="(string-length(../@valueURI) &gt; 0) or (string-length(../@valueURIxEditor) &gt; 0)" />
+    </xed:cleanup>
+  </xed:template>
 
 </xed:template>

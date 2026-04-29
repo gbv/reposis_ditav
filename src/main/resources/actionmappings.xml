@@ -18,17 +18,20 @@
   </collection>
   <collection name="mods">
     <action action="create">
-      <when condition="(group = admin)" url="/editor/editor-admins.xed" />
+      <when condition="group = admin" url="/editor/editor-admins.xed" />
+      <when condition="group = editor" url="/editor/editor-dynamic.xed" />
       <when condition="group = submitter" url="/content/publish/index.xml" />
       <when condition="true" url="/servlets/MCRLoginServlet?url=MCRActionMappingServlet/mods/create" />
     </action>
     <action action="create-child">
-      <when condition="(group = admin)" url="/editor/editor-admins.xed" />
+      <when condition="group = admin" url="/editor/editor-admins.xed" />
+      <when condition="group = editor" url="/editor/editor-dynamic.xed" />
       <when condition="group = submitter" url="/editor/editor-dynamic.xed" />
       <when condition="true" url="/servlets/MCRLoginServlet?url=MCRActionMappingServlet/mods/create-child" />
     </action>
     <action action="create-copy">
-      <when condition="(group = admin)" url="/editor/editor-admins.xed" />
+      <when condition="group = admin" url="/editor/editor-admins.xed" />
+      <when condition="group = editor" url="/editor/editor-dynamic.xed" />
       <when condition="group = submitter" url="/editor/editor-dynamic.xed" />
       <when condition="true" url="/servlets/MCRLoginServlet?url=MCRActionMappingServlet/mods/create-copy" />
     </action>
