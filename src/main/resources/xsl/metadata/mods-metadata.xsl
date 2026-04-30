@@ -141,7 +141,7 @@
     <xsl:param name="title" />
     <xsl:param name="msg" />
     <div id="mir-message">
-      <div class="jumbotron">
+      <div class="p-5 mb-4 bg-body-tertiary rounded-3">
         <h1>
           <xsl:value-of select="$title" />
         </h1>

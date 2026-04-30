@@ -10,15 +10,7 @@
 
   <xsl:template name="mir.navigation">
 
-    <div id="header_box" class="clearfix container">
-      <div id="options_nav_box" class="mir-prop-nav">
-        <nav>
-          <ul class="navbar-nav ms-auto flex-row">
-            <xsl:call-template name="mir.loginMenu" />
-            <xsl:call-template name="mir.languageMenu" />
-          </ul>
-        </nav>
-      </div>
+    <div id="header_box" class="container">
       <div id="project_logo_box">
         <a href="{concat($WebApplicationBaseURL,substring($loaded_navigation_xml/@hrefStartingPage,2))}">
           <span id="logo_modul">DiTaV</span>
@@ -28,14 +20,20 @@
           </xsl:if>
         </a>
       </div>
+      <div id="options_nav_box" class="mir-prop-nav">
+        <nav>
+          <ul class="navbar-nav ms-auto flex-row">
+            <xsl:call-template name="mir.loginMenu" />
+            <xsl:call-template name="mir.languageMenu" />
+          </ul>
+        </nav>
+      </div>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="mir-main-nav bg-primary">
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-
-          <div class="container-fluid">
           <button
             class="navbar-toggler"
             type="button"
@@ -47,12 +45,11 @@
             <span class="navbar-toggler-icon"></span>
           </button>
 
-            <div
-              id="mir-main-nav-collapse-box"
-              class="collapse navbar-collapse mir-main-nav__entries justify-content-between">
-
-              <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-              <xsl:for-each select="$loaded_navigation_xml/menu">
+          <div
+            id="mir-main-nav-collapse-box"
+            class="collapse navbar-collapse mir-main-nav__entries justify-content-between">
+            <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+            <xsl:for-each select="$loaded_navigation_xml/menu">
                 <xsl:choose>
                   <!-- Ignore some menus, they are shown elsewhere in the layout -->
                   <xsl:when test="@id='main'"/>
@@ -67,10 +64,10 @@
               <xsl:call-template name="mir.basketMenu" />
             </ul>
 
-            <form
-              action="{$WebApplicationBaseURL}servlets/solr/find"
-              class="searchfield_box d-flex"
-              role="search">
+          <form
+            action="{$WebApplicationBaseURL}servlets/solr/find"
+            class="searchfield_box d-flex"
+            role="search">
               <!-- Check if 'initialCondQuery' exists and extract its value if it does -->
               <xsl:variable name="initialCondQuery" select="/response/lst[@name='responseHeader']/lst[@name='params']/str[@name='initialCondQuery']" />
 
@@ -104,11 +101,10 @@
                 </xsl:when>
               </xsl:choose>
 
-              <button type="submit" class="btn btn-primary my-2 my-sm-0">
-                <i class="fas fa-search"></i>
-              </button>
-            </form>
-            </div>
+            <button type="submit" class="btn btn-primary my-2 my-sm-0">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
           </div>
 
         </nav>
@@ -119,8 +115,8 @@
   <xsl:template name="mir.jumbotwo">
     <!-- show only on startpage -->
     <xsl:if test="//div/@class='jumbotwo'">
-      <div class="jumbotron">
-        <div class="container">
+      <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+        <div class="container py-5">
           <h1>Mit MIR wird alles gut!</h1>
           <h2>your repository - just out of the box</h2>
         </div>

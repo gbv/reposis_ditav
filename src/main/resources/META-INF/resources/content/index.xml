@@ -7,13 +7,12 @@
       <meta name="title" content="Willkommen beim digitalen Text-Archiv der VZG!" />
       <meta name="description" content="DiTaV Startseite" />
     </head>
-
     <div class="container">
-      
+
       <h2>Willkommen beim digitalen Textarchiv der VZG!</h2>
 
-      <p>Herzlich willkommen auf den Seiten des Digitalen Text-Archivs. Unser Archiv dient 
-        der Aufbewahrung, Pflege und Bereitstellung von digitalen Texten. Das Archiv befindet 
+      <p>Herzlich willkommen auf den Seiten des Digitalen Text-Archivs. Unser Archiv dient
+        der Aufbewahrung, Pflege und Bereitstellung von digitalen Texten. Das Archiv befindet
         sich noch im Aufbau, sowohl technisch als auch inhaltlich.
       </p>
 
@@ -21,7 +20,7 @@
       <p>Das "Digitale Text-Archiv" ist eine wegweisende Plattform, die es ermöglicht,
         Digitale Texte im TEI (Text Encoding Initiative) Format und zugehörige Digitalisate zu
         speichern und zu verwalten. TEI bietet eine standardisierte Möglichkeit, komplexe textuelle
-        Informationen zu strukturieren und zu annotieren,wodurch die tiefe Analyse und Auswertung 
+        Informationen zu strukturieren und zu annotieren,wodurch die tiefe Analyse und Auswertung
         von Texten ermöglicht wird.
       </p>
 
@@ -29,12 +28,11 @@
       <p>Unsere Mission ist es, den Zugang zu hochwertigen digitalen Texten zu erleichtern und
         die langfristige Erhaltung von kulturellem Erbe sicherzustellen. Wir streben danach,
         Forscher*innen, Studierende, Wissenschaftler*innen und die breite Öffentlichkeit mit einem
-        benutzerfreundlichen Portal zu unterstützen, das den reichen Schatz der digitalen Texte 
+        benutzerfreundlichen Portal zu unterstützen, das den reichen Schatz der digitalen Texte
         im GBV zugänglich macht.
       </p>
 
       <h3>Was bieten wir:</h3>
-
       <ul>
         <li>
           <b>Umfassende Sammlung:</b> Unser Archiv beherbergt eine breite Palette von digitalen
@@ -55,11 +53,125 @@
 
       <h3>Wie Sie teilnehmen können:</h3>
       <p>Wenn Sie digitale Texte erstellt haben oder interessiert sind, Ihre Texte
-        beizusteuern, laden wir Sie herzlich ein, sich mit uns in Verbindung zu setzen. Zusammen können 
+        beizusteuern, laden wir Sie herzlich ein, sich mit uns in Verbindung zu setzen. Zusammen
+        können
         wir dazu beitragen, die Reichweite und Bedeutung Ihrer Arbeit zu vergrößern.
       </p>
     </div>
-
   </section>
+
+  <section title="Welcome to the digital text archive of the VZG!" xml:lang="en">
+  <head>
+    <meta name="title" content="Welcome to the digital text archive of the VZG!" />
+    <meta name="description" content="DiTaV welcome page" />
+  </head>
+
+  <div class="container">
+
+    <h2>Welcome to the digital text archive of the VZG!</h2>
+
+    <p>Welcome to the pages of the Digital Text Archive. Our archive serves
+      the storage, maintenance and provision of digital texts. The archive is still under
+      construction, both technically and in terms of content.
+    </p>
+
+    <h3>About the project:</h3>
+    <p>The "Digital Text Archive" is a pioneering platform that enables
+      storing and managing digital texts in TEI (Text Encoding Initiative) format and associated
+      digitizations. TEI provides a standardized way to structure and annotate complex textual
+      information, enabling deep analysis and evaluation of texts.
+    </p>
+
+    <h3>Our Mission:</h3>
+    <p>Our mission is to facilitate access to high-quality digital texts and
+      ensure the long-term preservation of cultural heritage. We strive to
+      support researchers, students, scientists and the general public with a
+      user-friendly portal that makes the rich treasure of digital texts in the GBV accessible.
+    </p>
+
+    <h3>What we offer:</h3>
+    <ul>
+      <li>
+        <b>Comprehensive Collection:</b> Our archive hosts a wide range of digital texts covering
+        various topics, epochs and cultures.</li>
+      <li>
+        <b>Powerful Search Functions:</b> Search the collection using search parameters to find text
+        that matches your research interests.</li>
+      <li>
+        <b>TEI-compliant Storage:</b> All texts are stored in TEI format to enable rich annotation
+        and analysis.</li>
+      <li>
+        <b>Collaborative Platform:</b> The platform promotes collaboration between researchers and
+        enables the exchange of knowledge and ideas.</li>
+      <li>
+        <b>Portal Connection:</b> We enable the delivery of selected texts to portals to ensure
+        broader visibility.</li>
+    </ul>
+
+    <h3>How you can participate:</h3>
+    <p>If you have created digital texts or are interested in contributing your texts, we invite you
+      to contact us. Together we can help increase the reach and significance of your work.
+    </p>
+  </div>
+  </section>
+
+  <section title="Bienvenue dans l'archive de textes numériques de la VZG!" xml:lang="fr">
+  <head>
+    <meta name="title" content="Bienvenue dans l'archive de textes numériques de la VZG!" />
+    <meta name="description" content="DiTaV page d'accueil" />
+  </head>
+  <div class="container">
+
+    <h2>Bienvenue dans l'archive de textes numériques de la VZG!</h2>
+
+    <p>Bienvenue sur les pages de l'Archive de Textes Numériques. Notre archive sert à
+      la conservation, l'entretien et la fourniture de textes numériques. L'archive est encore en
+      construction, tant sur le plan technique que sur le plan du contenu.
+    </p>
+
+    <h3>À propos du projet:</h3>
+    <p>L'"Archive de Textes Numériques" est une plateforme pionnière qui permet
+      de stocker et de gérer des textes numériques au format TEI (Text Encoding Initiative) et des
+      numérisations associées. TEI fournit un moyen standardisé de structurer et d'annoter des
+      informations textuelles complexes, permettant une analyse approfondie et une évaluation des
+      textes.
+    </p>
+
+    <h3>Notre mission:</h3>
+    <p>Notre mission est de faciliter l'accès à des textes numériques de haute qualité et
+      d'assurer la préservation à long terme du patrimoine culturel. Nous nous efforçons de soutenir
+      les chercheurs, les étudiants, les scientifiques et le grand public avec un portail convivial
+      qui rend le riche trésor des textes numériques dans le GBV accessible.
+    </p>
+
+    <h3>Ce que nous offrons:</h3>
+
+    <ul>
+      <li>
+        <b>Collection complète:</b> Notre archive héberge une large gamme de textes numériques
+        couvrant divers sujets, époques et cultures.</li>
+      <li>
+        <b>Fonctions de recherche puissantes:</b> Recherchez dans la collection en utilisant des
+        paramètres de recherche pour trouver des textes qui correspondent à vos intérêts de
+        recherche.</li>
+      <li>
+        <b>Stockage conforme à TEI:</b> Tous les textes sont stockés au format TEI pour permettre
+        une annotation riche et une analyse approfondie.</li>
+      <li>
+        <b>Plateforme collaborative:</b> La plateforme favorise la collaboration entre les
+        chercheurs et permet l'échange de connaissances et d'idées.</li>
+      <li>
+        <b>Connexion au portail:</b> Nous permettons la livraison de textes sélectionnés vers des
+        portails pour assurer une visibilité plus large.</li>
+    </ul>
+
+    <h3>Comment vous pouvez participer:</h3>
+    <p>Si vous avez créé des textes numériques ou êtes intéressé à contribuer vos textes, nous vous
+      invitons à nous contacter. Ensemble, nous pouvons aider à augmenter la portée et l'importance
+      de votre travail.
+    </p>
+  </div>
+  </section>
+
   <meta></meta>
 </MyCoReWebPage>
