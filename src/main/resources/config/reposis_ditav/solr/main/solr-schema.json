@@ -34,5 +34,59 @@
       "stored": true,
       "indexed": true
     }
+  },
+  {
+    "add-field": {
+      "name": "ditav.mods.dante_metadata_link",
+      "type": "strings",
+      "multiValued": true,
+      "stored": true,
+      "indexed": true
+    }
+  },
+  {
+    "add-field": {
+      "name": "ditav.mods.dante_metadata_org_link",
+      "type": "strings",
+      "multiValued": true,
+      "stored": true,
+      "indexed": true
+    }
+  },
+  {
+    "add-field": {
+      "name": "ditav.mods.dante_metadata_pers_link",
+      "type": "strings",
+      "multiValued": true,
+      "stored": true,
+      "indexed": true
+    }
+  },
+  {
+    "add-field": {
+      "name": "ditav.mods.dante_file_link",
+      "type": "strings",
+      "multiValued": true,
+      "stored": true,
+      "indexed": true
+    }
+  },
+  {
+    "add-field": {
+      "name": "ditav.mods.dante_file_org_link",
+      "type": "strings",
+      "multiValued": true,
+      "stored": true,
+      "indexed": true
+    }
+  },
+  {
+    "add-field": {
+      "name": "ditav.mods.dante_file_pers_link",
+      "type": "strings",
+      "multiValued": true,
+      "stored": true,
+      "indexed": true
+    }
   }
 ]

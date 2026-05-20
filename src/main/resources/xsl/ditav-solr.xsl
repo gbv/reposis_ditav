@@ -36,6 +36,56 @@
       </field>
     </xsl:for-each>
 
+    <xsl:for-each select="metadata/def.modsContainer/modsContainer/mods:mods/mods:originInfo[@eventType = 'created']/mods:agent/mods:nameIdentifier[@type='dante' and string-length(text()) &gt; 0]">
+      <xsl:variable name="nameIdentifier" select="."/>
+
+      <!-- concat https://uri.gbv.de/terminology/lod_organisations/ and >838c2acb-4a07-49d4-857c-cdbcb66b83e9 -->
+      <xsl:variable name="dante_link" select="concat($nameIdentifier/@typeURI, $nameIdentifier/text())"/>
+
+      <xsl:choose>
+        <xsl:when test="$nameIdentifier/@typeURI = 'https://uri.gbv.de/terminology/lod_organisations/'">
+          <field name="ditav.mods.dante_metadata_org_link">
+            <xsl:value-of select="$dante_link" />
+          </field>
+        </xsl:when>
+
+        <xsl:when test="$nameIdentifier/@typeURI = 'https://uri.gbv.de/terminology/lod_persons/'">
+          <field name="ditav.mods.dante_metadata_pers_link">
+            <xsl:value-of select="$dante_link" />
+          </field>
+        </xsl:when>
+      </xsl:choose>
+    </xsl:for-each>
+
+    <!-- TODO: change to @valueURI if fixed in data -->
+    <!-- <mods:nameIdentifier type="dante" typeURI="https://uri.gbv.de/terminology/lod_organisations/">838c2acb-4a07-49d4-857c-cdbcb66b83e9</mods:nameIdentifier> -->
+    <xsl:for-each
+      select="metadata/def.modsContainer/modsContainer/mods:mods/mods:subject/mods:name[@type='personal' and count(mods:nameIdentifier[@type='dante']) &gt; 0]">
+      
+      <xsl:variable name="nameIdentifier" select="mods:nameIdentifier[@type='dante']"/>
+
+      <!-- concat https://uri.gbv.de/terminology/lod_organisations/ and >838c2acb-4a07-49d4-857c-cdbcb66b83e9 -->
+      <xsl:variable name="dante_link" select="concat($nameIdentifier/@typeURI, $nameIdentifier/text())"/>
+
+      <field name="ditav.mods.dante_metadata_link">
+        <xsl:value-of select="$dante_link"/>
+      </field>
+
+      <xsl:choose>
+        <xsl:when test="$nameIdentifier/@typeURI = 'https://uri.gbv.de/terminology/lod_organisations/'">
+          <field name="ditav.mods.dante_metadata_org_link">
+            <xsl:value-of select="$dante_link" />
+          </field>
+        </xsl:when>
+
+        <xsl:when test="$nameIdentifier/@typeURI = 'https://uri.gbv.de/terminology/lod_persons/'">
+          <field name="ditav.mods.dante_metadata_pers_link">
+            <xsl:value-of select="$dante_link" />
+          </field>
+        </xsl:when>
+      </xsl:choose>
+
+    </xsl:for-each>
   </xsl:template>
 
 
