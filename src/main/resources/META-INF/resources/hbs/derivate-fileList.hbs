@@ -1,4 +1,4 @@
-<div id="collapse{{mycorederivate}}" class="body collapse in show">
+<div id="collapse{{mycorederivate}}" class="body collapse show">
   <table class="table table-sm table-striped">
     {{#isNot '/' path}}
       <tr class="file_set d-flex">
@@ -20,8 +20,7 @@
           <td class="file_preview col-1 text-center text-nowrap">
               {{#is type "file"}}
                 {{#contains "pdf|ps" extension}}
-                  <span class="fas {{getFileIcon extension}}" data-bs-toggle="tooltip"
-                              data-placement="right" data-html="true" data-title='&lt;img src="{{../serverBaseURL}}img/pdfthumb/{{../mycorederivate}}{{path}}?centerThumb=no"&gt;'></span>
+                  <span class="fas {{getFileIcon extension}}" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-html="true" title='&lt;img src="{{../serverBaseURL}}img/pdfthumb/{{../mycorederivate}}{{path}}?centerThumb=no"&gt;'></span>
                 {{else}}
                   <span class="fas {{getFileIcon extension}}" title="{{getFileLabel extension}}" aria-hidden="true"></span>
                 {{/contains}}
@@ -78,7 +77,6 @@
                 <div class="btn-group">
                   <a href="#" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
                     <i class="fas fa-cog"></i>
-                    <span class="caret"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
                     {{#isNot type "directory"}}

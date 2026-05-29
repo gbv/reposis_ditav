@@ -19,7 +19,7 @@
       <label xml:lang="x-group" text="true" />
       <category ID="cc_mark_1.0">
         <label xml:lang="de" text="Public Domain Mark 1.0" description="Kein Urheberrechtsschutz" />
-        <label xml:lang="en" text="Public Fomain Mark 1.0" description="No Copyright" />
+        <label xml:lang="en" text="Public Domain Mark 1.0" description="No Copyright" />
         <label xml:lang="x-dnb-cc" text="cc:cc-pdm-1.0" />
         <url xlink:href="https://creativecommons.org/publicdomain/mark/1.0/" xlink:type="locator" />
       </category>

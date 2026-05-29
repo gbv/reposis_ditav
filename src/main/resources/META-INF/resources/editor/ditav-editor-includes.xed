@@ -547,7 +547,7 @@
   <xed:template id="language">
     <xed:repeat xpath="mods:language" max="5">
       <div class="mir-form-group row {$xed-validation-marker}">
-        <label class="col-md-3 col-form-label text-right">
+        <label class="col-md-3 col-form-label text-end form-label">
           <xed:output i18n="mir.language" />
         </label>
         <div class="col-md-6">
@@ -591,7 +591,7 @@
   </xed:template>
 
   <xed:template id="genre.base">
-    <label class="col-md-3 col-form-label text-right">
+    <label class="col-md-3 col-form-label text-end form-label">
       <xed:output i18n="lod_document_classification.type.label" />
     </label>
     <div class="col-md-6">
@@ -618,7 +618,7 @@
     <xed:bind xpath="mods:titleInfo">
       <div class="mir-fieldset-content">
         <div class="mir-form-group row required {$xed-validation-marker}">
-          <label class="col-md-3 col-form-label text-right">
+          <label class="col-md-3 col-form-label text-end form-label">
             <xed:output i18n="mir.title" />
           </label>
           <div class="col-md-6">
@@ -647,7 +647,7 @@
     <xed:repeat xpath="mods:titleInfo[@type='translated']" min="1" max="6">
       <div class="mir-fieldset-content">
         <div class="mir-form-group row">
-          <label class="col-md-3 col-form-label text-right mir-formgroup-label">
+          <label class="col-md-3 col-form-label text-end form-label mir-formgroup-label">
             <xed:output i18n="mir.title" />
           </label>
           <div class="col-md-6">
@@ -678,7 +678,7 @@
       <xed:repeat xpath="mods:titleInfo[@type='translated']" min="1" max="6">
         <div class="mir-fieldset-content">
           <div class="mir-form-group row">
-            <label class="col-md-3 col-form-label text-right mir-formgroup-label">
+            <label class="col-md-3 col-form-label text-end form-label mir-formgroup-label">
               <xed:output i18n="mir.title" />
             </label>
             <div class="col-md-6">
@@ -690,7 +690,7 @@
           </div>
           <mir:textfield xpath="mods:subTitle" label="mir.title.subTitle" />
           <div class="mir-form-group row">
-            <label class="col-md-3 col-form-label text-right mir-formgroup-label">
+            <label class="col-md-3 col-form-label text-end form-label mir-formgroup-label">
               <xed:output i18n="mir.language" />
             </label>
             <div class="col-md-6">
@@ -710,7 +710,7 @@
   <xed:template id="sdnb.repeat.optional">
     <xed:repeat xpath="mods:classification[@authority='sdnb'][@displayLabel='sdnb']" min="1" max="10" method="build">
       <div class="mir-form-group row {$xed-validation-marker}">
-        <label class="col-md-3 col-form-label text-right">
+        <label class="col-md-3 col-form-label text-end form-label">
           <xed:output i18n="editor.search.mir.sdnb" />
  : </label>
         <div class="col-md-6">
@@ -729,7 +729,7 @@
   <xed:template id="ditav_translation">
     <xed:bind xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/translation'][@displayLabel='translation']/@valueURIxEditor">
       <div class="mir-form-group row {$xed-validation-marker}">
-        <label class="col-md-3 col-form-label text-right">
+        <label class="col-md-3 col-form-label text-end form-label">
           <xed:output i18n="ditav.form.translation.label" />
         </label>
         <div class="col-md-6">
@@ -748,7 +748,7 @@
   <xed:template id="ditav_transcription">
     <xed:bind xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/transcription'][@displayLabel='transcription']/@valueURIxEditor">
       <div class="mir-form-group row {$xed-validation-marker}">
-        <label class="col-md-3 col-form-label text-right">
+        <label class="col-md-3 col-form-label text-end form-label">
           <xed:output i18n="ditav.form.transcription.label" />
         </label>
         <div class="col-md-6">
@@ -767,7 +767,7 @@
   <xed:template id="ditav_translation_available">
     <xed:bind xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/translation_available'][@displayLabel='translation_available']/@valueURIxEditor">
       <div class="mir-form-group row {$xed-validation-marker}">
-        <label class="col-md-3 col-form-label text-right">
+        <label class="col-md-3 col-form-label text-end form-label">
           <xed:output i18n="ditav.form.translation_available.label" />
         </label>
         <div class="col-md-6">
@@ -786,7 +786,7 @@
   <xed:template id="ditav_scan_available">
     <xed:bind xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/scan_available'][@displayLabel='scan_available']/@valueURIxEditor">
       <div class="mir-form-group row {$xed-validation-marker}">
-        <label class="col-md-3 col-form-label text-right">
+        <label class="col-md-3 col-form-label text-end form-label">
           <xed:output i18n="ditav.form.scan_available.label" />
         </label>
         <div class="col-md-6">
@@ -805,7 +805,7 @@
   <xed:template id="gazin_genres">
     <xed:bind xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/gazin_genres'][@displayLabel='gazin_genres']/@valueURIxEditor">
       <div class="mir-form-group row {$xed-validation-marker}">
-        <label class="col-md-3 col-form-label text-right">
+        <label class="col-md-3 col-form-label text-end form-label">
           <xed:output i18n="gazin_genre.label" />
         </label>
         <div class="col-md-6">
@@ -824,7 +824,7 @@
   <xed:template id="lod_archives">
     <xed:bind xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/lod_archives'][@displayLabel='lod_archives']/@valueURIxEditor">
       <div class="mir-form-group row {$xed-validation-marker}">
-        <label class="col-md-3 col-form-label text-right">
+        <label class="col-md-3 col-form-label text-end form-label">
           <xed:output i18n="lod_archives.label" />
         </label>
         <div class="col-md-6">
@@ -860,7 +860,7 @@
   <xed:template id="lod_document_classification">
     <xed:bind xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/lod_document_classification'][@displayLabel='lod_document_classification']/@valueURIxEditor">
       <div class="mir-form-group row {$xed-validation-marker}">
-        <label class="col-md-3 col-form-label text-right">
+        <label class="col-md-3 col-form-label text-end form-label">
           <xed:output i18n="lod_document_classification.subtype.label" />
         </label>
         <div class="col-md-6">
@@ -922,7 +922,7 @@
     <xed:repeat xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/koloe_period'][@displayLabel='koloe_period']" min="1">
       <xed:bind xpath="@valueURIxEditor">
         <div class="mir-form-group row {$xed-validation-marker}">
-          <label class="col-md-3 col-form-label text-right">
+          <label class="col-md-3 col-form-label text-end form-label">
             <xed:output i18n="koloe_period.label" />
           </label>
           <div class="col-md-6">
@@ -943,7 +943,7 @@
     <xed:repeat xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/koloe_topic_classification'][@displayLabel='koloe_topic_classification']" min="1">
       <xed:bind xpath="@valueURIxEditor">
         <div class="mir-form-group row {$xed-validation-marker}">
-          <label class="col-md-3 col-form-label text-right">
+          <label class="col-md-3 col-form-label text-end form-label">
             <xed:output i18n="koloe_topic_classification.label" />
           </label>
           <div class="col-md-6">
@@ -1036,7 +1036,7 @@
   <xed:template id="lod.document_classification">
     <xed:bind xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/lod_document_classification'][@displayLabel='lod_document_classification']/@valueURIxEditor">
       <div class="mir-form-group row {$xed-validation-marker}">
-        <label class="col-md-3 col-form-label text-right">
+        <label class="col-md-3 col-form-label text-end form-label">
           <xed:output i18n="lod.editor.metadata.lod_document_classification.label" />
         </label>
         <div class="col-md-6">
@@ -1055,7 +1055,7 @@
   <xed:template id="lod.archives">
     <xed:bind xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/lod_archives'][@displayLabel='lod_archives']/@valueURIxEditor">
       <div class="mir-form-group row {$xed-validation-marker}">
-        <label class="col-md-3 col-form-label text-right">
+        <label class="col-md-3 col-form-label text-end form-label">
           <xed:output i18n="lod.editor.metadata.lod_archives.label" />
         </label>
         <div class="col-md-6">
@@ -1088,7 +1088,7 @@
       <xed:repeat xpath="mods:note" min="1" max="5">
         <div class="mir-fieldset-content">
           <div class="mir-form-group row">
-            <label class="col-md-3 col-form-label text-right">
+            <label class="col-md-3 col-form-label text-end form-label">
               <xed:output i18n="mir.comment.type" />
             </label>
             <div class="col-md-6">
@@ -1114,7 +1114,7 @@
   </xed:template>
 
   <xed:template id="lod.genre.base">
-    <label class="col-md-3 col-form-label text-right">
+    <label class="col-md-3 col-form-label text-end form-label">
       <xed:output i18n="lod.editor.genre.label" />
     </label>
     <div class="col-md-6">
@@ -1187,7 +1187,7 @@
       <xed:repeat xpath="mods:abstract" min="1" max="3">
         <div class="mir-fieldset-content">
           <div class="mir-form-group row">
-            <label class="col-md-3 col-form-label text-right">
+            <label class="col-md-3 col-form-label text-end form-label">
               <xed:output i18n="lod.abstract.in" />
             </label>
             <div class="col-md-6">
@@ -1243,7 +1243,7 @@
 
           <!-- Event Type Selector -->
           <div class="mir-form-group row">
-            <label class="col-md-3 col-form-label text-right">
+            <label class="col-md-3 col-form-label text-end form-label">
               <xed:output i18n="lod.editor.originInfo.eventType" />
             </label>
             <div class="col-md-6">
@@ -1287,7 +1287,7 @@
 
           <!-- Event Type Selector -->
           <div class="mir-form-group row">
-            <label class="col-md-3 col-form-label text-right">
+            <label class="col-md-3 col-form-label text-end form-label">
               <xed:output i18n="lod.editor.originInfo.eventType" />
             </label>
             <div class="col-md-6">
@@ -1334,7 +1334,7 @@
 
         <!-- Display Form (full name with search) -->
         <div class="mir-form-group row">
-          <label class="col-md-3 col-form-label text-right">
+          <label class="col-md-3 col-form-label text-end form-label">
             <xed:output i18n="editor.label.author" />
           </label>
           <div class="col-md-6">
@@ -1354,7 +1354,7 @@
 
         <!-- Role (marcrelator) -->
         <div class="mir-form-group row">
-          <label class="col-md-3 col-form-label text-right">
+          <label class="col-md-3 col-form-label text-end form-label">
             <xed:output i18n="mir.role" />
           </label>
           <div class="col-md-6">
