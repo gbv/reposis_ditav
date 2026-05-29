@@ -15,3 +15,7 @@ MCR.LayoutService.LastModifiedCheckPeriod=0
 MCR.UseXSLTemplateCache=false
 MCR.SASS.DeveloperMode=true
 ```
+
+## CORS
+
+See [docs/CORS_SETUP.md](docs/CORS_SETUP.md) for CORS setup, deployment, and verification.

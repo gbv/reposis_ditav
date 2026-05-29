@@ -1,0 +1,184 @@
+<div id="collapse{{mycorederivate}}" class="body collapse show">
+  <table class="table table-sm table-striped">
+    {{#isNot '/' path}}
+      <tr class="file_set d-flex">
+        <td class="file_preview col-1 text-center text-nowrap">
+          <span class="fas fa-folder" aria-hidden="true"></span>
+        </td>
+        <td class="file_name derivate_folder col">
+          <a data-path="{{getParent path}}/" href="#">..</a>
+        </td>
+      </tr>
+    {{/isNot}}
+    {{#each children}}
+      {{#is (concat '/' ../mainDoc) path}}
+        <tr class="file_set active_file d-flex">
+      {{else}}
+             <tr class="file_set d-flex" {{#if ../permWrite}} {{#is type "directory"}}
+                 data-upload-object="{{../mycorederivate}}" data-upload-target="{{path}}" {{/is}}{{/if}} >
+      {{/is}}
+          <td class="file_preview col-1 text-center text-nowrap">
+              {{#is type "file"}}
+                {{#contains "pdf|ps" extension}}
+                  <span class="fas {{getFileIcon extension}}" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-html="true" title='&lt;img src="{{../serverBaseURL}}img/pdfthumb/{{../mycorederivate}}{{path}}?centerThumb=no"&gt;'></span>
+                {{else}}
+                  <span class="fas {{getFileIcon extension}}" title="{{getFileLabel extension}}" aria-hidden="true"></span>
+                {{/contains}}
+              {{else}}
+                <span class="fas fa-folder" aria-hidden="true"></span>
+              {{/is}}
+          </td>
+          {{#isNot type "directory"}}
+            {{#is "mp4" extension}}
+              <td class="file_name file_video col-6">
+                <a data-deriid="{{../mycorederivate}}" data-name="{{name}}" href="{{href}}">
+                  {{name}}
+                </a>
+                <div class="file_md5 hidden">
+                  <span class="file_md5_label">{{getI18n "mir.derivate.file.MD5"}}</span> {{md5}}
+                </div>
+              </td>
+            {{else}}
+              <td class="file_name col-6">
+                <a href="{{href}}">
+                  {{name}}
+                </a>
+                <div class="file_md5 hidden">
+                  <span class="file_md5_label">{{getI18n "mir.derivate.file.MD5"}}</span> {{md5}}
+                </div>
+              </td>
+            {{/is}}
+          {{else}}
+            <td class="file_name derivate_folder col">
+              <a data-path="{{path}}" href="#">
+                {{name}}
+              </a>
+            </td>
+          {{/isNot}}
+          <td class="file_date d-none d-sm-table-cell col-md-2 text-end">
+            {{#is type "file"}}
+              {{formatDate time.modified}}
+            {{/is}}
+          </td>
+          <td class="file_size d-none d-sm-table-cell col-md-2 text-end text-nowrap">
+            {{#isNot type "directory"}}
+                {{formatFileSize size}}
+            {{/isNot}}
+          </td>
+          <td class="d-sm-none col-4 text-end">
+            {{#is type "file"}}
+              {{formatDate time.modified}}<br>
+            {{/is}}
+            {{formatFileSize size}}
+          </td>
+          <td class="options col-1 text-end">
+            {{#isOr ../permWrite ../permDelete}}
+              {{#noDirOrURN type ../urn}}
+                <div class="btn-group">
+                  <a href="#" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
+                    <i class="fas fa-cog"></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    {{#isNot type "directory"}}
+                      <li>
+                        <a title="{{getI18n "IFS.mainFile"}}"
+                            href="#"
+                            data-derivateid="{{../mycorederivate}}"
+                            data-objectid="{{../mycoreobject}}"
+                            data-file="{{name}}"
+                            data-path="{{urlPath}}"
+                            class="option mir_mainfile dropdown-item">
+                          <span class="fas fa-star"></span>
+                          {{getI18n "IFS.mainFile"}}
+                        </a>
+                      </li>
+                      {{#contains name ".tei.xml"}}
+                        <li>
+                          <a href="{{../serverBaseURL}}modules/webtools/texteditor/objects/{{../mycoreobject}}/derivates/{{../mycorederivate}}/contents{{urlPath}}"
+                              class="option dropdown-item"
+                              title="{{getI18n (concat "IFS." type ".Open_in_texteditor")}}">
+                            <span class="fas fa-file-code"></span>
+                            {{getI18n (concat "IFS." type ".Open_in_texteditor")}}
+                          </a>
+                        </li>
+                      {{/contains}}
+                    {{/isNot}}
+                      {{#is type "file"}}
+                          <li>
+                              <a href="{{../serverBaseURL}}servlets/MCRDerivateServlet?derivateid={{../mycorederivate}}&amp;objectid={{../mycoreobject}}&amp;todo=smovfile&amp;file={{urlPath}}"
+                              class="option rename dropdown-item"
+                              title="{{getI18n (concat "IFS." type "Rename")}}">
+                              <span class="fas fa-file-signature"></span>
+                              {{getI18n (concat "IFS." type "Rename")}}
+                              </a>
+                          </li>
+                      {{/is}}
+                      <li>
+                        <a href="{{../serverBaseURL}}servlets/MCRDerivateServlet?derivateid={{../mycorederivate}}&amp;objectid={{../mycoreobject}}&amp;todo=sdelfile&amp;file={{urlPath}}"
+                            class="option confirm_deletion dropdown-item"
+                            data-text="{{getI18n (concat "mir.confirm." type ".text")}}"
+                            title="{{getI18n (concat "IFS." type "Delete")}}">
+                          <span class="fas fa-trash-alt"></span>
+                          {{getI18n (concat "IFS." type "Delete")}}
+                        </a>
+                      </li>
+                  </ul>
+                </div>
+              {{/noDirOrURN}}
+            {{/isOr}}
+          </td>
+        </tr>
+    {{/each}}
+  </table>
+  {{#if permWrite}}
+      <div class="card bg-light text-center mir-file-upload-box" data-upload-object="{{mycorederivate}}" data-upload-target="{{path}}">
+        <div class="card-body">
+          <i class="fas fa-upload"></i>
+          {{{getI18n "mir.upload.drop.derivate"}}}
+        </div>
+      </div>
+  {{/if}}
+
+  {{#if pagination}}
+    <div class="file_box_pagination row">
+      <div class="col-md-6 d-xs-none pagination-info">
+        {{getI18n "mir.pagination.entriesInfo" pagination.start pagination.end pagination.total}}
+      </div>
+      <div class="col-12 col-md-6">
+        <ul class="pagination pagination-sm float-end">
+          {{#paginate pagination type="first"}}
+            <li class="page-item{{#if disabled}} disabled{{/if}}">
+              <a href="#" class="page-link" data-page="{{n}}" aria-label="First" {{#unless disabled}}title="{{getI18n "mir.pagination.first" n}}{{/unless}}">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+          {{/paginate}}
+          {{#paginate pagination type="previous"}}
+            <li class="page-item{{#if disabled}} disabled{{/if}}">
+              <a href="#" data-page="{{n}}" class="page-link" aria-label="Previous" {{#unless disabled}}title="{{getI18n "mir.pagination.previous" n}}{{/unless}}">
+                <span aria-hidden="true">&lsaquo;</span>
+              </a>
+            </li>
+          {{/paginate}}
+          {{#paginate pagination type="middle" limit="5"}}
+            <li class="page-item{{#if active}} active{{/if}}"><a href="#" class="page-link" data-page="{{n}}">{{n}}</a></li>
+          {{/paginate}}
+          {{#paginate pagination type="next"}}
+            <li class="page-item{{#if disabled}} disabled{{/if}}">
+              <a href="#" class="page-link" data-page="{{n}}" aria-label="Next" {{#unless disabled}}title="{{getI18n "mir.pagination.next" n}}{{/unless}}">
+                <span aria-hidden="true">&rsaquo;</span>
+              </a>
+            </li>
+          {{/paginate}}
+          {{#paginate pagination type="last"}}
+            <li class="page-item{{#if disabled}} disabled{{/if}}">
+              <a href="#" class="page-link" data-page="{{n}}" aria-label="Last" {{#unless disabled}}title="{{getI18n "mir.pagination.last" n}}{{/unless}}">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          {{/paginate}}
+        </ul>
+      </div>
+    </div>
+  {{/if}}
+</div>

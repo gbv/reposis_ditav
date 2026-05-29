@@ -17,7 +17,7 @@
 
     <xed:form xmlns:xed="http://www.mycore.de/xeditor"
       xmlns:cmd="http://www.cdlib.org/inside/diglib/copyrightMD" method="post" role="form"
-      class="form-horizontal">
+      >
 
       <xed:preload uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" />
       <xed:preload uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-admins-includes.xed" />
