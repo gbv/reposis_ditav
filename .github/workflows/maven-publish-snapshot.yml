@@ -7,11 +7,8 @@ on:
   push:
     branches:
       - 'main'
-      - '2023.06.x'
-      - '2024.06.x'
       - '2025.06.x'
       - '2025.12.x'
-      - '2025.12.x-dev'
 
 jobs:
   build:
