@@ -1,6 +1,7 @@
 package de.gbv.reposis.ditav;
 
 import static de.gbv.reposis.ditav.DitavTEIAccumulator.DITAV_GENERIC_FILE_LINK_SOLR_FIELD;
+import static de.gbv.reposis.ditav.DitavTEIAccumulator.DITAV_GEONAMES_ID_SOLR_FIELD;
 import static de.gbv.reposis.ditav.DitavTEIAccumulator.DITAV_ORGANIZATION_FILE_LINK_SOLR_FIELD;
 import static de.gbv.reposis.ditav.DitavTEIAccumulator.DITAV_PERSON_FILE_LINK_SOLR_FIELD;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -17,10 +18,16 @@ import java.util.Set;
 import org.apache.solr.common.SolrInputDocument;
 import org.junit.jupiter.api.Test;
 import org.mycore.common.MCRClassTools;
+import org.mycore.common.MCRTestConfiguration;
+import org.mycore.common.MCRTestProperty;
 import org.mycore.test.MyCoReTest;
 
 @MyCoReTest
+// disable remote GeoNames lookups so the accumulator works offline during tests
+@MCRTestConfiguration(properties = @MCRTestProperty(key = "MCR.DITAV.GeoNames.Username", empty = true))
 class DitavTEIAccumulatorTest {
+
+    private static final Set<String> EXPECTED_GEONAME_IDS = Set.of("2747373", "2910831");
 
     private static final String PERS_PREFIX = "https://uri.gbv.de/terminology/lod_persons/";
 
@@ -66,6 +73,9 @@ class DitavTEIAccumulatorTest {
         List<Object> personValues = List.copyOf(solrDocument.getFieldValues(DITAV_PERSON_FILE_LINK_SOLR_FIELD));
         assertEquals(EXPECTED_PERSONS.size(), personValues.size(),
             "no duplicate values in person field");
+
+        Set<String> geonameIds = asStringSet(solrDocument.getFieldValues(DITAV_GEONAMES_ID_SOLR_FIELD));
+        assertEquals(EXPECTED_GEONAME_IDS, geonameIds, "geonameIds extracted from placeName refs (deduped)");
 
         Files.deleteIfExists(file);
     }
