@@ -5,6 +5,14 @@
   <label xml:lang="fr" text="Période" description="(KoloE) Période" />
   <label xml:lang="x-uri" text="https://ditav.gbv.de/api/v2/classifications/koloe_period" />
   <categories>
+    <category ID="before_colonial_conquest">
+      <label xml:lang="de" text="Vor der kolonialen Eroberung" />
+      <label xml:lang="en" text="Before the colonial conquest" />
+    </category>
+    <category ID="during_colonial_rule">
+      <label xml:lang="de" text="Während der deutschen Kolonialherrschaft " />
+      <label xml:lang="en" text="During German colonial rule" />
+    </category>
     <category ID="after_colonial_rule">
       <label xml:lang="de" text="Nach dem Ende der formellen deutschen Kolonialherrschaft" />
       <label xml:lang="en" text="After the end of formal German colonial rule" />

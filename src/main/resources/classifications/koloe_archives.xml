@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="koloe_archives">
+  <label xml:lang="de" text="Archive" />
+  <label xml:lang="en" text="Archives" />
+  <label xml:lang="x-uri" text="https://ditav.gbv.de/api/v2/classifications/koloe_archives" />
+  <categories>
+    <category ID="nwa">
+      <label xml:lang="de" text="NWA" description="Familienarchiv Hecker, nach Abgabe: Stiftung Niedersächsisches Wirtschaftsarchiv" />
+      <label xml:lang="x-uri" text="https://ditav.gbv.de/api/v2/classifications/koloe_archives#nwa" />
+      <url xlink:href="https://www.arcinsys.niedersachsen.de/arcinsys/detailAction.action?detailid=a163" xlink:type="locator" />
+    </category>
+    <category ID="gei">
+      <label xml:lang="de" text="GEI" description="Georg-Eckert-Institut, Leibniz-Institut für Bildungsmedien in Braunschweig" />
+      <label xml:lang="x-uri" text="https://ditav.gbv.de/api/v2/classifications/koloe_archives#gei" />
+      <url xlink:href="https://glotrec.gei.de/cat/" xlink:type="locator" />
+    </category>
+    <category ID="stadta_h">
+      <label xml:lang="de" text="StadtA H" description="Stadtarchiv Hannover" />
+      <label xml:lang="x-uri" text="https://ditav.gbv.de/api/v2/classifications/koloe_archives#stadta_h" />
+      <url xlink:href="https://www.arcinsys.niedersachsen.de/arcinsys/detailAction.action?detailid=a102" xlink:type="locator" />
+    </category>
+    <category ID="stab">
+      <label xml:lang="de" text=" StAB" description="Staatsarchiv Bremen" />
+      <label xml:lang="x-uri" text="https://ditav.gbv.de/api/v2/classifications/koloe_archives#stab" />
+      <url xlink:href="https://www.arcinsys.niedersachsen.de/arcinsys/detailAction.action?detailid=a189" xlink:type="locator" />
+    </category>
+  </categories>
+</mycoreclass>
