@@ -88,5 +88,65 @@
       "stored": true,
       "indexed": true
     }
+  },
+  {
+    "add-field": {
+      "name": "ditav.tei.geonames_id",
+      "type": "strings",
+      "multiValued": true,
+      "stored": true,
+      "indexed": true
+    }
+  },
+  {
+    "add-field": {
+      "name": "ditav.tei.geonames_link",
+      "type": "strings",
+      "multiValued": true,
+      "stored": true,
+      "indexed": true
+    }
+  },
+  {
+    "add-field": {
+      "name": "ditav.tei.place",
+      "type": "strings",
+      "multiValued": true,
+      "stored": true,
+      "indexed": true
+    }
+  },
+  {
+    "add-field-type": {
+      "name": "location_ditav",
+      "class": "solr.RptWithGeometrySpatialField",
+      "geo": true,
+      "spatialContextFactory": "Geo3D",
+      "distanceUnits": "kilometers",
+      "maxDistErr": "0.001",
+      "distErrPct": "0.025",
+      "planetModel": "WGS84",
+      "format": "WKT"
+    }
+  },
+  {
+    "add-field": {
+      "name": "ditav.tei.coordinates",
+      "type": "location_ditav",
+      "multiValued": true
+    }
+  },
+  {
+    "add-field": {
+      "name": "ditav.tei.coordinates.str",
+      "type": "string",
+      "multiValued": true
+    }
+  },
+  {
+    "add-copy-field": {
+      "source": "ditav.tei.coordinates",
+      "dest": "ditav.tei.coordinates.str"
+    }
   }
 ]
