@@ -67,6 +67,13 @@ public final class DitavGeoNamesService {
         .followRedirects(HttpClient.Redirect.NORMAL)
         .build();
 
+    /**
+     * One lock per geonameId, so concurrent fetches of <em>different</em> ids run in parallel
+     * while concurrent fetches of the <em>same</em> id are serialized and hit the cache after the
+     * first one stored it.
+     */
+    private final KeyedLocks fetchLocks = new KeyedLocks();
+
     private DitavGeoNamesService() {
     }
 
@@ -224,7 +231,14 @@ public final class DitavGeoNamesService {
         return getCacheDirectory().resolve(geonameId + ".json");
     }
 
-    private synchronized Optional<String> fetchAndStore(String geonameId) {
+    private Optional<String> fetchAndStore(String geonameId) {
+        // lock per geonameId: different ids fetch in parallel, the same id is fetched only once
+        try (KeyedLocks.LockHandle handle = fetchLocks.acquire(geonameId)) {
+            return doFetchAndStore(geonameId);
+        }
+    }
+
+    private Optional<String> doFetchAndStore(String geonameId) {
         // re-check the cache: another thread may have fetched it while we waited for the lock
         Optional<String> cached = getCached(geonameId);
         if (cached.isPresent()) {
