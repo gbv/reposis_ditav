@@ -247,7 +247,7 @@ public final class DitavGeoNamesService {
 
         Optional<String> username = MCRConfiguration2.getString(USERNAME_PROPERTY).filter(s -> !s.isBlank());
         if (username.isEmpty()) {
-            LOGGER.debug("No GeoNames username configured ({}); skipping remote lookup for {}",
+            LOGGER.warn("No GeoNames username configured ({}); skipping remote lookup for {}",
                 USERNAME_PROPERTY, geonameId);
             return Optional.empty();
         }
