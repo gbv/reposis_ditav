@@ -83,11 +83,11 @@ public class DitavTEIAccumulator implements MCRSolrFileIndexAccumulator {
         }
 
         extractTEIElement(document, "persName",
-            "https://uri.gbv.de/terminology/lod_persons/", teiDocument,
+            "//uri.gbv.de/terminology/lod_persons/", teiDocument,
             DITAV_GENERIC_FILE_LINK_SOLR_FIELD, DITAV_PERSON_FILE_LINK_SOLR_FIELD);
 
         extractTEIElement(document, "orgName",
-            "https://uri.gbv.de/terminology/lod_organisations/", teiDocument,
+            "//uri.gbv.de/terminology/lod_organisations/", teiDocument,
             DITAV_GENERIC_FILE_LINK_SOLR_FIELD, DITAV_ORGANIZATION_FILE_LINK_SOLR_FIELD);
 
         extractGeoNames(document, teiDocument);
