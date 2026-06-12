@@ -997,6 +997,7 @@
 
     <xed:include ref="cancel.submit" />
     <xed:include ref="cleanup-rules" />
+    <xed:include ref="ditav-cleanup-rules" />
     <xed:include ref="validation-rules" />
 
     <xed:include ref="javascript" />
