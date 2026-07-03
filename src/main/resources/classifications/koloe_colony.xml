@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="koloe_colony">
+  <label xml:lang="de" text="Kolonie" description="(KoloE) Kolonie" />
+  <label xml:lang="en" text="Colony" description="(KoloE) colony" />
+  <label xml:lang="x-uri" text="https://ditav.gbv.de/api/v2/classifications/koloe_colony" />
+  <categories>
+    <category ID="cameroon">
+      <label xml:lang="de" text="Kamerun" />
+      <label xml:lang="en" text="Cameroon" />
+    </category>
+    <category ID="togo">
+      <label xml:lang="de" text="Togo" />
+      <label xml:lang="en" text="Togo" />
+    </category>
+    <category ID="german_new_guinea">
+      <label xml:lang="de" text="Deutsch-Neuguinea " />
+      <label xml:lang="en" text="German New Guinea" />
+    </category>
+  </categories>
+</mycoreclass>

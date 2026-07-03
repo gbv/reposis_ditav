@@ -5,6 +5,14 @@
   <label xml:lang="fr" text="Thème" description="(KoloE) Thème" />
   <label xml:lang="x-uri" text="https://ditav.gbv.de/api/v2/classifications/koloe_topic_classification" />
   <categories>
+    <category ID="cultural_interconnections">
+      <label xml:lang="de" text="Kulturelle Verflechtungen" />
+      <label xml:lang="en" text="Cultural interconnections" />
+    </category>
+    <category ID="post_colonial_legacy">
+      <label xml:lang="de" text="(Post-)Koloniales Erbe und Erinnerungskultur" />
+      <label xml:lang="en" text="(Post-)colonial legacy and culture of remembrance" />
+    </category>
     <category ID="colonial_violence">
       <label xml:lang="de" text="Koloniale Gewalt" />
       <label xml:lang="en" text="Colonial violence" />

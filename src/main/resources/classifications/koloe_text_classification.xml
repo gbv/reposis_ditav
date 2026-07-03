@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="koloe_text_classification">
+  <label xml:lang="de" text="Texte" description="(KoloE) Teiltexte" />
+  <label xml:lang="en" text="Texts" description="(KoloE) Part texts" />
+  <label xml:lang="fr" text="Textes" description="(KoloE) Part texts" />
+  <label xml:lang="x-uri" text="https://ditav.gbv.de/api/v2/classifications/koloe_text_classification" />
+  <categories>
+    <category ID="a_text">
+      <label xml:lang="de" text="A-Text: Entstehungskontext und Ursprung" />
+      <label xml:lang="en" text="A-Text: Context of origin and genesis" />
+      <label xml:lang="fr" text="A-Text: Contexte d'origine et genèse" />
+    </category>
+    <category ID="b_text">
+      <label xml:lang="de" text="B-Text: Inhaltliche Auseinandersetzung" />
+      <label xml:lang="en" text="B-Text: Content-related engagement" />
+      <label xml:lang="fr" text="B-Text: Engagement lié au contenu" />
+    </category>
+    <category ID="c_text">
+      <label xml:lang="de" text="C-Text: Gegenwartsbezug und Transfer" />
+      <label xml:lang="en" text="C-Text: Contemporary relevance and transfer" />
+      <label xml:lang="fr" text="C-Text: Pertinence contemporaine et transfert" />
+    </category>
+  </categories>
+</mycoreclass>
