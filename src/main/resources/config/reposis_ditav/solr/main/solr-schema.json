@@ -27,6 +27,36 @@
     }
   },
   {
+    "add-copy-field": {
+      "source": "mods.author",
+      "dest": "ditav.mods.author.facet"
+    }
+  },
+  {
+    "add-copy-field": {
+      "source": "mods.nameByRole.personal.rcp",
+      "dest": "ditav.mods.recipient.facet"
+    }
+  },
+  {
+    "add-field": {
+      "name": "ditav.mods.origin.author.facet",
+      "type": "strings",
+      "multiValued": true,
+      "stored": true,
+      "indexed": true
+    }
+  },
+  {
+    "add-field": {
+      "name": "ditav.mods.origin.receipient.facet",
+      "type": "strings",
+      "multiValued": true,
+      "stored": true,
+      "indexed": true
+    }
+  },
+  {
     "add-dynamic-field": {
       "name": "ditav.mods.title.lang.*",
       "type": "strings",
