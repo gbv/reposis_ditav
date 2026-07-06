@@ -79,9 +79,9 @@ public class DitavIndexingTest {
         assertEquals("Letter from Golitsyn to Grimaldo",
             getFieldValue(fields, "ditav.mods.title.lang.en"));
         assertEquals("Golitsyn, Sergei Dmitrievich",
-            getFieldValue(fields, "ditav.mods.author.facet"));
+            getFieldValue(fields, "ditav.mods.origin.author.facet"));
         assertEquals("Grimaldo, Marquis of, José",
-            getFieldValue(fields, "ditav.mods.recipient.facet"));
+            getFieldValue(fields, "ditav.mods.origin.receipient.facet"));
     }
 
     private String getFieldValue(List<Element> fields, String name) {
