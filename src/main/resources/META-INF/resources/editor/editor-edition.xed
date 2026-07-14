@@ -1,45 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <MyCoReWebPage>
-  <section title="LOD-Dokument erstellen" xml:lang="de" />
-  <section title="Create LOD document" xml:lang="en" />
+  <section title="Edition hinzufügen" xml:lang="de" />
+  <section title="Add edition" xml:lang="en" />
+  <section title="Ajouter une édition" xml:lang="fr" />
   <section xml:lang="all">
 
-    <xed:form xmlns:xed="http://www.mycore.de/xeditor"
-      xmlns:cmd="http://www.cdlib.org/inside/diglib/copyrightMD" method="post" role="form"
-      >
+    <xed:form xmlns:xed="http://www.mycore.de/xeditor" xmlns:cmd="http://www.cdlib.org/inside/diglib/copyrightMD" method="post" role="form">
 
       <xed:preload uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed" />
       <xed:preload uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-admins-includes.xed" />
       <xed:preload uri="xslStyle:editor/mir2xeditor:webapp:editor/ditav-editor-includes.xed" />
-  
       <xed:preload uri="{$MIR.EditorForms.CustomIncludes}" />
-
+      
+      <!-- form title -->
+      <h1 class="mir-fieldset-legend">
+        <xed:output i18n="edition.editor.add_edition" />
+      </h1>
       <xed:include ref="in.out" />
 
       <xed:bind xpath="/mycoreobject">
         <xed:include ref="mycore.common" />
-        <xed:bind xpath="@ID" initially="edition_mods_00000000" />
-
-
-        <xed:bind
-          xpath="metadata/def.modsContainer[@class='MCRMetaXML'][@notinherit='true']/modsContainer/mods:mods">
-          <xed:bind xpath="mods:typeOfResource/@mcr:categId" initially="typeOfResource:text" />
-          <xed:include ref="genres.edition" />
+        <xed:bind xpath="metadata/def.modsContainer[@class='MCRMetaXML'][@notinherit='true']/modsContainer/mods:mods">
+          <xed:include ref="failed-validation-messages" />
+          <br />
+          <xed:bind xpath="../../../../service">
+            <xed:include ref="status" />
+          </xed:bind>
+          <xed:include ref="ditav.edition" />
           <xed:include ref="cleanup-rules" />
-          <xed:include ref="ditav-cleanup-rules" />
           <xed:include ref="validation-rules" />
-
           <xed:include ref="javascript" />
+          <xed:include ref="cancel.submit" />
           <!-- frame for modal window -->
           <xed:include ref="modal.name" />
           <xed:include ref="modal.body" />
-
         </xed:bind>
-
       </xed:bind>
-
     </xed:form>
-
   </section>
 </MyCoReWebPage>
