@@ -22,13 +22,13 @@
         <label xml:lang="de" text="Quelle" />
         <label xml:lang="en" text="Source" />
         <label xml:lang="fr" text="Source" />
-        <label xml:lang="x-hosts" text="document" />
+        <label xml:lang="x-hosts" text="edition document" />
       </category>
       <category ID="contextual_information">
         <label xml:lang="de" text="Kontext" />
         <label xml:lang="en" text="Contextual Information" />
         <label xml:lang="fr" text="Information contextuelle" />
-        <label xml:lang="x-hosts" text="document" />
+        <label xml:lang="x-hosts" text="edition document" />
       </category>
     </category>
     <category ID="supplement">

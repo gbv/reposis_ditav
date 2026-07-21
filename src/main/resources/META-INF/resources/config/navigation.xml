@@ -87,7 +87,7 @@
         <label xml:lang="en">Add edition</label>
     </item>
     <!--
-    <item href="/content/publish/add_document.xed" type="intern" replaceMenu="false" constrainPopUp="false">
+    <item href="/content/publish/add-document.xed" type="intern" replaceMenu="false" constrainPopUp="false">
         <label xml:lang="de">Dokument hinzufügen</label>
         <label xml:lang="en">Add document</label>
     </item>

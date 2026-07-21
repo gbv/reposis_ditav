@@ -89,23 +89,92 @@
 
   <!-- Koloniales Erbe Online Edition (KOLOE) -->
   <xed:template id="koloe.edition">
-    <div class="border rounded p-3 mb-4">
       <!-- Title -->
       <xed:include ref="title.complex.repeated" />
       <!-- author -->
-      <xed:include ref="ditav.author.repeated" />
+      <xed:include ref="author.repeated" />
       <!-- date of creation -->
       <xed:include ref="research.data.date.repeated" />
       <!-- place of creation -->
       <xed:include ref="creator.place" />
       <!-- language -->
       <xed:include ref="language" />
-      <!-- document type -->
-      <xed:include ref="koloe_mir_genres" />
-      <!-- document subtype -->
+      <!-- document classification -->
       <xed:include ref="koloe_document_classification" />
+      <!-- topic classification -->
+      <xed:include ref="koloe_topic_classification" />
+      <!-- continents -->
+      <xed:include ref="koloe_continents" />
+      <!-- period -->
+      <xed:include ref="koloe_period" />
       <!-- license -->
       <xed:include ref="rights" />
+  </xed:template>
+
+    <!-- ========== dynamic editor ========== -->
+
+  <xed:template id="gzn.edition">
+    <xed:include ref="gazin_genres" />
+  </xed:template>
+
+  <xed:template id="lod.edition">
+    <div class="border rounded p-3 mb-4">
+      <h2>
+        <xed:output i18n="ditav.mods.section.frontend" />
+      </h2>
+
+      <!-- title (Language) -->
+      <xed:include ref="ditav.mods.title" />
+      <!-- translated title (Language) -->
+      <xed:include ref="ditav.mods.translated_title" />
+      <!-- author -->
+      <xed:include ref="ditav.mods.agent.author" />
+      <!-- date of creation -->
+      <xed:include ref="ditav.mods.originInfo.created.displayDate" />
+      <!-- place of creation -->
+      <xed:include ref="ditav.mods.originInfo.created.placeTerm" />
+      <!-- recipient -->
+      <xed:include ref="ditav.mods.originInfo.received.recipient" />
+      <!-- date of reception -->
+      <xed:include ref="ditav.mods.originInfo.received.displayDate" />
+      <!-- place of reception -->
+      <xed:include ref="ditav.mods.originInfo.received.placeTerm" />
+      <!-- language -->
+      <xed:include ref="language" />
+      <!-- document type -->
+      <xed:include ref="lod_document_classification_main" />
+      <!-- document subtype -->
+      <xed:include ref="lod_document_classification" />
+      <!-- subject - topic -->
+      <xed:include ref="ditav.mods.subject.topic" />
+      <!-- subject - person name-->
+      <xed:include ref="ditav.mods.subject.personal" />
+      <!-- subject - corporate name-->
+      <xed:include ref="ditav.mods.subject.corporate" />
+      <!-- Translation -->
+      <xed:include ref="ditav_translation" />
+      <!-- comment on source -->
+      <xed:include ref="ditav.note.source_note" />
+      <!-- comment on language -->
+      <xed:include ref="ditav.note.language_note" />
+      <!-- original or copy -->
+      <xed:include ref="ditav.note.original_or_copy" />
+      <!-- Number of folios in the record -->
+      <xed:include ref="ditav.mods.physicalDescription.extent" />
+      <!-- archive -->
+      <xed:include ref="lod_archives" />
+      <!-- archive number -->
+      <xed:include ref="ditav.mods.location.shelfLocator" />
+      <!-- License -->
+      <xed:include ref="rights" />
+    </div>
+    <div class="border rounded p-3 mb-4">
+      <h2>
+        <xed:output i18n="ditav.mods.section.internal" />
+      </h2>
+      <xed:include ref="ditav.mods.classification.transcription" />
+      <xed:include ref="ditav.mods.classification.translation_available" />
+      <xed:include ref="ditav.mods.classification.scan_available" />
     </div>
   </xed:template>
 
