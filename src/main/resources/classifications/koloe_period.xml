@@ -18,5 +18,9 @@
       <label xml:lang="en" text="After the end of formal German colonial rule" />
       <label xml:lang="fr" text="Après la fin de la domination coloniale allemande officielle" />
     </category>
+    <category ID="during_decolonization">
+      <label xml:lang="de" text="Während der Dekolonisierung" />
+      <label xml:lang="en" text="During decolonization" />
+    </category>
   </categories>
 </mycoreclass>

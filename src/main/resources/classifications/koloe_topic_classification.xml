@@ -23,5 +23,17 @@
       <label xml:lang="en" text="Colonial thought patterns and structures" />
       <label xml:lang="fr" text="Modèles et structures de pensée coloniale" />
     </category>
+    <category ID="economic_interconnections">
+      <label xml:lang="de" text="Wirtschaftliche Verflechtungen" />
+      <label xml:lang="en" text="Economic interconnections" />
+    </category>
+    <category ID="gender">
+      <label xml:lang="de" text="Geschlecht" />
+      <label xml:lang="en" text="Gender" />
+    </category>
+    <category ID="diplomatic_relations">
+      <label xml:lang="de" text="Diplomatische Beziehungen" />
+      <label xml:lang="en" text="Diplomatic relations" />
+    </category>
   </categories>
 </mycoreclass>
