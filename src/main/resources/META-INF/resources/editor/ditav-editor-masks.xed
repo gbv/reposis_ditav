@@ -6,22 +6,22 @@
   <xed:template id="ditav.edition">
     <!-- Title -->
     <xed:include ref="title.complex.repeated" />
-    <!-- Author -->
-    <xed:include ref="author.repeated" />
-    <!-- Editor -->
-    <xed:include ref="editor.repeated" />
-    <!-- Contributor -->
-    <xed:include ref="research.data.person.repeated" />
+    <!-- author -->
+    <xed:include ref="name.extended.full.repeated" />
     <!-- Date -->
     <xed:include ref="date.range.extended.datetimepicker" />
     <!-- Location -->
     <xed:include ref="place" />
-    <!-- Places mentioned -->
-    <xed:include ref="geographic.repeated" />
     <!-- Size -->
     <xed:include ref="extent" />
     <!-- Language -->
     <xed:include ref="language" />
+    <!-- license -->
+    <xed:include ref="rights" />
+    <!--abstract -->
+    <xed:include ref="abstract.repeated" />
+    <!--comment -->
+    <xed:include ref="comment.complex" />
   </xed:template>
 
   <!-- Languages of Diplomacy Online Edition (LOD) -->

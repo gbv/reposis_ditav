@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="koloe_trigger_warning">
+  <label xml:lang="de" text="Trigger-Warnung" />
+  <label xml:lang="en" text="Trigger Warning" />
+  <label xml:lang="fr" text="Avertissement de contenu" />
+  <label xml:lang="x-uri" text="https://ditav.gbv.de/api/v2/classifications/koloe_trigger_warning" />
+  <categories>
+    <category ID="no_trigger_warning">
+      <label xml:lang="de" text="Keine Trigger-Warnung" description="" />
+      <label xml:lang="x-uri" text="https://ditav.gbv.de/api/v2/classifications/koloe_trigger_warning#no_trigger_warning" />
+    </category>
+  </categories>
+</mycoreclass>

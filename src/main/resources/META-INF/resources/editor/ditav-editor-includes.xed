@@ -43,6 +43,7 @@
     <xed:include ref="koloe_document_classification" />
     <xed:include ref="koloe_topic_classification" />
     <xed:include ref="koloe_text_classification" />
+    <xed:include ref="koloe_trigger_warning" />
     <xed:include ref="koloe_continents" />
     <xed:include ref="koloe_colony" />
     <xed:include ref="koloe_period" />
@@ -57,7 +58,6 @@
 
   <xed:template id="genres.contextual_information">
     <xed:include ref="failed-validation-messages" />
-
     <xed:bind xpath="../../../../service">
       <xed:include ref="status" />
     </xed:bind>
@@ -67,7 +67,6 @@
 
   <xed:template id="genres.document">
     <xed:include ref="failed-validation-messages" />
-
     <xed:bind xpath="../../../../service">
       <xed:include ref="status" />
     </xed:bind>
@@ -76,15 +75,11 @@
   </xed:template>
 
   <xed:template id="genres.edition">
-
+    <xed:include ref="failed-validation-messages" />
+    <xed:bind xpath="../../../../service">
+      <xed:include ref="status" />
+    </xed:bind>
     <xed:include ref="ditav.edition" />
-
-    <xed:include ref="cleanup-rules" />
-    <xed:include ref="ditav-cleanup-rules" />
-    <xed:include ref="validation-rules" />
-
-    <xed:include ref="javascript" />
-
   </xed:template>
 
   <!--  <xed:template id="genres.submit">
@@ -93,11 +88,12 @@
     <xed:include ref="ditav-cleanup-rules" />
     <xed:include ref="validation-rules" />
   </xed:template>
-  -->
+
   
   <xed:template id="cancel.submit">
     <xed:include ref="debug.cancel.submit" />
   </xed:template>
+  -->
 
   <xed:template id="genres.source">
     <xed:include ref="failed-validation-messages" />
@@ -723,23 +719,40 @@
       <xed:include ref="koloe_colony" />
       <!-- period -->
       <xed:include ref="koloe_period" />
+      <!-- keywords -->
+      <xed:include ref="subject.complex.required" />
+      <!-- geographic and cartographic metadata -->
+      <xed:include ref="geographicAndCartographics" />
       <!-- archives -->
       <xed:include ref="koloe_archives" />
-      <xed:include ref="subject.complex.required" />
-      <xed:include ref="geographicAndCartographics" />
+      <!-- shelf mark -->
       <xed:include ref="shelfmark" />
+      <!--link to the physical location of the resource -->
+      <xed:include ref="link.repeated" />
+      <!-- extent -->
       <xed:include ref="extent" />
+      <!-- copyrights -->
       <xed:include ref="rights" />
+      <!-- abstract -->
+      <xed:include ref="abstract.repeated" />
+      <!-- add resource class-->
       <xed:bind xpath="mods:typeOfResource/@mcr:categId" initially="typeOfResource:text" />
   </xed:template>
 
   <xed:template id="koloe.genres.contextual_information">
+    <!-- text classification (A, B, or C text) -->
     <xed:include ref="koloe_text_classification" />
+    <!-- related to source -->
     <xed:include ref="ditav.related.item.other.search.of.all.items" />
-    <xed:include ref="title" />
+    <!-- title -->
+    <xed:include ref="title.complex.repeated" />
+    <!-- authors -->
     <xed:include ref="author.repeated" />
+    <!-- copyrights -->
     <xed:include ref="rights" />
+    <!-- abstract -->
     <xed:include ref="abstract.repeated" />
+    <!-- add resource class-->
     <xed:bind xpath="mods:typeOfResource/@mcr:categId" initially="typeOfResource:text" />
   </xed:template>
 
@@ -758,25 +771,37 @@
       <xed:include ref="koloe_document_classification" />
       <!-- topic classification -->
       <xed:include ref="koloe_topic_classification" />
+      <!-- trigger warning -->
+      <xed:include ref="koloe_trigger_warning" />
       <!-- continents -->
       <xed:include ref="koloe_continents" />
       <!-- colony -->
       <xed:include ref="koloe_colony" />
       <!-- period -->
       <xed:include ref="koloe_period" />
+      <!-- keywords -->
+      <xed:include ref="subject.complex.required" />
+      <!-- geographic and cartographic metadata -->
+      <xed:include ref="geographicAndCartographics" />
       <!-- archives -->
       <xed:include ref="koloe_archives" />
-      <xed:include ref="subject.complex.required" />
-      <xed:include ref="geographicAndCartographics" />
+      <!-- shelf mark -->
       <xed:include ref="shelfmark" />
+      <!--link to the physical location of the resource -->
+      <xed:include ref="link.repeated" />
+      <!-- extent -->
       <xed:include ref="extent" />
+      <!-- copyrights -->
       <xed:include ref="rights" />
+      <!-- abstract -->
       <xed:include ref="abstract.repeated" />
+      <!-- add resource class-->
       <xed:bind xpath="mods:typeOfResource/@mcr:categId" initially="typeOfResource:text" />
   </xed:template>
 
   <!-- koloe supplement genres -->
   <xed:template id="koloe.genres.supplement">
+      <!-- title -->
       <xed:include ref="title.complex.repeated" />
       <!-- author -->
       <xed:include ref="author.repeated" />
@@ -796,14 +821,23 @@
       <xed:include ref="koloe_colony" />
       <!-- period -->
       <xed:include ref="koloe_period" />
+      <!-- keywords -->
+      <xed:include ref="subject.complex.required" />
+      <!-- geographic and cartographic metadata -->
+      <xed:include ref="geographicAndCartographics" />
       <!-- archives -->
       <xed:include ref="koloe_archives" />
-      <xed:include ref="subject.complex.required" />
-      <xed:include ref="geographicAndCartographics" />
+      <!-- shelf mark -->
       <xed:include ref="shelfmark" />
+      <!--link to the physical location of the resource -->
+      <xed:include ref="link.repeated" />
+      <!-- extent -->
       <xed:include ref="extent" />
-      <xed:include ref="abstract.repeated" />
+      <!-- copyrights -->
       <xed:include ref="rights" />
+      <!-- abstract -->
+      <xed:include ref="abstract.repeated" />
+      <!-- add resource class-->
       <xed:bind xpath="mods:typeOfResource/@mcr:categId" initially="typeOfResource:text" />
   </xed:template>
 
@@ -920,7 +954,6 @@
   </xed:template>
 
   <!-- koloe text classification -->
-
   <xed:template id="koloe_text_classification">
     <xed:bind xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/koloe_text_classification'][@displayLabel='koloe_text_classification']/@valueURIxEditor">
       <div class="mir-form-group row {$xed-validation-marker}">
@@ -957,6 +990,28 @@
             </select>
           </div>
           <mir:help-pmud help-text="{i18n:koloe_topic_classification.help}" pmud="true" />
+        </div>
+      </xed:bind>
+    </xed:repeat>
+  </xed:template>
+
+  <!-- koloe trigger warning classification -->
+  <xed:template id="koloe_trigger_warning">
+    <xed:repeat xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/koloe_trigger_warning'][@displayLabel='koloe_trigger_warning']" min="1">
+      <xed:bind xpath="@valueURIxEditor">
+        <div class="mir-form-group row {$xed-validation-marker}">
+          <label class="col-md-3 col-form-label text-end form-label">
+            <xed:output i18n="koloe_trigger_warning.label" />
+          </label>
+          <div class="col-md-6">
+            <select class="form-control form-control-inline">
+              <option value="">
+                <xed:output i18n="mir.select.optional" />
+              </option>
+              <xed:include uri="xslStyle:items2options:classification:editor:-1:children:koloe_trigger_warning" />
+            </select>
+          </div>
+          <mir:help-pmud help-text="{i18n:koloe_trigger_warning.help}" pmud="true" />
         </div>
       </xed:bind>
     </xed:repeat>

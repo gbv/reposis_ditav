@@ -13,9 +13,7 @@
       <xed:preload uri="{$MIR.EditorForms.CustomIncludes}" />
       
       <!-- form title -->
-      <h1 class="mir-fieldset-legend">
-        <xed:output i18n="edition.editor.add_edition" />
-      </h1>
+      <h1><xed:output i18n="edition.editor.add_edition" /></h1>
       <xed:include ref="in.out" />
 
       <xed:bind xpath="/mycoreobject">
