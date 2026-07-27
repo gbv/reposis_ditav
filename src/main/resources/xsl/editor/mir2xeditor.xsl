@@ -233,7 +233,7 @@
   <xsl:template name="date-selectFormat">
     <xsl:param name="showDateTimeOption" select="'false'" />
     <div class="date-selectFormat">
-      <button class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"><span class="visually-hidden">Toggle Dropdown</span></button>
+      <button class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"><span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button>
       <ul class="dropdown-menu dropdown-menu-end" role="menu">
         <li>
           <a href="#" class="date-simpleOption dropdown-item">
@@ -428,6 +428,39 @@
     </xsl:variable>
     <xed:repeat
       xpath="mods:name[@type='personal' or not(@type) or (@type='corporate' and not(@authorityURI='{$institutesURI}'))][mods:role/mods:roleTerm[@type='code'][@authority='marcrelator']='{@role}']"
+      min="1" max="100">
+      <xed:bind xpath="@type" initially="personal" />
+      <xed:bind xpath="@simpleEditor" default="true" />
+      <xed:bind xpath="mods:displayForm"> <!-- Move down to get the "required" validation right -->
+        <div class="mir-form-group row {@class} {$xed-val-marker}">
+          <xed:bind xpath=".."> <!-- Move up again after validation marker is set -->
+            <label class="col-md-3 col-form-label text-end form-label">
+              <xed:output i18n="{@label}" />
+            </label>
+            <div class="col-md-6">
+              <div class="controls">
+                <xed:include ref="person.fields" />
+              </div>
+            </div>
+            <div class="col-md-3">
+              <xsl:if test="string-length(@help-text) &gt; 0">
+                <xsl:call-template name="mir-helpbutton" />
+              </xsl:if>
+              <xsl:call-template name="mir-pmud" />
+            </div>
+          </xed:bind>
+        </div>
+        <xsl:call-template name="mir-required" />
+      </xed:bind>
+    </xed:repeat>
+  </xsl:template>
+
+  <xsl:template match="mir:agent.role.repeated">
+    <xsl:variable name="xed-val-marker">
+      {$xed-validation-marker}
+    </xsl:variable>
+    <xed:repeat
+      xpath="mods:agent[@type='personal' or not(@type) or (@type='corporate' and not(@authorityURI='{$institutesURI}'))][mods:role/mods:roleTerm[@type='code'][@authority='marcrelator']='{@role}']"
       min="1" max="100">
       <xed:bind xpath="@type" initially="personal" />
       <xed:bind xpath="@simpleEditor" default="true" />

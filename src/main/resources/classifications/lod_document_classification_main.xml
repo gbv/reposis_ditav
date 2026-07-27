@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="lod_document_classification_main">
+  <label xml:lang="de" text="Genre" description="Liste der Quellenarten" />
+  <label xml:lang="en" text="Genre" description="List of source types" />
+  <label xml:lang="fr" text="Genre" description="Liste des types de source" />
+  <label xml:lang="x-uri" text="http://www.mycore.org/classifications/lod_document_classification_main" />
+  <categories>
+    <category ID="archival_material">
+      <label xml:lang="de" text="Archivmaterial" />
+      <label xml:lang="en" text="Archival Material" />
+      <label xml:lang="fr" text="Document d'archive" />
+      <label xml:lang="x-hosts" text="standalone edition" />
+      <label xml:lang="x-mapping"
+        text="marcgt:archival_material diniPublType:other diniPublType2022:SourceMaterial" />
+    </category>
+    <category ID="autobiography">
+      <label xml:lang="de" text="Autobiografie" />
+      <label xml:lang="en" text="Autobiography" />
+      <label xml:lang="fr" text="Autobiographie" />
+      <label xml:lang="x-hosts" text="standalone edition" />
+      <label xml:lang="x-mapping"
+        text="marcgt:autobiography diniPublType:other diniPublType2022:SourceMaterial" />
+    </category>
+    <category ID="diplomatic_document">
+      <label xml:lang="de" text="Diplomatisches Dokument" />
+      <label xml:lang="en" text="Diplomatic Document" />
+      <label xml:lang="fr" text="Document diplomatique" />
+      <label xml:lang="x-hosts" text="standalone edition" />
+      <label xml:lang="x-mapping"
+        text="marcgt:official_document diniPublType:other diniPublType2022:SourceMaterial" />
+    </category>
+    <category ID="ego_document">
+      <label xml:lang="de" text="Ego-Dokument" />
+      <label xml:lang="en" text="Ego Document" />
+      <label xml:lang="fr" text="Document ego" />
+      <label xml:lang="x-hosts" text="standalone edition" />
+      <label xml:lang="x-mapping"
+        text="marcgt:personal_paper diniPublType:other diniPublType2022:SourceMaterial" />
+    </category>
+    <category ID="fiction">
+      <label xml:lang="de" text="Fiktion" />
+      <label xml:lang="en" text="Fiction" />
+      <label xml:lang="fr" text="Fiction" />
+      <label xml:lang="x-hosts" text="standalone edition" />
+      <label xml:lang="x-mapping"
+        text="marcgt:fiction diniPublType:other diniPublType2022:SourceMaterial" />
+    </category>
+    <category ID="financial_document">
+      <label xml:lang="de" text="Finanzdokument" />
+      <label xml:lang="en" text="Financial Document" />
+      <label xml:lang="fr" text="Document financier" />
+      <label xml:lang="x-hosts" text="standalone edition" />
+      <label xml:lang="x-mapping"
+        text="marcgt:financial_document diniPublType:other diniPublType2022:SourceMaterial" />
+    </category>
+    <category ID="language_exercise">
+      <label xml:lang="de" text="Sprachübung" />
+      <label xml:lang="en" text="Language Exercise" />
+      <label xml:lang="fr" text="Exercice de langue" />
+      <label xml:lang="x-hosts" text="standalone edition" />
+      <label xml:lang="x-mapping"
+        text="marcgt:instruction diniPublType:other diniPublType2022:SourceMaterial" />
+    </category>
+    <category ID="legal_document">
+      <label xml:lang="de" text="Rechtsdokument" />
+      <label xml:lang="en" text="Legal Document" />
+      <label xml:lang="fr" text="Document juridique" />
+      <label xml:lang="x-hosts" text="standalone edition" />
+      <label xml:lang="x-mapping"
+        text="marcgt:legal_document diniPublType:other diniPublType2022:SourceMaterial" />
+    </category>
+    <category ID="letter">
+      <label xml:lang="de" text="Brief" />
+      <label xml:lang="en" text="Letter" />
+      <label xml:lang="fr" text="Lettre" />
+      <label xml:lang="x-hosts" text="standalone edition" />
+      <label xml:lang="x-mapping"
+        text="marcgt:letter diniPublType:other diniPublType2022:SourceMaterial" />
+    </category>
+    <category ID="official_document">
+      <label xml:lang="de" text="Amtliches Dokument" />
+      <label xml:lang="en" text="Official Document" />
+      <label xml:lang="fr" text="Document officiel" />
+      <label xml:lang="x-hosts" text="standalone edition" />
+      <label xml:lang="x-mapping"
+        text="marcgt:official_document diniPublType:other diniPublType2022:SourceMaterial" />
+    </category>
+    <category ID="office_records">
+      <label xml:lang="de" text="Amtsunterlagen" description="Amtsunterlagen" />
+      <label xml:lang="en" text="office records" description="office records" />
+      <label xml:lang="fr" text="documents officiels" description="documents officiels" />
+    </category>
+    <category ID="other">
+      <label xml:lang="de" text="Sonstiges" />
+      <label xml:lang="en" text="Other" />
+      <label xml:lang="fr" text="Autre" />
+      <label xml:lang="x-hosts" text="standalone edition" />
+      <label xml:lang="x-mapping"
+        text="marcgt:other diniPublType:other diniPublType2022:SourceMaterial" />
+    </category>
+    <category ID="training_guide">
+      <label xml:lang="de" text="Ausbildungsanleitung" />
+      <label xml:lang="en" text="Training Guide" />
+      <label xml:lang="fr" text="Guide de formation" />
+      <label xml:lang="x-hosts" text="standalone edition" />
+      <label xml:lang="x-mapping"
+        text="marcgt:manual diniPublType:other diniPublType2022:SourceMaterial" />
+    </category>
+    <category ID="transfer_document">
+      <label xml:lang="de" text="Übertragungsurkunde" />
+      <label xml:lang="en" text="Transfer Document" />
+      <label xml:lang="fr" text="Document de transfert" />
+      <label xml:lang="x-hosts" text="standalone edition" />
+      <label xml:lang="x-mapping"
+        text="marcgt:legal_document diniPublType:other diniPublType2022:SourceMaterial" />
+    </category>
+    <category ID="travelogue">
+      <label xml:lang="de" text="Reisebericht" />
+      <label xml:lang="en" text="Travelogue" />
+      <label xml:lang="fr" text="Récit de voyage" />
+      <label xml:lang="x-hosts" text="standalone edition" />
+      <label xml:lang="x-mapping"
+        text="marcgt:travelogue diniPublType:other diniPublType2022:SourceMaterial" />
+    </category>
+  </categories>
+</mycoreclass>

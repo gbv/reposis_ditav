@@ -31,7 +31,7 @@
     </category>
     <category ID="described_in">
       <label xml:lang="de" text="Begleittext" />
-      <label xml:lang="en" text="Described in" />
+      <label xml:lang="en" text="Companion text" />
       <label xml:lang="fr" text="Texte accompagnateur" />
     </category>
     <category ID="analysed_in">
