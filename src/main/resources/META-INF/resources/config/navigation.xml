@@ -74,35 +74,17 @@
       <label xml:lang="en">LoD - Document classification</label>
       <label xml:lang="fr">LoD - Classification du document</label>
     </item>
-  </menu>
-  <menu id="publish" dir="/content/publish">
-    <label xml:lang="de">Dokumente einreichen</label>
-    <label xml:lang="en">Submit Document</label>
     <item href="/servlets/solr/select?q=createdby:{CurrentUser}&amp;fq=objectType:mods" type="intern" replaceMenu="false" constrainPopUp="false">
       <label xml:lang="de">Meine Einreichungen</label>
       <label xml:lang="en">My submissions</label>
     </item>
-    <item href="/editor/editor-edition.xed" type="intern" replaceMenu="false" constrainPopUp="false">
-        <label xml:lang="de">Edition hinzufügen</label>
-        <label xml:lang="en">Add edition</label>
-    </item>
-    <!--
-    <item href="/content/publish/add-document.xed" type="intern" replaceMenu="false" constrainPopUp="false">
-        <label xml:lang="de">Dokument hinzufügen</label>
-        <label xml:lang="en">Add document</label>
-    </item>
-    <item href="/editor/editor-admins.xed" type="intern" replaceMenu="false" constrainPopUp="false">
-        <label xml:lang="de">Dokument hinzufügen (Expert)</label>
-        <label xml:lang="en">Add document (Expert)</label>
-      </item>
-    <item href="/content/publish/guidelines.xml" type="intern">
-      <label xml:lang="de">Leitlinien</label>
-      <label xml:lang="en">Guidelines</label>
-    </item>
-    -->
-    <item href="/content/publish/contract.xml" type="intern">
-      <label xml:lang="de">Vertragsbedingungen</label>
-      <label xml:lang="en">Terms &amp; Conditions</label>
+  </menu>
+  <menu id="publish" dir="/content/publish">
+    <label xml:lang="de">Edition</label>
+    <label xml:lang="en">Edition</label>
+    <item href="/editor/edition-editor.xed" type="intern" replaceMenu="false" constrainPopUp="false">
+        <label xml:lang="de">Hinzufügen</label>
+        <label xml:lang="en">Add</label>
     </item>
   </menu>
   <menu id="user">

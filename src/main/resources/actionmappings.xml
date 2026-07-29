@@ -36,9 +36,9 @@
       <when condition="(group = admin) or (group = editor)" url="/servlets/MCRLockServlet?url=/editor/editor-dynamic.xed" />
       <when condition="(status != published) and (status != review)" url="/servlets/MCRLockServlet?url=/editor/editor-dynamic.xed" />
     </action>
-    <action action="update-admin">
+    <!--<action action="update-admin">
       <when condition="(group = admin) or (group = editor)" url="/servlets/MCRLockServlet?url=/editor/editor-admins.xed" />
-    </action>
+    </action>-->
     <action action="update-xml">
       <when condition="(group = admin)" url="/modules/webtools/texteditor/objects/" />
     </action>
