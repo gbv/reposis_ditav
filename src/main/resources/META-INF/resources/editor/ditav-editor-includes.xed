@@ -50,7 +50,18 @@
   </xed:template>
 
   <xed:template id="lod.edition.admin">
-    <xed:include ref="lod.edition" />
+      <!-- document subtype -->
+      <xed:include ref="lod_document_classification.repeated" />
+      <!-- Translation -->
+      <xed:include ref="ditav_translation" />
+      <!-- comment on source -->
+      <xed:include ref="ditav.note.source_note" />
+      <!-- comment on language -->
+      <xed:include ref="ditav.note.language_note" />
+      <!-- original or copy -->
+      <xed:include ref="ditav.note.original_or_copy" />
+      <!-- archive -->
+      <xed:include ref="lod_archives" />
   </xed:template>
 
 
@@ -592,32 +603,70 @@
     </div>
   </xed:template>
 
-  <!-- Project templates -->
+  <!-- == Project templates == -->
 
   <!--GAZIN -->
 
-  <!-- gazin genre classification -->
-  <xed:template id="gazin_genres">
-    <xed:bind xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/gazin_genres'][@displayLabel='gazin_genres']/@valueURIxEditor">
-      <div class="mir-form-group row {$xed-validation-marker}">
-        <label class="col-md-3 col-form-label text-end form-label">
-          <xed:output i18n="gazin_genre.label" />
-        </label>
-        <div class="col-md-6">
-          <select class="form-control form-control-inline">
-            <option value="">
-              <xed:output i18n="mir.select.optional" />
-            </option>
-            <xed:include uri="xslStyle:items2options:classification:editor:-1:children:gazin_genres" />
-          </select>
-        </div>
-        <mir:help-pmud help-text="{i18n:gazin_genre.help}" pmud="false" />
-      </div>
-    </xed:bind>
+  <xed:template id="gzn.genres.document">
+    <xed:include ref="gzn.edition" />
   </xed:template>
 
+  <xed:template id="gzn.genres.contextual_information">
+    <xed:include ref="gzn.edition" />
+  </xed:template>
+
+  <!-- gazin source genres -->
+  <xed:template id="gzn.genres.source">
+    <xed:include ref="gzn.edition" />
+  </xed:template>
+
+  <!-- gazin supplement genres -->
+  <xed:template id="gzn.genres.supplement">
+    <xed:include ref="gzn.edition" />
+  </xed:template>
+
+  <!-- gazin genre classification -->
+  <xed:template id="gazin_genres">
+    <xed:repeat xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/gazin_genres'][@displayLabel='gazin_genres']" min="1" max="10">
+      <xed:bind xpath="@valueURIxEditor">
+        <div class="mir-form-group row {$xed-validation-marker}">
+          <label class="col-md-3 col-form-label text-end form-label">
+            <xed:output i18n="gazin_genre.label" />
+          </label>
+          <div class="col-md-6">
+            <select class="form-control form-control-inline">
+              <option value="">
+                <xed:output i18n="mir.select.optional" />
+              </option>
+              <xed:include uri="xslStyle:items2options:classification:editor:-1:children:gazin_genres" />
+            </select>
+          </div>
+          <mir:help-pmud help-text="{i18n:gazin_genre.help}" pmud="true" />
+        </div>
+      </xed:bind>
+    </xed:repeat>
+  </xed:template>
 
   <!-- LOD -->
+
+  <xed:template id="lod.genres.document">
+    <xed:include ref="lod.edition" />
+  </xed:template>
+
+  <xed:template id="lod.genres.contextual_information">
+    <xed:include ref="lod.edition" />
+  </xed:template>
+
+  <!-- lod source genres -->
+  <xed:template id="lod.genres.source">
+    <xed:include ref="lod.edition" />
+  </xed:template>
+
+  <!-- lod supplement genres -->
+  <xed:template id="lod.genres.supplement">
+    <xed:include ref="lod.edition" />
+  </xed:template>
+
 
   <!-- lod archive classification -->
   <xed:template id="lod_archives">
@@ -639,62 +688,26 @@
     </xed:bind>
   </xed:template>
 
-  <!-- lod genre classification -->
-  <xed:template id="lod_mir_genres">
-    <xed:load-resource name="mir_genres" uri="classification:metadata:-1:children:mir_genres" />
-    <xed:if test="mods:genre[@type='intern'][not(@authorityURI)]">
-      <xed:bind xpath="mods:genre[@type='intern'][not(@authorityURI)]">
-        <xed:bind xpath="@authorityURI" set="{$mir_genres/label[@xml:lang='x-uri']/@text}" />
-      </xed:bind>
-    </xed:if>
-    <xed:repeat xpath=".//mods:genre[@type='intern'][@authorityURI=$mir_genres/label[@xml:lang='x-uri']/@text]" min="1" max="10">
-      <xed:bind xpath="@valueURIxEditor" initially="{$genre}">
-        <div class="mir-form-group row required {$xed-validation-marker}">
-          <xed:include ref="genre.base" />
-          <mir:help-pmud help-text="{i18n:mir.help.genre}" pmud="true" />
+    <!-- lod document classification -->
+  <xed:template id="lod_document_classification.repeated">
+    <xed:repeat xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/lod_document_classification'][@displayLabel='lod_document_classification']" min="1" max="10">
+      <xed:bind xpath="@valueURIxEditor">
+        <div class="mir-form-group row {$xed-validation-marker}">
+          <label class="col-md-3 col-form-label text-end form-label">
+            <xed:output i18n="lod_document_classification.type.label" />
+          </label>
+          <div class="col-md-6">
+            <select class="form-control form-control-inline">
+              <option value="">
+                <xed:output i18n="mir.select.optional" />
+              </option>
+              <xed:include uri="xslStyle:items2options:classification:editor:-1:children:lod_document_classification" />
+            </select>
+          </div>
+          <mir:help-pmud help-text="{i18n:lod_document_classification.help}" pmud="true" />
         </div>
       </xed:bind>
     </xed:repeat>
-  </xed:template>
-
-  <!-- lod document classification -->
-  <xed:template id="lod_document_classification_main">
-    <xed:bind xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/lod_document_classification_main'][@displayLabel='lod_document_classification_main']/@valueURIxEditor">
-      <div class="mir-form-group row {$xed-validation-marker}">
-        <label class="col-md-3 col-form-label text-end form-label">
-          <xed:output i18n="lod_document_classification_main.subtype.label" />
-        </label>
-        <div class="col-md-6">
-          <select class="form-control form-control-inline">
-            <option value="">
-              <xed:output i18n="mir.select.optional" />
-            </option>
-            <xed:include uri="xslStyle:items2options:classification:editor:-1:children:lod_document_classification_main" />
-          </select>
-        </div>
-        <mir:help-pmud help-text="{i18n:lod_document_classification_main.help}" pmud="false" />
-      </div>
-    </xed:bind>
-  </xed:template>
-
-  <!-- lod document classification -->
-  <xed:template id="lod_document_classification">
-    <xed:bind xpath="mods:classification[@authorityURI='https://ditav.gbv.de/api/v2/classifications/lod_document_classification'][@displayLabel='lod_document_classification']/@valueURIxEditor">
-      <div class="mir-form-group row {$xed-validation-marker}">
-        <label class="col-md-3 col-form-label text-end form-label">
-          <xed:output i18n="lod_document_classification.subtype.label" />
-        </label>
-        <div class="col-md-6">
-          <select class="form-control form-control-inline">
-            <option value="">
-              <xed:output i18n="mir.select.optional" />
-            </option>
-            <xed:include uri="xslStyle:items2options:classification:editor:-1:children:lod_document_classification" />
-          </select>
-        </div>
-        <mir:help-pmud help-text="{i18n:lod_document_classification.help}" pmud="false" />
-      </div>
-    </xed:bind>
   </xed:template>
 
 
@@ -1035,9 +1048,6 @@
             <input id="relItem-edition" type="hidden" />
           </xed:bind>
         </xed:when>
-        <xed:otherwise>
-          <div class="alert alert-danger" role="alert">Missing Edition.Id URL parameter.</div>
-        </xed:otherwise>
       </xed:choose>
     </xed:bind>
   </xed:template>
