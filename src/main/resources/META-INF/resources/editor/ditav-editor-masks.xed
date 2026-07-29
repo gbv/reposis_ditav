@@ -4,20 +4,40 @@
 <xed:template xmlns:xed="http://www.mycore.de/xeditor" xmlns:mir="http://www.mycore.de/mir">
 
   <xed:template id="ditav.edition">
+    <!-- Bind genre edition -->
+    <xed:include ref="ditav.edition.genre.bind" />
+        <!-- Add edition ID if user is admin -->
+    <xed:choose>
+      <xed:when test="($CurrentUser='administrator') or ($CurrentGroup ='admin')">
+        <xed:include ref="ditav.edition.id" />
+      </xed:when>
+    </xed:choose>
+    <!-- Hosting Institute -->
+    <xed:include ref="institutes" />
     <!-- Title -->
     <xed:include ref="title.complex.repeated" />
     <!-- author -->
     <xed:include ref="name.extended.full.repeated" />
     <!-- Date -->
     <xed:include ref="date.range.extended.datetimepicker" />
+    <!-- Publisher -->
+    <xed:include ref="publisher" />
     <!-- Location -->
     <xed:include ref="place" />
+    <!-- Place of Creation -->
+    <xed:include ref="ditav.mods.originInfo.created.placeTerm" />
+    <!-- geographic and cartographic metadata -->
+    <xed:include ref="geographicAndCartographics" />
     <!-- Size -->
     <xed:include ref="extent" />
     <!-- Language -->
     <xed:include ref="language" />
     <!-- license -->
     <xed:include ref="rights" />
+    <!-- Identifier -->
+    <xed:include ref="identifier.repeated" />
+    <!-- URL link -->
+    <xed:include ref="link.repeated" />
     <!--abstract -->
     <xed:include ref="abstract.repeated" />
     <!--comment -->

@@ -1042,8 +1042,9 @@
     </xed:bind>
   </xed:template>
 
+  <!-- edition id -->
   <xed:template id="ditav.edition.id">
-    <xed:bind xpath="mods:mods/@ID">
+    <xed:bind xpath="/mycoreobject/@ID">
       <mir:textfield xpath="." label="ditav.mods.edition.id.label" help-text="{i18n:ditav.mods.edition.id.help}" placeholder="{i18n:ditav.mods.edition.id.placeholder}" />
     </xed:bind>
   </xed:template>
@@ -1318,6 +1319,14 @@
         </div>
       </xed:bind>
     </xed:repeat>
+  </xed:template>
+  
+  <!-- Initialise mir_genre with edition as default -->
+  <xed:template id="ditav.edition.genre.bind">
+    <xed:load-resource name="mir_genres" uri="classification:metadata:-1:children:mir_genres" />
+    <xed:bind xpath="mods:genre[@type='intern'][@authorityURI=$mir_genres/label[@xml:lang='x-uri']/@text]">
+      <xed:bind xpath="@valueURIxEditor" initially="edition" />
+    </xed:bind>
   </xed:template>
 
   <!-- Edition subject -->
