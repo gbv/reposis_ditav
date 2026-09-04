@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="mir_relateditem">
+<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="mir_relateditem">
   <label xml:lang="en" text="relateditem" />
   <label xml:lang="x-uri" text="http://www.mycore.org/classifications/mir_relateditem" />
   <categories>
@@ -31,7 +30,7 @@
     </category>
     <category ID="described_in">
       <label xml:lang="de" text="Begleittext" />
-      <label xml:lang="en" text="Companion text" />
+      <label xml:lang="en" text="Described in" />
       <label xml:lang="fr" text="Texte accompagnateur" />
     </category>
     <category ID="analysed_in">

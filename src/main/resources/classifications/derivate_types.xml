@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="derivate_types">
+<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="derivate_types">
   <label xml:lang="de" text="Dateibereichtyp" />
   <label xml:lang="en" text="Type of file area" />
   <categories>
+    <category ID="glossary">
+      <label xml:lang="de" text="Glossar" />
+      <label xml:lang="en" text="Glossary" />
+      <label xml:lang="fr" text="Glossaire" />
+    </category>
     <category ID="content_other_version">
       <label xml:lang="de" text="Inhalt (andere Version)" />
       <label xml:lang="en" text="Content (other version)" />

@@ -4,6 +4,10 @@
   <label xml:lang="en" text="Archives" />
   <label xml:lang="x-uri" text="https://ditav.gbv.de/api/v2/classifications/koloe_archives" />
   <categories>
+    <category ID="u-vw">
+      <label xml:lang="de" text="U-VW" description="Konzernarchiv der Volkswagen Aktiengesellschaft" />
+      <url xlink:href="https://www.volkswagen-group.com/de" xlink:type="locator" />
+    </category>
     <category ID="nwa">
       <label xml:lang="de" text="NWA" description="Familienarchiv Hecker, nach Abgabe: Stiftung Niedersächsisches Wirtschaftsarchiv" />
       <label xml:lang="x-uri" text="https://ditav.gbv.de/api/v2/classifications/koloe_archives#nwa" />
