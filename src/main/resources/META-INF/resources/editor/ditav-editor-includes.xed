@@ -361,10 +361,8 @@
   </xed:template>
 
   <!-- subject - topic -->
-  <xed:template id="ditav.mods.subject.topic" repeatable="true">
-    <xed:repeat xpath="mods:subject[@xlink:type='simple']/mods:topic[not(@type)]" min="0" max="10">
-      <mir:textfield xpath="." label="ditav.mods.subject.topic.label" help-text="{i18n:ditav.mods.subject.topic.help}" placeholder="{i18n:ditav.mods.subject.topic.placeholder}" />
-    </xed:repeat>
+  <xed:template id="ditav.mods.subject.topic">
+    <mir:textfield repeat="true" xpath="mods:subject[@xlink:type='simple']/mods:topic[not(@type)]" min="1" max="10" label="ditav.mods.subject.topic.label" help-text="{i18n:ditav.mods.subject.topic.help}" placeholder="{i18n:ditav.mods.subject.topic.placeholder}" />
   </xed:template>
   
   <!-- subject - person name -->
