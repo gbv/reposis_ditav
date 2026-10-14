@@ -93,14 +93,15 @@
     <xed:include ref="ditav.edition" />
   </xed:template>
 
-  <!--  <xed:template id="genres.submit">
+  <!-- add ditav specific clean up rules -->
+  <xed:template id="genres.submit">
     <xed:include ref="cancel.submit" />
     <xed:include ref="cleanup-rules" />
     <xed:include ref="ditav-cleanup-rules" />
     <xed:include ref="validation-rules" />
   </xed:template>
 
-  
+  <!--
   <xed:template id="cancel.submit">
     <xed:include ref="debug.cancel.submit" />
   </xed:template>
@@ -1414,11 +1415,9 @@
   <!-- ========== cleanup rules ========== -->
 
   <xed:template id="ditav-cleanup-rules">
-    <xed:cleanup>
-      <!-- Cleanup rules for agent elements -->
-      <xed:cleanup-rule xpath="//mods:agent" relevant-if="(mods:namePart|mods:displayForm|mods:nameIdentifier|mods:description) or (string-length(@valueURI) &gt; 0) or (string-length(@valueURIxEditor) &gt; 0)" />
-      <xed:cleanup-rule xpath="//mods:agent/@authorityURI" relevant-if="(string-length(../@valueURI) &gt; 0) or (string-length(../@valueURIxEditor) &gt; 0)" />
-    </xed:cleanup>
+    <!-- Cleanup rules for agent elements -->
+    <xed:cleanup-rule xpath="//mods:agent" relevant-if="(mods:namePart|mods:displayForm|mods:nameIdentifier|mods:description) or (string-length(@valueURI) &gt; 0) or (string-length(@valueURIxEditor) &gt; 0)" />
+    <xed:cleanup-rule xpath="//mods:agent/@authorityURI" relevant-if="(string-length(../@valueURI) &gt; 0) or (string-length(../@valueURIxEditor) &gt; 0)" />
   </xed:template>
 
 </xed:template>
