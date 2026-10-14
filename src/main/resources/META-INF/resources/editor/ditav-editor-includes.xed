@@ -1414,11 +1414,9 @@
   <!-- ========== cleanup rules ========== -->
 
   <xed:template id="ditav-cleanup-rules">
-    <xed:cleanup>
-      <!-- Cleanup rules for agent elements -->
-      <xed:cleanup-rule xpath="//mods:agent" relevant-if="(mods:namePart|mods:displayForm|mods:nameIdentifier|mods:description) or (string-length(@valueURI) &gt; 0) or (string-length(@valueURIxEditor) &gt; 0)" />
-      <xed:cleanup-rule xpath="//mods:agent/@authorityURI" relevant-if="(string-length(../@valueURI) &gt; 0) or (string-length(../@valueURIxEditor) &gt; 0)" />
-    </xed:cleanup>
+    <!-- Cleanup rules for agent elements -->
+    <xed:cleanup-rule xpath="//mods:agent" relevant-if="(mods:namePart|mods:displayForm|mods:nameIdentifier|mods:description) or (string-length(@valueURI) &gt; 0) or (string-length(@valueURIxEditor) &gt; 0)" />
+    <xed:cleanup-rule xpath="//mods:agent/@authorityURI" relevant-if="(string-length(../@valueURI) &gt; 0) or (string-length(../@valueURIxEditor) &gt; 0)" />
   </xed:template>
 
 </xed:template>
