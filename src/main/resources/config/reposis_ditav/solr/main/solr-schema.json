@@ -199,8 +199,17 @@
   },
   {
     "add-field": {
-      "name": "ditav.mods.year",
-      "type": "pint",
+      "name": "ditav.mods.dateCreated.start",
+      "type": "string",
+      "multiValued": true,
+      "stored": true,
+      "indexed": true
+    }
+  },
+  {
+    "add-field": {
+      "name": "ditav.mods.dateCreated.end",
+      "type": "string",
       "multiValued": true,
       "stored": true,
       "indexed": true
