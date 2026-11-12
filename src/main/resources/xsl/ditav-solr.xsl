@@ -86,7 +86,77 @@
       </xsl:choose>
 
     </xsl:for-each>
+
+    <!-- Index place terms from originInfo (created/received) -->
+    <xsl:for-each select="metadata/def.modsContainer/modsContainer/mods:mods/mods:originInfo[@eventType='created' or @eventType='received']/mods:place/mods:placeTerm">
+      <field name="ditav.mods.place">
+        <xsl:value-of select="text()" />
+      </field>
+    </xsl:for-each>
+
+    <!-- Index displayDate from originInfo -->
+    <xsl:for-each select="metadata/def.modsContainer/modsContainer/mods:mods/mods:originInfo/mods:displayDate">
+      <field name="ditav.mods.displayDate">
+        <xsl:value-of select="text()" />
+      </field>
+      
+      <!-- Extract numeric year from displayDate (format: dd/mm/yyyy or similar) -->
+      <xsl:variable name="dateText" select="text()" />
+      <xsl:if test="string-length($dateText) &gt; 0">
+        <xsl:variable name="year">
+          <xsl:call-template name="extractYear">
+            <xsl:with-param name="date" select="$dateText" />
+          </xsl:call-template>
+        </xsl:variable>
+        <xsl:if test="string-length($year) &gt; 0">
+          <field name="ditav.mods.year"><xsl:value-of select="$year" /></field>
+        </xsl:if>
+      </xsl:if>
+    </xsl:for-each>
   </xsl:template>
 
+  <!-- Template to extract year from displayDate -->
+  <xsl:template name="extractYear">
+    <xsl:param name="date" />
+    
+    <!-- Try to match year pattern (4 digits) -->
+    <xsl:variable name="yearPattern" select="translate($date, '0123456789', '          ')" />
+    <xsl:variable name="digitsOnly" select="translate($date, $yearPattern, '')" />
+    
+    <!-- Find first 4-digit sequence -->
+    <xsl:variable name="firstYear">
+      <xsl:call-template name="findFourDigitYear">
+        <xsl:with-param name="text" select="$digitsOnly" />
+        <xsl:with-param name="pos" select="1" />
+      </xsl:call-template>
+    </xsl:variable>
+    
+    <xsl:value-of select="$firstYear" />
+  </xsl:template>
+
+  <!-- Recursive template to find 4-digit year -->
+  <xsl:template name="findFourDigitYear">
+    <xsl:param name="text" />
+    <xsl:param name="pos" />
+    
+    <xsl:if test="$pos &lt;= string-length($text) - 3">
+      <xsl:variable name="candidate" select="substring($text, $pos, 4)" />
+      <xsl:choose>
+        <xsl:when test="translate($candidate, '0123456789', '          ') = ''">
+          <!-- Found 4 digits, check if it's a reasonable year (1500-2099) -->
+          <xsl:variable name="yearNum" select="number($candidate)" />
+          <xsl:if test="$yearNum &gt;= 1500 and $yearNum &lt;= 2099">
+            <xsl:value-of select="$candidate" />
+          </xsl:if>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:call-template name="findFourDigitYear">
+            <xsl:with-param name="text" select="$text" />
+            <xsl:with-param name="pos" select="$pos + 1" />
+          </xsl:call-template>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:if>
+  </xsl:template>
 
 </xsl:stylesheet>

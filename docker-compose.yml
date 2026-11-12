@@ -20,6 +20,7 @@ services:
     ports:
       - ${SOLR_HTTP}:8983
     environment:
+      - SOLR_MODULES=analysis-extras
       - SOLR_ADMIN_USER=${SOLR_ADMIN_USER}
       - SOLR_ADMIN_PASSWORD=${SOLR_ADMIN_PASSWORD}
       - SOLR_SEARCH_USER=${SOLR_SEARCH_USER}
