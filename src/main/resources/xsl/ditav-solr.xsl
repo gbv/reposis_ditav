@@ -86,7 +86,43 @@
       </xsl:choose>
 
     </xsl:for-each>
-  </xsl:template>
 
+    <!-- Index place terms from originInfo (created/received) -->
+    <xsl:for-each select="metadata/def.modsContainer/modsContainer/mods:mods/mods:originInfo[@eventType='created' or @eventType='received']/mods:place/mods:placeTerm">
+      <field name="ditav.mods.place">
+        <xsl:value-of select="text()" />
+      </field>
+    </xsl:for-each>
+
+    <!-- Index displayDate from originInfo -->
+    <xsl:for-each select="metadata/def.modsContainer/modsContainer/mods:mods/mods:originInfo/mods:displayDate">
+      <field name="ditav.mods.displayDate">
+        <xsl:value-of select="text()" />
+      </field>
+    </xsl:for-each>
+
+    <xsl:for-each select="metadata/def.modsContainer/modsContainer/mods:mods/mods:originInfo/mods:dateCreated">
+      <xsl:choose>
+        <xsl:when test="@point = 'start'">
+          <field name="ditav.mods.dateCreated.start">
+            <xsl:value-of select="text()" />
+          </field>
+        </xsl:when>
+        <xsl:when test="@point = 'end'">
+          <field name="ditav.mods.dateCreated.end">
+            <xsl:value-of select="text()" />
+          </field>
+        </xsl:when>
+        <xsl:otherwise>
+          <field name="ditav.mods.dateCreated.start">
+            <xsl:value-of select="text()" />
+          </field>
+          <field name="ditav.mods.dateCreated.end">
+            <xsl:value-of select="text()" />
+          </field>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:for-each>
+  </xsl:template>
 
 </xsl:stylesheet>

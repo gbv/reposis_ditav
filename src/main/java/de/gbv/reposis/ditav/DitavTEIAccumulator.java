@@ -28,8 +28,6 @@ import org.jdom2.xpath.XPathExpression;
 import org.jdom2.xpath.XPathFactory;
 import org.mycore.solr.index.file.MCRSolrFileIndexAccumulator;
 
-import com.google.gson.JsonObject;
-
 import de.gbv.reposis.ditav.geonames.DitavGeoNamesService;
 
 public class DitavTEIAccumulator implements MCRSolrFileIndexAccumulator {
@@ -81,6 +79,8 @@ public class DitavTEIAccumulator implements MCRSolrFileIndexAccumulator {
         } catch (JDOMException e) {
             throw new IOException("Error while reading " + filePath + "!", e);
         }
+
+        document.addField("content", teiDocument.getRootElement().getValue());
 
         extractTEIElement(document, "persName",
             "//uri.gbv.de/terminology/lod_persons/", teiDocument,

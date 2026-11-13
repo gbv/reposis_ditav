@@ -70,6 +70,9 @@ class DitavTEIAccumulatorTest {
         expectedGeneric.addAll(EXPECTED_ORGS);
         assertEquals(expectedGeneric, generic, "generic field contains persons + orgs");
 
+        assertTrue(solrDocument.getFieldValue("content").toString().contains("Сиятелнейший Граф"),
+            "TEI text is indexed for fulltext search");
+
         List<Object> personValues = List.copyOf(solrDocument.getFieldValues(DITAV_PERSON_FILE_LINK_SOLR_FIELD));
         assertEquals(EXPECTED_PERSONS.size(), personValues.size(),
             "no duplicate values in person field");

@@ -178,5 +178,41 @@
       "source": "ditav.tei.coordinates",
       "dest": "ditav.tei.coordinates.str"
     }
+  },
+  {
+    "add-field": {
+      "name": "ditav.mods.place",
+      "type": "strings",
+      "multiValued": true,
+      "stored": true,
+      "indexed": true
+    }
+  },
+  {
+    "add-field": {
+      "name": "ditav.mods.displayDate",
+      "type": "strings",
+      "multiValued": true,
+      "stored": true,
+      "indexed": true
+    }
+  },
+  {
+    "add-field": {
+      "name": "ditav.mods.dateCreated.start",
+      "type": "string",
+      "multiValued": true,
+      "stored": true,
+      "indexed": true
+    }
+  },
+  {
+    "add-field": {
+      "name": "ditav.mods.dateCreated.end",
+      "type": "string",
+      "multiValued": true,
+      "stored": true,
+      "indexed": true
+    }
   }
 ]
