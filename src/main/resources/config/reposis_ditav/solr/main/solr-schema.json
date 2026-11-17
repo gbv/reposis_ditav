@@ -1,5 +1,46 @@
 [
   {
+    "add-field-type": {
+      "name": "dea_text_ru",
+      "class": "solr.TextField",
+      "positionIncrementGap": "100",
+      "analyzer": {
+        "tokenizer": {
+          "class": "solr.StandardTokenizerFactory"
+        },
+        "filters": [
+          {
+            "class": "solr.LowerCaseFilterFactory"
+          },
+          {
+            "class": "solr.StopFilterFactory",
+            "format": "snowball",
+            "words": "lang/stopwords_ru.txt",
+            "ignoreCase": "true"
+          },
+          {
+            "class": "solr.SnowballPorterFilterFactory",
+            "language": "Russian"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "add-field": {
+      "name": "allMeta.ru",
+      "type": "dea_text_ru",
+      "stored": true,
+      "multiValued": true
+    }
+  },
+  {
+    "add-copy-field": {
+      "source": "allMeta",
+      "dest": "allMeta.ru"
+    }
+  },
+  {
     "add-dynamic-field": {
       "name": "mods.identifier.type.*",
       "type": "strings",
