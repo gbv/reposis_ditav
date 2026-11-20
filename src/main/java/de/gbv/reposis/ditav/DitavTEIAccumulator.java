@@ -18,9 +18,11 @@ import java.util.stream.Stream;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.solr.common.SolrInputDocument;
+import org.jdom2.Content;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
+import org.jdom2.Text;
 import org.jdom2.filter.Filters;
 import org.jdom2.input.SAXBuilder;
 import org.jdom2.input.sax.XMLReaders;
@@ -82,7 +84,7 @@ public class DitavTEIAccumulator implements MCRSolrFileIndexAccumulator {
 
         // runs after the Tika accumulator: replaces all Tika chunk values with one complete
         // value, otherwise Solr rejects the doc ("multiple values ... non multiValued field content")
-        document.setField("content", teiDocument.getRootElement().getValue());
+        document.setField("content", extractTEIContent(teiDocument.getRootElement()));
 
         extractTEIElement(document, "persName",
             "//uri.gbv.de/terminology/lod_persons/", teiDocument,
@@ -93,6 +95,49 @@ public class DitavTEIAccumulator implements MCRSolrFileIndexAccumulator {
             DITAV_GENERIC_FILE_LINK_SOLR_FIELD, DITAV_ORGANIZATION_FILE_LINK_SOLR_FIELD);
 
         extractGeoNames(document, teiDocument);
+    }
+
+    private static String extractTEIContent(Element rootElement) {
+        StringBuilder content = new StringBuilder();
+        appendTEIContent(rootElement, content);
+        return content.toString().trim();
+    }
+
+    private static void appendTEIContent(Element element, StringBuilder content) {
+        for (Content child : element.getContent()) {
+            if (child instanceof Text text) {
+                content.append(text.getText());
+            } else if (child instanceof Element childElement) {
+                boolean block = isTEIBlockElement(childElement);
+                if (block) {
+                    appendBlockSeparator(content);
+                }
+                appendTEIContent(childElement, content);
+                if (block) {
+                    appendBlockSeparator(content);
+                }
+            }
+        }
+    }
+
+    /**
+     * Adds a boundary between block elements without inserting separators into inline
+     * content. This keeps adjacent blocks searchable, e.g. {@code <p>brief</p><p>ostafrika</p>}
+     * becomes {@code "brief ostafrika"}.
+     */
+    private static void appendBlockSeparator(StringBuilder content) {
+        if (content.length() > 0 && !Character.isWhitespace(content.charAt(content.length() - 1))) {
+            content.append(' ');
+        }
+    }
+
+    private static boolean isTEIBlockElement(Element element) {
+        return switch (element.getName()) {
+            case "ab", "argument", "back", "body", "byline", "closer", "dateline", "div", "epigraph",
+                "front", "head", "item", "l", "lg", "list", "note", "opener", "p", "postscript",
+                "quote", "salute", "sp", "stage", "trailer" -> true;
+            default -> false;
+        };
     }
 
     /**
