@@ -80,7 +80,9 @@ public class DitavTEIAccumulator implements MCRSolrFileIndexAccumulator {
             throw new IOException("Error while reading " + filePath + "!", e);
         }
 
-        document.addField("content", teiDocument.getRootElement().getValue());
+        // runs after the Tika accumulator: replaces all Tika chunk values with one complete
+        // value, otherwise Solr rejects the doc ("multiple values ... non multiValued field content")
+        document.setField("content", teiDocument.getRootElement().getValue());
 
         extractTEIElement(document, "persName",
             "//uri.gbv.de/terminology/lod_persons/", teiDocument,

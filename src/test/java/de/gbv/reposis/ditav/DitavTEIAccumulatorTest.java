@@ -84,6 +84,32 @@ class DitavTEIAccumulatorTest {
     }
 
     @Test
+    void replacesExistingContentValues() throws IOException {
+        Path file;
+        SolrInputDocument solrDocument = new SolrInputDocument();
+        try (InputStream is = MCRClassTools.getClassLoader()
+            .getResourceAsStream("files/accumulator_test_file.xml")) {
+            file = Files.createTempFile("acc", "test_file.xml");
+            Files.copy(is, file, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+        }
+        try {
+            // simulate Tika chunk values already present in the document
+            solrDocument.addField("content", "\n");
+            solrDocument.addField("content", "chunk from tika");
+
+            new DitavTEIAccumulator().accumulate(solrDocument, file, null);
+
+            List<Object> contentValues = List.copyOf(solrDocument.getFieldValues("content"));
+            assertEquals(1, contentValues.size(),
+                "content must hold exactly one value (Tika chunks replaced)");
+            assertTrue(contentValues.get(0).toString().contains("Сиятелнейший Граф"),
+                "the single content value is the full TEI text");
+        } finally {
+            Files.deleteIfExists(file);
+        }
+    }
+
+    @Test
     void skipsNonXmlFiles() throws IOException {
         SolrInputDocument doc = new SolrInputDocument();
         Path nonXml = Files.createTempFile("acc", "test_file.txt");
