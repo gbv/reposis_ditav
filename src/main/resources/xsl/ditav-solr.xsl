@@ -82,6 +82,9 @@
           <field name="ditav.mods.dante_metadata_pers_link">
             <xsl:value-of select="$dante_link" />
           </field>
+          <field name="ditav.mods.dante_metadata_pers_link">
+            <xsl:value-of select="concat('http:', substring-after($dante_link, ':'))" />
+          </field>
         </xsl:when>
       </xsl:choose>
 
