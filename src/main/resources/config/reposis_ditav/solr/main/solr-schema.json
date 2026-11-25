@@ -223,7 +223,7 @@
   {
     "add-field": {
       "name": "ditav.mods.place",
-      "type": "strings",
+      "type": "text_general",
       "multiValued": true,
       "stored": true,
       "indexed": true
